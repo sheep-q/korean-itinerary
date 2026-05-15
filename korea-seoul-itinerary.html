@@ -1,0 +1,589 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width,initial-scale=1"/>
+<title>Plan 1: Seoul Only – 6 ngày khám phá | 2026</title>
+<style>
+*{-webkit-print-color-adjust:exact!important;print-color-adjust:exact!important;color-adjust:exact!important}
+*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Arial,sans-serif;font-size:14px;color:#1a1a1a;background:#fff;line-height:1.5}
+a{color:#029a45;text-decoration:none}
+
+.hdr{background:#1a2332;color:#fff;padding:13px 32px;display:flex;align-items:center;justify-content:space-between}
+.hdr-brand{font-size:15px;font-weight:600}
+.hdr-right{font-size:12px;color:rgba(255,255,255,0.55)}
+
+.hero{background:#1a2332;color:#fff;padding:36px 32px 32px;border-bottom:4px solid #03C75A}
+.hero h1{font-size:26px;font-weight:600;margin-bottom:5px;letter-spacing:-0.01em}
+.hero-dest{font-size:15px;color:rgba(255,255,255,0.65);margin-bottom:3px}
+.hero-dates{font-size:14px;color:#03C75A;font-weight:600}
+.hero-tag{display:inline-block;margin-top:12px;background:#03C75A;color:#fff;padding:5px 16px;border-radius:20px;font-size:12px;font-weight:600;letter-spacing:.02em}
+.plan-badge{display:inline-block;margin-top:10px;margin-right:8px;background:rgba(255,255,255,0.12);color:rgba(255,255,255,0.85);padding:4px 14px;border-radius:16px;font-size:12px;border:1px solid rgba(255,255,255,0.25)}
+
+.ov-grid{display:grid;grid-template-columns:repeat(4,1fr);border-bottom:1px solid #e0e0e0}
+.ov-card{padding:18px 20px;border-right:1px solid #e0e0e0;text-align:center}
+.ov-card:last-child{border-right:none}
+.ov-icon{font-size:20px;color:#03C75A;margin-bottom:5px}
+.ov-val{font-size:22px;font-weight:600}
+.ov-lbl{font-size:11px;color:#666;margin-top:3px}
+
+.wrap{max-width:860px;margin:0 auto;padding:0 28px 56px}
+
+.sec-hdr{display:flex;align-items:center;gap:12px;padding:28px 0 14px;border-bottom:1px solid #e0e0e0;margin-bottom:24px}
+.sec-ico{width:36px;height:36px;background:#e8faf2;border-radius:8px;display:flex;align-items:center;justify-content:center;flex-shrink:0;font-size:18px}
+.sec-tit{font-size:19px;font-weight:600}
+
+.price-highlight{background:#1a2332;color:#fff;border-radius:10px;padding:14px 18px;display:flex;justify-content:space-between;align-items:center;margin-bottom:14px}
+.ph-label{font-size:13px;color:rgba(255,255,255,0.7)}
+.ph-val{font-size:20px;font-weight:600;color:#03C75A;text-align:right}
+.ph-sub{font-size:11px;color:rgba(255,255,255,0.45);margin-top:2px}
+.ph-lsub{font-size:11px;color:rgba(255,255,255,0.45);margin-top:1px}
+.flight-grid{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-bottom:14px}
+.flight-card{border:1px solid #ddd;border-radius:10px;padding:16px}
+.flight-badge{display:inline-flex;align-items:center;gap:6px;background:#e8faf2;color:#029a45;font-size:12px;font-weight:600;padding:4px 12px;border-radius:16px;margin-bottom:12px;border:1px solid #b3e8cd}
+.f-row{display:flex;justify-content:space-between;font-size:13px;padding:5px 0;border-bottom:1px solid #f0f0f0}
+.f-row:last-child{border-bottom:none}
+.f-key{color:#666}
+.f-val{font-weight:600;text-align:right}
+.f-val.green{color:#029a45}
+.box-alert{background:#fff8e1;border-left:3px solid #f59f00;border-radius:8px;padding:13px 15px;font-size:13px;line-height:1.7;margin-bottom:14px}
+.box-alert .box-label{font-size:11px;font-weight:700;color:#b36e00;text-transform:uppercase;letter-spacing:.06em;display:block;margin-bottom:5px}
+.box-alert ul{margin-left:14px;font-size:12px;color:#7a5100;line-height:1.8}
+.box-alert li{margin-bottom:3px}
+
+.day-block{margin-bottom:32px;border:1px solid #ccc;border-radius:12px;overflow:hidden;page-break-inside:avoid}
+.day-hdr{background:#243044;color:#fff;padding:14px 20px;display:flex;align-items:center;gap:16px}
+.day-num{width:38px;height:38px;border-radius:50%;background:#03C75A;display:flex;align-items:center;justify-content:center;font-size:15px;font-weight:800;flex-shrink:0;color:#fff}
+.day-date-lbl{font-size:11px;color:rgba(255,255,255,0.5);margin-bottom:2px}
+.day-name{font-size:15px;font-weight:600;letter-spacing:.01em}
+.day-summary{padding:14px 20px;font-size:13px;line-height:1.8;color:#555;border-bottom:1px solid #eee;background:#f9f9f9}
+
+.activities{padding:0 20px}
+.act-row{display:grid;grid-template-columns:90px 1fr;gap:14px;padding:12px 0;border-bottom:1px solid #f0f0f0}
+.act-row:last-child{border-bottom:none}
+.act-time{font-size:12px;font-weight:700;color:#029a45;padding-top:2px;line-height:1.5}
+.act-name{font-size:13px;font-weight:600;margin-bottom:2px}
+.act-desc{font-size:12px;color:#555;line-height:1.6}
+
+.box{margin:0 20px 14px;padding:13px 15px;border-radius:8px;font-size:13px;line-height:1.7}
+.box-dining{background:#e8faf2;border-left:3px solid #03C75A}
+.box-dining .box-label{font-size:11px;font-weight:700;color:#029a45;text-transform:uppercase;letter-spacing:.06em;display:block;margin-bottom:5px}
+.box-tips{background:#f5f5f3;border-left:3px solid #ccc}
+.box-tips .box-label{font-size:11px;font-weight:700;color:#888;text-transform:uppercase;letter-spacing:.06em;display:block;margin-bottom:5px}
+.box-tips ul{margin-left:14px;font-size:12px;color:#555;line-height:1.7}
+.box-tips li{margin-bottom:3px}
+
+.tags{display:flex;flex-wrap:wrap;gap:6px;margin:0 20px 16px}
+.tag{font-size:12px;padding:4px 11px;border-radius:16px;background:#e8faf2;color:#029a45;font-weight:600;border:1px solid #b3e8cd}
+
+.rest-list{margin-top:8px}
+.rest-item{display:grid;grid-template-columns:auto 1fr auto;gap:8px;align-items:start;padding:8px 0;border-bottom:1px solid #c8eeda}
+.rest-item:last-child{border-bottom:none}
+.rest-rank{width:22px;height:22px;border-radius:50%;background:#03C75A;color:#fff;font-size:10px;font-weight:800;display:flex;align-items:center;justify-content:center;flex-shrink:0;margin-top:1px}
+.rest-info .rest-name{font-size:13px;font-weight:700;color:#1a2332;margin-bottom:1px}
+.rest-info .rest-type{font-size:11px;color:#555;margin-bottom:2px}
+.rest-info .rest-addr{font-size:11px;color:#777}
+.rest-right{text-align:right;flex-shrink:0}
+.rest-stars{color:#f59f00;font-size:12px;font-weight:700;white-space:nowrap}
+.rest-price{font-size:11px;color:#029a45;font-weight:600;margin-top:2px}
+.rest-map-link{display:inline-block;margin-top:4px;font-size:11px;color:#029a45;font-weight:600;padding:2px 8px;border:1px solid #03C75A;border-radius:10px;white-space:nowrap}
+.rest-map-link:hover{background:#e8faf2}
+
+.tr-wrap{overflow-x:auto}
+.tr-tbl{width:100%;border-collapse:collapse;font-size:13px;border:1px solid #ccc;border-radius:10px;overflow:hidden}
+.tr-tbl th{background:#1a2332;color:#fff;padding:9px 12px;text-align:left;font-weight:600;font-size:11px;border-right:1px solid rgba(255,255,255,0.15)}
+.tr-tbl th:last-child{border-right:none}
+.tr-tbl td{padding:9px 12px;border-bottom:1px solid #eee;border-right:1px solid #eee;vertical-align:top;line-height:1.55}
+.tr-tbl td:last-child{border-right:none}
+.tr-tbl tr:last-child td{border-bottom:none}
+.tr-tbl tr:nth-child(even) td{background:#f9f9f7}
+.sbadge{display:inline-flex;align-items:center;justify-content:center;width:20px;height:20px;border-radius:50%;font-size:10px;font-weight:800;color:#fff;flex-shrink:0}
+.note-sm{font-size:11px;color:#666;line-height:1.55}
+
+.budget-wrap{border:1px solid #ccc;border-radius:10px;overflow:hidden}
+.budget-row{display:flex;justify-content:space-between;padding:11px 16px;border-bottom:1px solid #eee;font-size:13px}
+.budget-row:last-child{border-bottom:none}
+.budget-row.hi{background:#e8faf2}
+.bk{color:#666}
+.bv{font-weight:600}
+.budget-total{display:flex;justify-content:space-between;align-items:center;background:#e8faf2;padding:14px 16px;border-top:2px solid #03C75A}
+.bt-lbl{font-weight:600;font-size:14px;color:#029a45}
+.bt-val{font-size:22px;font-weight:700;color:#029a45}
+
+.ftr{background:#1a2332;color:#fff;padding:28px 32px;text-align:center}
+.ftr-main{font-size:13px;opacity:.75;margin-bottom:6px;line-height:1.8}
+.ftr-sub{font-size:11px;opacity:.4}
+
+@media print {
+  @page{margin:1cm;size:A4}
+  body{font-size:12px}
+  .hdr,.hero,.day-hdr,.ov-grid,.price-highlight,.budget-total,.ftr,.box-alert,.box-dining,.box-tips,.tag,.flight-badge,.day-summary{-webkit-print-color-adjust:exact!important;print-color-adjust:exact!important}
+  .day-block{page-break-inside:avoid;break-inside:avoid}
+  .sec-hdr{page-break-after:avoid;break-after:avoid}
+}
+</style>
+</head>
+<body>
+
+<div class="hdr">
+  <div class="hdr-brand">Hành trình Hàn Quốc 2026 · Plan 1</div>
+  <div class="hdr-right">Kết xuất tháng 5/2026</div>
+</div>
+
+<div class="hero">
+  <h1>📋 Plan 1 – Seoul Toàn Bộ · 6 ngày</h1>
+  <div class="hero-dest">Hàn Quốc · Seoul · Thủ đô</div>
+  <div class="hero-dates">Check-in 21:30 🇻🇳 Thứ Năm 27/8 · Bay 00:20 🇻🇳 Thứ Sáu 28/8 – Về 22:50 🇻🇳 Thứ Tư 2/9</div>
+  <div class="plan-badge">Seoul only – không đi Busan</div>
+  <div class="plan-badge">5 ngày khám phá thủ đô</div>
+  <div class="hero-tag">Hành trình đã lên lịch</div>
+</div>
+
+<div class="ov-grid">
+  <div class="ov-card"><div class="ov-icon">👥</div><div class="ov-val">6</div><div class="ov-lbl">Thành viên</div></div>
+  <div class="ov-card"><div class="ov-icon">📅</div><div class="ov-val">6</div><div class="ov-lbl">Ngày tại Seoul</div></div>
+  <div class="ov-card"><div class="ov-icon">📍</div><div class="ov-val">16</div><div class="ov-lbl">Địa điểm</div></div>
+  <div class="ov-card"><div class="ov-icon">🏙️</div><div class="ov-val">1</div><div class="ov-lbl">Thành phố</div></div>
+</div>
+
+<div class="wrap">
+
+<div class="sec-hdr"><div class="sec-ico">✈️</div><span class="sec-tit">Thông tin chuyến bay</span></div>
+
+<div class="price-highlight">
+  <div>
+    <div class="ph-label">Parata Air · Khứ hồi · Đã bao gồm 15kg hành lý ký gửi</div>
+    <div class="ph-lsub">Hãng hàng không mới · Loại vé: Cơ bản</div>
+  </div>
+  <div>
+    <div class="ph-val">8.150.000 ₫/người</div>
+    <div class="ph-sub">× 6 người = 48.900.000 ₫</div>
+  </div>
+</div>
+
+<div class="flight-grid">
+  <div class="flight-card">
+    <div class="flight-badge">✈ Chiều đi</div>
+    <div class="f-row"><span class="f-key">Hãng bay</span><span class="f-val">Parata Air</span></div>
+    <div class="f-row"><span class="f-key">Khởi hành</span><span class="f-val">HAN 00:20 🇻🇳 (Thứ Sáu, 28/8/2026)</span></div>
+    <div class="f-row"><span class="f-key">Đến nơi</span><span class="f-val">ICN 06:40 🇰🇷 (Thứ Sáu, 28/8/2026)</span></div>
+    <div class="f-row"><span class="f-key">Check-in tại HAN</span><span class="f-val green">21:30–22:00 🇻🇳 Thứ Năm 27/8</span></div>
+    <div class="f-row"><span class="f-key">Hành lý</span><span class="f-val">15kg ký gửi (đã bao gồm)</span></div>
+  </div>
+  <div class="flight-card">
+    <div class="flight-badge">✈ Chiều về</div>
+    <div class="f-row"><span class="f-key">Hãng bay</span><span class="f-val">Parata Air</span></div>
+    <div class="f-row"><span class="f-key">Khởi hành</span><span class="f-val">ICN 19:55 🇰🇷 (Thứ Tư, 2/9/2026)</span></div>
+    <div class="f-row"><span class="f-key">Đến nơi</span><span class="f-val">HAN 22:50 🇻🇳 (Thứ Tư, 2/9/2026)</span></div>
+    <div class="f-row"><span class="f-key">Loại vé</span><span class="f-val">Cơ bản · 15kg ký gửi included</span></div>
+  </div>
+</div>
+
+<div class="box-alert">
+  <span class="box-label">⚠ Lưu ý quan trọng</span>
+  <ul>
+    <li><strong>Có mặt tại HAN lúc 21:30–22:00 🇻🇳 tối Thứ Năm 27/8/2026</strong> – cất cánh 00:20 🇻🇳 rạng sáng Thứ Sáu 28/8/2026</li>
+    <li>Plan 1 – chỉ ở Seoul, không xuống Busan – tiết kiệm hơn và không mất thời gian di chuyển</li>
+    <li>Hành lý ký gửi 15kg/người đã bao gồm trong giá vé Parata Air</li>
+    <li>Công dân Việt Nam không cần visa vào Hàn Quốc ≤45 ngày (xác nhận K-ETA nếu yêu cầu)</li>
+  </ul>
+</div>
+
+<div class="sec-hdr"><div class="sec-ico">🗺️</div><span class="sec-tit">Lịch trình ngày qua ngày</span></div>
+
+<!-- NGÀY 1 -->
+<div class="day-block">
+  <div class="day-hdr">
+    <div class="day-num" style="background:#888780">1</div>
+    <div><div class="day-date-lbl">Thứ Sáu, 28/8/2026</div><div class="day-name">Đến Seoul · Myeongdong · Namdaemun</div></div>
+  </div>
+  <div class="day-summary">Hạ cánh sân bay Incheon lúc 06:40 giờ Hàn Quốc sau chuyến bay đêm từ Hà Nội. Làm thủ tục nhập cảnh, di chuyển vào trung tâm Seoul bằng tàu AREX, nhận phòng tại Myeongdong rồi thả mình vào mê cung phố ẩm thực và mua sắm sôi động nhất Seoul.</div>
+  <div class="activities">
+    <div class="act-row"><div class="act-time">06:40 🇰🇷</div><div><div class="act-name">Hạ cánh sân bay Incheon (ICN)</div><div class="act-desc">Làm thủ tục hải quan, nhận hành lý. Mua thẻ T-money tại GS25 trong sân bay (3.000₩ tiền cọc). Lên tàu AREX vào Seoul Station (~5.000₩, 43 phút).</div></div></div>
+    <div class="act-row"><div class="act-time">Buổi sáng</div><div><div class="act-name">Nhận phòng khách sạn Myeongdong</div><div class="act-desc">Gửi hành lý nếu phòng chưa sẵn. Khu Myeongdong: Ibis Styles, Lotte City, Travelodge – ưu tiên vị trí gần ga Myeongdong.</div></div></div>
+    <div class="act-row"><div class="act-time">Buổi chiều</div><div><div class="act-name">Khu phố ẩm thực Myeongdong</div><div class="act-desc">Phố đi bộ 1km với hàng trăm quầy đồ ăn vỉa hè. Phải thử: tteokbokki, hotteok, kem bắp, gà chiên mật ong. Cửa hàng mỹ phẩm Innisfree, Etude, Olive Young.</div></div></div>
+    <div class="act-row"><div class="act-time">17:00 🇰🇷</div><div><div class="act-name">Chợ Namdaemun (남대문시장)</div><div class="act-desc">Chợ truyền thống lớn nhất Hàn Quốc. Quần áo, đồ lưu niệm, hải sản khô, đặc sản địa phương. Đi bộ ~10 phút từ Myeongdong.</div></div></div>
+    <div class="act-row"><div class="act-time">Tối</div><div><div class="act-name">Ăn tối tại Myeongdong</div><div class="act-desc">Samgyeopsal (thịt ba chỉ nướng) hoặc chimaek (gà chiên + bia Hàn) ngay trên phố. Nghỉ sớm lấy lại sức sau chuyến bay đêm.</div></div></div>
+  </div>
+  <div class="box box-dining"><span class="box-label">🍽 Nhà hàng gợi ý – Ngày 1 · Myeongdong</span>
+  <div class="rest-list">
+    <div class="rest-item">
+      <div class="rest-rank">1</div>
+      <div class="rest-info"><div class="rest-name">Myeongdong Kyoja (명동교자)</div><div class="rest-type">Kalguksu · Mandu · Quán truyền thống từ 1966</div><div class="rest-addr">29 Myeongdong 10-gil, Jung-gu, Seoul</div></div>
+      <div class="rest-right"><div class="rest-stars">★ 4.5</div><div class="rest-price">11.000–15.000₩</div><a class="rest-map-link" href="https://www.google.com/maps/search/?api=1&query=Myeongdong+Kyoja+%EB%AA%85%EB%8F%99%EA%B5%90%EC%9E%90+Seoul" target="_blank">🗺 Maps</a></div>
+    </div>
+    <div class="rest-item">
+      <div class="rest-rank">2</div>
+      <div class="rest-info"><div class="rest-name">Gogung (고궁) – Bibimbap</div><div class="rest-type">Cơm trộn đặc sản Jeonju · Không gian truyền thống</div><div class="rest-addr">Myeongdong 1-ga, Jung-gu, Seoul</div></div>
+      <div class="rest-right"><div class="rest-stars">★ 4.3</div><div class="rest-price">13.000–18.000₩</div><a class="rest-map-link" href="https://www.google.com/maps/search/?api=1&query=Gogung+bibimbap+Myeongdong+Seoul" target="_blank">🗺 Maps</a></div>
+    </div>
+    <div class="rest-item">
+      <div class="rest-rank">3</div>
+      <div class="rest-info"><div class="rest-name">Phố ẩm thực Myeongdong (길거리 음식)</div><div class="rest-type">Tteokbokki · Hotteok · Kem bắp nướng · Gà mật ong</div><div class="rest-addr">Myeongdong 8-gil (phố chính), Jung-gu, Seoul</div></div>
+      <div class="rest-right"><div class="rest-stars">★ 4.4</div><div class="rest-price">1.000–5.000₩/món</div><a class="rest-map-link" href="https://www.google.com/maps/search/?api=1&query=Myeongdong+street+food+Seoul" target="_blank">🗺 Maps</a></div>
+    </div>
+  </div>
+  </div>
+  <div class="box box-tips"><span class="box-label">💡 Mẹo hay</span><ul><li>Mua thẻ T-money ngay tại sân bay – dùng được tàu điện ngầm, xe buýt, taxi Kakao T</li><li>Download app Naver Map và Kakao T trước khi đi – bản đồ và gọi taxi cực tiện</li><li>Tỷ giá: 1 triệu VNĐ ≈ 56.000₩ – đổi tiền tại Myeongdong được giá tốt nhất</li></ul></div>
+  <div class="tags"><span class="tag">Tàu AREX từ ICN</span><span class="tag">Phố ẩm thực Myeongdong</span><span class="tag">Chợ Namdaemun</span><span class="tag">Mỹ phẩm Olive Young</span></div>
+</div>
+
+<!-- NGÀY 2 -->
+<div class="day-block">
+  <div class="day-hdr">
+    <div class="day-num" style="background:#7F77DD">2</div>
+    <div><div class="day-date-lbl">Thứ Bảy, 29/8/2026</div><div class="day-name">Gyeongbokgung · Bukchon · Insadong · Hongdae · Sông Hán</div></div>
+  </div>
+  <div class="day-summary">Ngày dài nhất hành trình — khám phá Seoul từ cung điện ngàn năm đến khu giải trí sôi động của giới trẻ. Buổi sáng mang không khí hoàng gia, buổi chiều ngập nghệ thuật và K-pop, buổi tối lãng mạn bên sông Hán.</div>
+  <div class="activities">
+    <div class="act-row"><div class="act-time">09:00 🇰🇷</div><div><div class="act-name">Cung điện Gyeongbokgung (경복궁)</div><div class="act-desc">Cung điện chính triều Joseon, xây năm 1395. Vé 3.000₩. Lễ đổi gác hoàng gia 10:00 &amp; 14:00 – xem miễn phí. Thuê hanbok trong sân để chụp ảnh miễn phí.</div></div></div>
+    <div class="act-row"><div class="act-time">11:00 🇰🇷</div><div><div class="act-name">Làng Hanok Bukchon (북촌한옥마을)</div><div class="act-desc">Gần 600 ngôi nhà mái ngói truyền thống. Điểm chụp ảnh đẹp: dốc Gahoe-ro 11-gil. Giữ yên tĩnh – có cư dân sinh sống.</div></div></div>
+    <div class="act-row"><div class="act-time">12:30 🇰🇷</div><div><div class="act-name">Ăn trưa và dạo phố Insadong</div><div class="act-desc">Phố nghệ nhân, thủ công mỹ nghệ, bánh tteok. Ssamziegil – khu phức hợp sân trong – không thể bỏ qua.</div></div></div>
+    <div class="act-row"><div class="act-time">14:30 🇰🇷</div><div><div class="act-name">Tàu điện ngầm đến Hongdae</div><div class="act-desc">Line 3 từ ga Anguk đến Hongdae (25 phút, ~1.400₩). Trung tâm văn hóa giới trẻ Seoul – nghệ sĩ đường phố, K-pop, cafe concept, streetwear.</div></div></div>
+    <div class="act-row"><div class="act-time">20:00 🇰🇷</div><div><div class="act-name">Công viên sông Hán Banpo – Đài phun nước cầu vồng</div><div class="act-desc">Taxi Kakao T từ Hongdae (~20 phút, ~13.000₩/taxi). Đài phun nước Rainbow Moonbow – màn trình diễn ánh sáng sau hoàng hôn. Mang đồ ăn ra picnic bên sông.</div></div></div>
+  </div>
+  <div class="box box-dining"><span class="box-label">🍽 Nhà hàng gợi ý – Ngày 2 · Gyeongbokgung · Hongdae</span>
+  <div class="rest-list">
+    <div class="rest-item">
+      <div class="rest-rank">1</div>
+      <div class="rest-info"><div class="rest-name">Tosokchon Samgyetang (토속촌 삼계탕)</div><div class="rest-type">Gà hầm sâm · Icon ẩm thực gần cung điện · Luôn có hàng dài</div><div class="rest-addr">5 Jahamun-ro 5-gil, Jongno-gu, Seoul</div></div>
+      <div class="rest-right"><div class="rest-stars">★ 4.4</div><div class="rest-price">17.000₩/suất</div><a class="rest-map-link" href="https://www.google.com/maps/search/?api=1&query=Tosokchon+Samgyetang+%ED%86%A0%EC%86%8D%EC%B4%8C+%EC%82%BC%EA%B3%84%ED%83%95+Seoul" target="_blank">🗺 Maps</a></div>
+    </div>
+    <div class="rest-item">
+      <div class="rest-rank">2</div>
+      <div class="rest-info"><div class="rest-name">Ssamziegil Food Stalls (쌈지길 음식)</div><div class="rest-type">Bánh tteok · Trà truyền thống · Ăn vặt Insadong</div><div class="rest-addr">Insadong-gil, Jongno-gu, Seoul</div></div>
+      <div class="rest-right"><div class="rest-stars">★ 4.3</div><div class="rest-price">3.000–8.000₩</div><a class="rest-map-link" href="https://www.google.com/maps/search/?api=1&query=Ssamziegil+Insadong+Seoul" target="_blank">🗺 Maps</a></div>
+    </div>
+    <div class="rest-item">
+      <div class="rest-rank">3</div>
+      <div class="rest-info"><div class="rest-name">Mapo Galmaegi (마포갈매기) – Hongdae</div><div class="rest-type">Galmaegi-sal (cơ hoành heo nướng) · Korean BBQ chính gốc</div><div class="rest-addr">Wausan-ro, Mapo-gu, Seoul (khu Hongdae)</div></div>
+      <div class="rest-right"><div class="rest-stars">★ 4.3</div><div class="rest-price">10.000–18.000₩</div><a class="rest-map-link" href="https://www.google.com/maps/search/?api=1&query=Mapo+Galmaegi+%EB%A7%88%ED%8F%AC%EA%B0%88%EB%A7%A4%EA%B8%B0+Hongdae+Seoul" target="_blank">🗺 Maps</a></div>
+    </div>
+  </div>
+  </div>
+  <div class="tags"><span class="tag">Cung điện Gyeongbokgung</span><span class="tag">Lễ đổi gác hoàng gia</span><span class="tag">Thuê Hanbok</span><span class="tag">Đài phun nước cầu vồng Banpo</span></div>
+</div>
+
+<!-- NGÀY 3 -->
+<div class="day-block">
+  <div class="day-hdr">
+    <div class="day-num" style="background:#378ADD">3</div>
+    <div><div class="day-date-lbl">Chủ Nhật, 30/8/2026</div><div class="day-name">LOL Park – Esports Day · Chợ Gwangjang</div></div>
+  </div>
+  <div class="day-summary">Ngày dành riêng cho LCK – giải đấu League of Legends hàng đầu thế giới. LOL Park tại khu Jongno là thánh địa của fan game Hàn Quốc: xem trận đấu trực tiếp, tham quan bảo tàng esports, chụp ảnh cùng cúp vô địch. Tối kết thúc tại chợ Gwangjang huyền thoại.</div>
+  <div class="activities">
+    <div class="act-row"><div class="act-time">09:30 🇰🇷</div><div><div class="act-name">Di chuyển đến LOL Park – Gran Seoul (Jongno)</div><div class="act-desc">Tàu điện ngầm đến ga Jonggak hoặc Gwanghwamun. LOL Park nằm tầng B1 tòa Gran Seoul – địa điểm tổ chức LCK chính thức.</div></div></div>
+    <div class="act-row"><div class="act-time">10:00 🇰🇷</div><div><div class="act-name">Khu trải nghiệm LoL Experience Zone</div><div class="act-desc">Triển lãm lịch sử LoL, bộ sưu tập cúp LCK, khu chụp ảnh với champions. Merchandise store: skin, áo đấu, phụ kiện chính hãng.</div></div></div>
+    <div class="act-row"><div class="act-time">13:00 🇰🇷</div><div><div class="act-name">Xem trận đấu LCK Playoffs</div><div class="act-desc">Mùa LCK 2026 kéo đến 13/9, Playoffs tháng 8 rất có thể có trận tại đây. Xem lịch tại lolesports.com · Đặt vé tại ticketlink.co.kr (30.000–50.000₩/vé).</div></div></div>
+    <div class="act-row"><div class="act-time">Tối</div><div><div class="act-name">Chợ Gwangjang + Ăn tối khu Jongno</div><div class="act-desc">Chợ ẩm thực nổi tiếng nhất Hàn: bindaetteok (bánh xèo đậu xanh), mayak gimbap, yukhoe (bò sống). Không khí sôi động nhất từ 18:00–22:00.</div></div></div>
+  </div>
+  <div class="box box-dining"><span class="box-label">🍽 Nhà hàng gợi ý – Ngày 3 · Jongno · Chợ Gwangjang</span>
+  <div class="rest-list">
+    <div class="rest-item">
+      <div class="rest-rank">1</div>
+      <div class="rest-info"><div class="rest-name">Bindaetteok Stalls – Chợ Gwangjang (광장시장 빈대떡)</div><div class="rest-type">Bánh xèo đậu xanh · Iconic street food nổi tiếng Netflix</div><div class="rest-addr">88 Changgyeonggung-ro, Jongno-gu, Seoul (cổng chính)</div></div>
+      <div class="rest-right"><div class="rest-stars">★ 4.6</div><div class="rest-price">5.000–8.000₩/cái</div><a class="rest-map-link" href="https://www.google.com/maps/search/?api=1&query=Gwangjang+Market+Bindaetteok+%EA%B4%91%EC%9E%A5%EC%8B%9C%EC%9E%A5+Seoul" target="_blank">🗺 Maps</a></div>
+    </div>
+    <div class="rest-item">
+      <div class="rest-rank">2</div>
+      <div class="rest-info"><div class="rest-name">Mayak Gimbap (마약 김밥) – Gwangjang</div><div class="rest-type">Kimbap mini cuộn mè vàng · Nghiện không thể dừng</div><div class="rest-addr">Bên trong Gwangjang Market, Jongno-gu, Seoul</div></div>
+      <div class="rest-right"><div class="rest-stars">★ 4.5</div><div class="rest-price">3.000₩/cuộn</div><a class="rest-map-link" href="https://www.google.com/maps/search/?api=1&query=Mayak+Gimbap+Gwangjang+Market+%EB%A7%88%EC%95%BD%EA%B9%80%EB%B0%A5+Seoul" target="_blank">🗺 Maps</a></div>
+    </div>
+    <div class="rest-item">
+      <div class="rest-rank">3</div>
+      <div class="rest-info"><div class="rest-name">Jongno Jokbal (종로 족발)</div><div class="rest-type">Jokbal (giò heo ép) · Bossam · Đặc sản Jongno buổi tối</div><div class="rest-addr">Jongno 3-ga, Jongno-gu, Seoul</div></div>
+      <div class="rest-right"><div class="rest-stars">★ 4.2</div><div class="rest-price">20.000–35.000₩/2 người</div><a class="rest-map-link" href="https://www.google.com/maps/search/?api=1&query=Jongno+Jokbal+%EC%A2%85%EB%A1%9C+%EC%A1%B1%EB%B0%9C+Seoul" target="_blank">🗺 Maps</a></div>
+    </div>
+  </div>
+  </div>
+  <div class="tags"><span class="tag">LOL Park chính thức</span><span class="tag">LCK Playoffs</span><span class="tag">Esports merchandise</span><span class="tag">Chợ Gwangjang</span></div>
+</div>
+
+<!-- NGÀY 4 -->
+<div class="day-block">
+  <div class="day-hdr">
+    <div class="day-num" style="background:#1D9E75">4</div>
+    <div><div class="day-date-lbl">Thứ Hai, 31/8/2026</div><div class="day-name">N Seoul Tower · Itaewon · Lotte World Tower · Yeouido</div></div>
+  </div>
+  <div class="day-summary">Ngày 4 Seoul – leo lên tháp Namsan ngắm toàn cảnh thủ đô, rồi xuống phố Itaewon quốc tế ăn đủ mọi hương vị. Buổi chiều chinh phục Lotte World Tower cao nhất Hàn Quốc, tối thả thuyền hoặc picnic bên đảo Yeouido sông Hán.</div>
+  <div class="activities">
+    <div class="act-row"><div class="act-time">09:30 🇰🇷</div><div><div class="act-name">N Seoul Tower trên núi Namsan (남산서울타탑)</div><div class="act-desc">Đi cáp treo từ chân núi Namsan (~9.000₩ khứ hồi). Tháp cao 236m – view 360° toàn Seoul. Gắn "love locks" tại hàng rào xung quanh tháp. Vé Observatory ~21.000₩/người.</div></div></div>
+    <div class="act-row"><div class="act-time">12:00 🇰🇷</div><div><div class="act-name">Phố Itaewon (이태원) – Ăn trưa đa quốc tịch</div><div class="act-desc">Tàu ĐN Line 6 từ Itaewon Station. Khu phố quốc tế nhất Seoul: nhà hàng Ý, Trung Đông, Mỹ Latin, craft beer, thương hiệu vintage. Khu Haebangchon (경리단길) gần đó có nhiều quán indie hay.</div></div></div>
+    <div class="act-row"><div class="act-time">14:30 🇰🇷</div><div><div class="act-name">Lotte World Tower (롯데월드타워) – 555m</div><div class="act-desc">Tòa nhà cao thứ 5 thế giới. Seoul Sky Observatory tầng 117–123 (27.000₩). View đỉnh nhìn xa 100km trời quang. Lotte World Mall ngay dưới – siêu thị lớn và nhiều cửa hàng.</div></div></div>
+    <div class="act-row"><div class="act-time">17:00 🇰🇷</div><div><div class="act-name">Đảo Yeouido (여의도) – Sông Hán chiều tà</div><div class="act-desc">Tàu ĐN Line 5 đến ga Yeouido. Công viên sông Hán rộng 2km – mua đồ ăn tại CU/GS25 và picnic theo kiểu Hàn Quốc. Thuê xe đạp đôi đi dọc bờ sông.</div></div></div>
+    <div class="act-row"><div class="act-time">Tối</div><div><div class="act-name">IFC Seoul Mall – Ăn tối + Đi bộ Yeouido</div><div class="act-desc">IFC Seoul ngay cạnh ga Yeouido – tầng hầm có food court và nhà hàng đa dạng. Buổi tối đảo Yeouido sáng đèn rất đẹp – đặc biệt khi nhìn từ bờ kia sông Hán.</div></div></div>
+  </div>
+  <div class="box box-dining"><span class="box-label">🍽 Nhà hàng gợi ý – Ngày 4 · Namsan · Itaewon · Yeouido</span>
+  <div class="rest-list">
+    <div class="rest-item">
+      <div class="rest-rank">1</div>
+      <div class="rest-info"><div class="rest-name">Vatos Urban Tacos (바토스) – Itaewon</div><div class="rest-type">Korean-Mexican fusion · Kimchi carnitas tacos · Besto burrito</div><div class="rest-addr">18 Itaewon-ro 15ga-gil, Yongsan-gu, Seoul</div></div>
+      <div class="rest-right"><div class="rest-stars">★ 4.4</div><div class="rest-price">14.000–22.000₩</div><a class="rest-map-link" href="https://www.google.com/maps/search/?api=1&query=Vatos+Urban+Tacos+%EB%B0%94%ED%86%A0%EC%8A%A4+Itaewon+Seoul" target="_blank">🗺 Maps</a></div>
+    </div>
+    <div class="rest-item">
+      <div class="rest-rank">2</div>
+      <div class="rest-info"><div class="rest-name">Lotte World Tower SkyBridge Cafe (123층)</div><div class="rest-type">Cafe tầng 123 – uống nước trên mây · View Seoul cực đỉnh</div><div class="rest-addr">300 Olympic-ro, Songpa-gu, Seoul (Lotte World Tower)</div></div>
+      <div class="rest-right"><div class="rest-stars">★ 4.5</div><div class="rest-price">15.000–30.000₩</div><a class="rest-map-link" href="https://www.google.com/maps/search/?api=1&query=Lotte+World+Tower+Seoul+Sky+Observatory" target="_blank">🗺 Maps</a></div>
+    </div>
+    <div class="rest-item">
+      <div class="rest-rank">3</div>
+      <div class="rest-info"><div class="rest-name">Yeouido Hangang Picnic (여의도 한강공원)</div><div class="rest-type">Chimaek bên sông · CU/GS25 + giao đồ ăn ngay ra bãi cỏ</div><div class="rest-addr">Yeouinaru-ro, Yeongdeungpo-gu, Seoul (bến thuyền)</div></div>
+      <div class="rest-right"><div class="rest-stars">★ 4.5</div><div class="rest-price">10.000–20.000₩</div><a class="rest-map-link" href="https://www.google.com/maps/search/?api=1&query=Yeouido+Hangang+Park+%EC%97%AC%EC%9D%98%EB%8F%84+%ED%95%9C%EA%B0%95%EA%B3%B5%EC%9B%90+Seoul" target="_blank">🗺 Maps</a></div>
+    </div>
+  </div>
+  </div>
+  <div class="box box-tips"><span class="box-label">💡 Mẹo ngày 4</span><ul><li>N Seoul Tower: đặt vé cáp treo online để tránh xếp hàng – Seoul Cable Car app</li><li>Lotte World Tower: mua vé Seoul Sky online trước để được giảm giá ~20%</li><li>Itaewon: khu Haebangchon (HBC) gần đó yên tĩnh hơn và quán xá indie hơn</li></ul></div>
+  <div class="tags"><span class="tag">N Seoul Tower 236m</span><span class="tag">Cáp treo Namsan</span><span class="tag">Love locks</span><span class="tag">Lotte World Tower 555m</span><span class="tag">Picnic Yeouido sông Hán</span></div>
+</div>
+
+<!-- NGÀY 5 -->
+<div class="day-block">
+  <div class="day-hdr">
+    <div class="day-num" style="background:#EF9F27">5</div>
+    <div><div class="day-date-lbl">Thứ Ba, 1/9/2026</div><div class="day-name">COEX Starfield · Garosu-gil · Dongdaemun DDP</div></div>
+  </div>
+  <div class="day-summary">Ngày cuối vui chơi tại Seoul – thư viện Starfield COEX nổi tiếng viral, phố boutique Garosu-gil cây xanh và kiệt tác kiến trúc DDP của Zaha Hadid. Chiều tối về khách sạn đóng hành lý, chuẩn bị sẵn sàng cho chuyến bay về ngày mai (2/9).</div>
+  <div class="activities">
+    <div class="act-row"><div class="act-time">10:00 🇰🇷</div><div><div class="act-name">Thư viện Starfield COEX (별마당 도서관)</div><div class="act-desc">Thư viện sách khổng lồ cao 13m – check-in viral nhất Seoul, miễn phí. SM Town Atrium ngay trong mall cho fan K-pop. COEX Aquarium tùy chọn (~29.000₩).</div></div></div>
+    <div class="act-row"><div class="act-time">12:00 🇰🇷</div><div><div class="act-name">Ăn trưa Gangnam + Phố Garosu-gil</div><div class="act-desc">Đi bộ ~15 phút từ COEX. Phố cây xanh boutique: cafe đặc sản, skincare premium, thời trang Hàn Quốc. Mua sắm cuối hành trình.</div></div></div>
+    <div class="act-row"><div class="act-time">14:00 🇰🇷</div><div><div class="act-name">Dongdaemun Design Plaza – DDP (동대문디자인플라자)</div><div class="act-desc">Kiệt tác kiến trúc Zaha Hadid – tham quan và mua sắm cuối trước khi ra sân bay (~20 phút, cửa 1). Chợ đêm Dongdaemun nếu còn thời gian.</div></div></div>
+    <div class="act-row"><div class="act-time">18:00 🇰🇷</div><div><div class="act-name">Ăn tối + Về khách sạn – Chuẩn bị hành lý</div><div class="act-desc">Ăn tối tại khu Dongdaemun hoặc Myeongdong (gần khách sạn hơn). Về phòng đóng hành lý sẵn – ngày mai (2/9) cần checkout và ra sân bay ICN lúc ~14:00–15:00.</div></div></div>
+  </div>
+  <div class="box box-dining"><span class="box-label">🍽 Nhà hàng gợi ý – Ngày 5 · Gangnam · COEX</span>
+  <div class="rest-list">
+    <div class="rest-item">
+      <div class="rest-rank">1</div>
+      <div class="rest-info"><div class="rest-name">COEX Market O2 Food Court (코엑스 푸드코트)</div><div class="rest-type">Food court đa dạng · Bibimbap, Kimbap, Bún Hàn · Tiện lợi</div><div class="rest-addr">B1, COEX Mall, 513 Yeongdong-daero, Gangnam-gu, Seoul</div></div>
+      <div class="rest-right"><div class="rest-stars">★ 4.0</div><div class="rest-price">8.000–15.000₩</div><a class="rest-map-link" href="https://www.google.com/maps/search/?api=1&query=COEX+Mall+Food+Court+Gangnam+Seoul" target="_blank">🗺 Maps</a></div>
+    </div>
+    <div class="rest-item">
+      <div class="rest-rank">2</div>
+      <div class="rest-info"><div class="rest-name">Garosu-gil Brunch Cafes (가로수길 브런치)</div><div class="rest-type">Brunch Hàn hiện đại · Cà phê specialty · Dessert cafe</div><div class="rest-addr">Garosu-gil, Sinsa-dong, Gangnam-gu, Seoul</div></div>
+      <div class="rest-right"><div class="rest-stars">★ 4.3</div><div class="rest-price">12.000–22.000₩</div><a class="rest-map-link" href="https://www.google.com/maps/search/?api=1&query=Garosu-gil+brunch+cafe+%EA%B0%80%EB%A1%9C%EC%88%98%EA%B8%B8+Gangnam+Seoul" target="_blank">🗺 Maps</a></div>
+    </div>
+    <div class="rest-item">
+      <div class="rest-rank">3</div>
+      <div class="rest-info"><div class="rest-name">Seolleongtang DDP (설렁탕) – Dongdaemun</div><div class="rest-type">Súp xương bò hầm nhừ · Ăn nhanh no bụng trước sân bay</div><div class="rest-addr">Gần Dongdaemun History &amp; Culture Park, Jung-gu, Seoul</div></div>
+      <div class="rest-right"><div class="rest-stars">★ 4.2</div><div class="rest-price">10.000–14.000₩</div><a class="rest-map-link" href="https://www.google.com/maps/search/?api=1&query=Seolleongtang+%EC%84%A4%EB%A0%81%ED%83%95+Dongdaemun+Seoul" target="_blank">🗺 Maps</a></div>
+    </div>
+  </div>
+  </div>
+  <div class="tags"><span class="tag">Thư viện Starfield COEX</span><span class="tag">SM Town K-pop</span><span class="tag">Garosu-gil boutique</span><span class="tag">DDP Zaha Hadid</span><span class="tag">Đóng hành lý về ngày mai</span></div>
+</div>
+
+
+<!-- NGÀY 6 -->
+<div class="day-block">
+  <div class="day-hdr">
+    <div class="day-num" style="background:#B85C8A">6</div>
+    <div><div class="day-date-lbl">Thứ Tư, 2/9/2026</div><div class="day-name">Trả phòng · Sân bay Incheon · Bay về Hà Nội</div></div>
+  </div>
+  <div class="day-summary">Ngày cuối hành trình – buổi sáng tự do mua sắm nốt tại Myeongdong, trả phòng trước 12:00 rồi ra sân bay Incheon. Hoàn thuế VAT tại quầy Global Blue trước khi check-in. Parata Air ICN 19:55 🇰🇷 cất cánh, hạ cánh Nội Bài 22:50 🇻🇳 – kết thúc chuyến Seoul tuyệt vời!</div>
+  <div class="activities">
+    <div class="act-row"><div class="act-time">Buổi sáng</div><div><div class="act-name">Tự do – Mua sắm cuối tại Myeongdong</div><div class="act-desc">Olive Young, Innisfree, quầy mỹ phẩm – mua nốt những thứ còn thiếu. Đổi lại tiền won dư sang VNĐ tại chợ Myeongdong (tỷ giá tốt hơn sân bay). GS25 gần khách sạn bán đồ ăn sáng tiện lợi.</div></div></div>
+    <div class="act-row"><div class="act-time">11:00 🇰🇷</div><div><div class="act-name">Trả phòng khách sạn (Check-out)</div><div class="act-desc">Checkout trước 12:00. Kiểm tra kỹ phòng – không bỏ sót đồ điện tử, sạc, hộ chiếu. Nhờ khách sạn giữ hành lý nếu cần đi ăn trưa trước khi di chuyển.</div></div></div>
+    <div class="act-row"><div class="act-time">12:00 🇰🇷</div><div><div class="act-name">Bữa trưa chia tay Seoul</div><div class="act-desc">Myeongdong Kyoja (kalguksu) hoặc quán quen trong 5 ngày qua – bữa cuối trên đất Hàn. Đảm bảo còn đủ tiền won cho taxi/AREX và bữa ăn ở sân bay nếu cần.</div></div></div>
+    <div class="act-row"><div class="act-time">14:00 🇰🇷</div><div><div class="act-name">Tàu AREX ra sân bay Incheon (ICN)</div><div class="act-desc">Từ ga Seoul Station (43 phút, 5.000₩/người) hoặc City Airport Terminal tại ga Hongik Univ. Mục tiêu có mặt tại ICN lúc 16:30–17:00 – trước giờ bay 3 tiếng.</div></div></div>
+    <div class="act-row"><div class="act-time">16:30 🇰🇷</div><div><div class="act-name">Check-in & Hoàn thuế VAT · Duty-free</div><div class="act-desc">Check-in Parata Air tại Terminal 1. Hoàn thuế VAT tại quầy Global Blue hoặc máy tự động (cần hóa đơn gốc từ cửa hàng Tax Free, trên 30.000₩). Mua duty-free nếu cần. Qua cửa xuất cảnh.</div></div></div>
+    <div class="act-row"><div class="act-time">19:55 🇰🇷</div><div><div class="act-name">✈ Parata Air ICN → HAN · Bay về Hà Nội</div><div class="act-desc">Cất cánh 19:55 🇰🇷 từ sân bay Incheon (UTC+9). Thời gian bay ~5 tiếng. Hạ cánh sân bay Nội Bài (HAN) 22:50 🇻🇳 ngày Thứ Tư 2/9/2026 – kết thúc 6 ngày Seoul đáng nhớ!</div></div></div>
+  </div>
+  <div class="box box-dining"><span class="box-label">🍽 Gợi ý bữa chia tay – Ngày 6 · Myeongdong</span>
+  <div class="rest-list">
+    <div class="rest-item">
+      <div class="rest-rank">1</div>
+      <div class="rest-info"><div class="rest-name">Myeongdong Kyoja (명동교자) – Bữa chia tay</div><div class="rest-type">Kalguksu & Mandu · Quán iconic từ 1966 · Kết thúc đúng nơi đúng lúc</div><div class="rest-addr">29 Myeongdong 10-gil, Jung-gu, Seoul</div></div>
+      <div class="rest-right"><div class="rest-stars">★ 4.5</div><div class="rest-price">11.000–15.000₩</div><a class="rest-map-link" href="https://www.google.com/maps/search/?api=1&query=Myeongdong+Kyoja+Seoul" target="_blank">🗺 Maps</a></div>
+    </div>
+    <div class="rest-item">
+      <div class="rest-rank">2</div>
+      <div class="rest-info"><div class="rest-name">ICN Airport Food Court (T1 tầng 3)</div><div class="rest-type">Ăn nhẹ tại sân bay · Bibimbap, Tteokgalbi · Giá ổn cho sân bay</div><div class="rest-addr">Incheon International Airport, Terminal 1, tầng 3</div></div>
+      <div class="rest-right"><div class="rest-stars">★ 3.9</div><div class="rest-price">12.000–20.000₩</div><a class="rest-map-link" href="https://www.google.com/maps/search/?api=1&query=Incheon+Airport+food+court+Terminal+1" target="_blank">🗺 Maps</a></div>
+    </div>
+  </div>
+  </div>
+  <div class="box box-tips"><span class="box-label">💡 Checklist ngày về</span><ul>
+    <li>Hoàn thuế VAT: giữ hóa đơn gốc từ cửa hàng Tax Free – mỗi hóa đơn trên 30.000₩</li>
+    <li>Pin sạc dự phòng (power bank): PHẢI để trong hành lý xách tay, không được ký gửi</li>
+    <li>Kiểm tra passport, vé điện tử Parata Air và thẻ T-money trước khi checkout</li>
+    <li>Đổi tiền won dư tại Myeongdong trước khi ra sân bay (tỷ giá tốt hơn ICN)</li>
+  </ul></div>
+  <div class="tags"><span class="tag">Checkout & trả phòng</span><span class="tag">Mua sắm cuối Myeongdong</span><span class="tag">AREX → ICN</span><span class="tag">Hoàn thuế VAT</span><span class="tag">Parata Air 19:55 🇰🇷</span><span class="tag">HAN 22:50 🇻🇳</span></div>
+</div>
+
+<!-- BẢN ĐỒ LEAFLET -->
+<div class="sec-hdr"><div class="sec-ico">🗺️</div><span class="sec-tit">Bản đồ hành trình – Seoul</span></div>
+
+<link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"/>
+<script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+
+<div style="margin-bottom:14px">
+  <div style="display:flex;flex-wrap:wrap;gap:8px;margin-bottom:10px">
+    <span style="display:inline-flex;align-items:center;gap:5px;font-size:12px"><span style="width:12px;height:12px;border-radius:50%;background:#888780;display:inline-block"></span>Ngày 1 – Thứ Sáu 28/8</span>
+    <span style="display:inline-flex;align-items:center;gap:5px;font-size:12px"><span style="width:12px;height:12px;border-radius:50%;background:#7F77DD;display:inline-block"></span>Ngày 2 – Thứ Bảy 29/8</span>
+    <span style="display:inline-flex;align-items:center;gap:5px;font-size:12px"><span style="width:12px;height:12px;border-radius:50%;background:#378ADD;display:inline-block"></span>Ngày 3 – Chủ Nhật 30/8</span>
+    <span style="display:inline-flex;align-items:center;gap:5px;font-size:12px"><span style="width:12px;height:12px;border-radius:50%;background:#1D9E75;display:inline-block"></span>Ngày 4 – Thứ Hai 31/8</span>
+    <span style="display:inline-flex;align-items:center;gap:5px;font-size:12px"><span style="width:12px;height:12px;border-radius:50%;background:#EF9F27;display:inline-block"></span>Ngày 5 – Thứ Ba 1/9</span>
+    <span style="display:inline-flex;align-items:center;gap:5px;font-size:12px"><span style="width:12px;height:12px;border-radius:50%;background:#B85C8A;display:inline-block"></span>Ngày 6 – Thứ Tư 2/9</span>
+  </div>
+  <div id="map1" style="width:100%;height:480px;border-radius:10px;border:1px solid #ccc;overflow:hidden"></div>
+  <div style="font-size:11px;color:#888;margin-top:6px">💡 Click điểm số để xem chi tiết · <strong>Click đường nối → mở Naver Maps</strong> · Lộ trình thực tế (OSRM)</div>
+</div>
+
+<script>
+(function(){
+  var map=L.map('map1');
+  L.tileLayer('https://{s}.basemaps.cartocdn.com/rastertiles/voyager/{z}/{x}/{y}{r}.png',{
+    attribution:'&copy; OpenStreetMap contributors &copy; CARTO',maxZoom:18
+  }).addTo(map);
+
+  var C={d1:'#888780',d2:'#7F77DD',d3:'#378ADD',d4:'#1D9E75',d5:'#EF9F27',d6:'#B85C8A'};
+
+  // [num, lat, lng, name, color, popup]
+  var pts=[
+    [1,  37.4602,126.4407,'Sân bay Incheon (ICN)',      C.d1,'Ngày 1 (28/8) · 06:40 🇰🇷 hạ cánh · Tàu AREX vào Seoul'],
+    [2,  37.5636,126.9869,'Myeongdong',                 C.d1,'Ngày 1 (28/8) · Phố ẩm thực & mua sắm · Check-in KS'],
+    [3,  37.5596,126.9780,'Chợ Namdaemun',              C.d1,'Ngày 1 (28/8) · Chợ truyền thống lớn nhất Seoul'],
+    [4,  37.5796,126.9770,'Cung điện Gyeongbokgung',    C.d2,'Ngày 2 (29/8) · 09:00 🇰🇷 · Cung điện triều Joseon 1395'],
+    [5,  37.5829,126.9832,'Làng Hanok Bukchon',         C.d2,'Ngày 2 (29/8) · 11:00 🇰🇷 · 600 nhà truyền thống'],
+    [6,  37.5727,126.9853,'Phố Insadong',               C.d2,'Ngày 2 (29/8) · 12:30 🇰🇷 · Nghệ nhân & Ssamziegil'],
+    [7,  37.5573,126.9249,'Hongdae',                    C.d2,'Ngày 2 (29/8) · 14:30 🇰🇷 · Văn hóa giới trẻ & K-pop'],
+    [8,  37.5112,127.0046,'Banpo – Sông Hán',           C.d2,'Ngày 2 (29/8) · 20:00 🇰🇷 · Đài phun nước cầu vồng'],
+    [9,  37.5700,126.9797,'LOL Park (Gran Seoul)',       C.d3,'Ngày 3 (30/8) · 09:30 🇰🇷 · Thánh địa esports LCK'],
+    [10, 37.5703,126.9987,'Chợ Gwangjang',              C.d3,'Ngày 3 (30/8) · Tối · Bindaetteok & Mayak Gimbap'],
+    [11, 37.5512,126.9882,'N Seoul Tower (Namsan)',      C.d4,'Ngày 4 (31/8) · 09:30 🇰🇷 · Cáp treo & view 360°'],
+    [12, 37.5340,126.9940,'Itaewon',                    C.d4,'Ngày 4 (31/8) · 12:00 🇰🇷 · Phố quốc tế – Korean-Mexican fusion'],
+    [13, 37.5126,127.1025,'Lotte World Tower (555m)',   C.d4,'Ngày 4 (31/8) · 14:30 🇰🇷 · Seoul Sky tầng 123'],
+    [14, 37.5266,126.9338,'Yeouido – Sông Hán',         C.d4,'Ngày 4 (31/8) · 17:00 🇰🇷 · Picnic & chimaek ven sông'],
+    [15, 37.5131,127.0589,'COEX Starfield',              C.d5,'Ngày 5 (1/9) · 10:00 🇰🇷 · Thư viện viral & SM Town'],
+    [16, 37.5203,127.0218,'Garosu-gil (Gangnam)',        C.d5,'Ngày 5 (1/9) · 12:00 🇰🇷 · Boutique cafe & skincare'],
+    [17, 37.5666,127.0093,'Dongdaemun DDP',              C.d5,'Ngày 5 (1/9) · 14:30 🇰🇷 · Kiến trúc Zaha Hadid']
+  ];
+
+  // [fromIdx, toIdx, label, naverMode, dayColor, osrmProfile]
+  var segs=[
+    [0,  1,  '🚇 ~55km (AREX)',    'transit',C.d1,'driving'],
+    [1,  2,  '🚶 ~0.7km',          'walk',   C.d1,'foot'   ],
+    [3,  4,  '🚶 ~1.2km',          'walk',   C.d2,'foot'   ],
+    [4,  5,  '🚶 ~0.6km',          'walk',   C.d2,'foot'   ],
+    [5,  6,  '🚇 ~7km (Line 3)',   'transit',C.d2,'driving'],
+    [6,  7,  '🚕 ~8km (taxi)',     'transit',C.d2,'driving'],
+    [8,  9,  '🚶 ~1.5km',          'walk',   C.d3,'foot'   ],
+    [10, 11, '🚌 ~3km (bus/taxi)', 'transit',C.d4,'driving'],
+    [11, 12, '🚇 ~3km (Line 6)',   'transit',C.d4,'driving'],
+    [12, 13, '🚇 ~12km (Line 2)',  'transit',C.d4,'driving'],
+    [14, 15, '🚶 ~1.5km',          'walk',   C.d5,'foot'   ],
+    [15, 16, '🚇 ~7km (subway)',   'transit',C.d5,'driving']
+  ];
+
+  function makeIcon(num,color){
+    var s=num<10?32:36;
+    return L.divIcon({
+      className:'',iconSize:[s,s],iconAnchor:[s/2,s/2],popupAnchor:[0,-(s/2+4)],
+      html:'<div style="width:'+s+'px;height:'+s+'px;border-radius:50%;background:'+color+
+           ';border:3px solid #fff;box-shadow:0 2px 6px rgba(0,0,0,0.45);display:flex;align-items:center;'+
+           'justify-content:center;font-size:'+(num<10?14:12)+'px;font-weight:900;color:#fff;font-family:Arial,sans-serif">'+num+'</div>'
+    });
+  }
+
+  var allLL=[];
+  pts.forEach(function(p){
+    allLL.push([p[1],p[2]]);
+    L.marker([p[1],p[2]],{icon:makeIcon(p[0],p[4])})
+      .bindPopup('<div style="min-width:170px"><strong style="font-size:13px;color:'+p[4]+'">'+
+        p[0]+'. '+p[3]+'</strong><br><span style="font-size:11px;color:#555">'+p[5]+'</span></div>')
+      .addTo(map);
+  });
+
+  segs.forEach(function(s){
+    var fi=s[0],ti=s[1],label=s[2],naverMode=s[3],color=s[4],osrmProfile=s[5];
+    var from=pts[fi],to=pts[ti];
+    var naverUrl='https://map.naver.com/v5/directions/'+
+      from[2]+','+from[1]+','+encodeURIComponent(from[3])+'/'+
+      to[2]+','+to[1]+','+encodeURIComponent(to[3])+'/'+naverMode;
+
+    function drawLine(coords){
+      var line=L.polyline(coords,{color:color,weight:2,dashArray:'5 8',opacity:0.5}).addTo(map);
+      line.on('click',function(){window.open(naverUrl,'_blank');});
+      line.bindTooltip(
+        '<div style="font-size:11px;line-height:1.5">🗺 <strong>Naver Maps</strong><br>'+label+'</div>',
+        {direction:'top',sticky:true}
+      );
+      var mid=coords[Math.floor(coords.length/2)];
+      L.marker(mid,{icon:L.divIcon({
+        className:'',iconSize:null,iconAnchor:[20,8],
+        html:'<div style="background:rgba(255,255,255,0.9);border:1px solid '+color+
+             ';border-radius:8px;padding:1px 7px;font-size:9.5px;font-weight:700;color:'+color+
+             ';white-space:nowrap;box-shadow:0 1px 3px rgba(0,0,0,0.15)">'+label+'</div>'
+      }),interactive:false}).addTo(map);
+    }
+
+    var osrmUrl='https://router.project-osrm.org/route/v1/'+osrmProfile+'/'+
+      from[2]+','+from[1]+';'+to[2]+','+to[1]+
+      '?overview=full&geometries=geojson&steps=false';
+
+    fetch(osrmUrl)
+      .then(function(r){return r.json();})
+      .then(function(d){
+        if(d.routes&&d.routes[0]){
+          var coords=d.routes[0].geometry.coordinates.map(function(c){return[c[1],c[0]];});
+          drawLine(coords);
+        } else { drawLine([[from[1],from[2]],[to[1],to[2]]]); }
+      })
+      .catch(function(){ drawLine([[from[1],from[2]],[to[1],to[2]]]); });
+  });
+
+  map.fitBounds(L.latLngBounds(allLL).pad(0.06));
+})();
+</script>
+
+<!-- TUYẾN DI CHUYỂN -->
+<div class="sec-hdr"><div class="sec-ico">🚆</div><span class="sec-tit">Tuyến di chuyển</span></div>
+<div class="tr-wrap">
+<table class="tr-tbl">
+  <thead><tr><th style="width:70px">Tuyến</th><th style="width:145px">Phương tiện</th><th style="width:75px">Thời gian</th><th style="width:75px">Khoảng cách</th><th style="width:90px">Chi phí</th><th>Ghi chú</th></tr></thead>
+  <tbody>
+    <tr><td><div style="display:flex;align-items:center;gap:3px"><span class="sbadge" style="background:#888780">1</span><span style="font-size:10px;color:#aaa">→</span><span class="sbadge" style="background:#888780">2</span></div></td><td>🚇 Tàu AREX</td><td>43 phút</td><td>~55 km</td><td>5.000₩</td><td class="note-sm">ICN Terminal 1 → Seoul Station. Mua T-money 3.000₩ tại GS25 sân bay.</td></tr>
+    <tr><td><div style="display:flex;align-items:center;gap:3px"><span class="sbadge" style="background:#888780">2</span><span style="font-size:10px;color:#aaa">→</span><span class="sbadge" style="background:#888780">3</span></div></td><td>🚶 Đi bộ</td><td>10 phút</td><td>~700 m</td><td>Miễn phí</td><td class="note-sm">Đường phẳng từ phố Myeongdong ra chợ Namdaemun.</td></tr>
+    <tr><td><div style="display:flex;align-items:center;gap:3px"><span class="sbadge" style="background:#7F77DD">4</span><span style="font-size:10px;color:#aaa">→</span><span class="sbadge" style="background:#7F77DD">5</span></div></td><td>🚶 Đi bộ</td><td>15 phút</td><td>~1,2 km</td><td>Miễn phí</td><td class="note-sm">Đường dốc nhẹ lên đồi Bukchon – đi giày thoải mái.</td></tr>
+    <tr><td><div style="display:flex;align-items:center;gap:3px"><span class="sbadge" style="background:#7F77DD">5</span><span style="font-size:10px;color:#aaa">→</span><span class="sbadge" style="background:#7F77DD">6</span></div></td><td>🚶 Đi bộ</td><td>10 phút</td><td>~600 m</td><td>Miễn phí</td><td class="note-sm">Dốc xuống từ Bukchon vào phố Insadong.</td></tr>
+    <tr><td><div style="display:flex;align-items:center;gap:3px"><span class="sbadge" style="background:#7F77DD">6</span><span style="font-size:10px;color:#aaa">→</span><span class="sbadge" style="background:#7F77DD">7</span></div></td><td>🚇 Tàu ĐN Tuyến 3</td><td>25 phút</td><td>~7 km</td><td>~1.400₩</td><td class="note-sm">Ga Anguk → Hongdae 입구. T-money dùng được.</td></tr>
+    <tr><td><div style="display:flex;align-items:center;gap:3px"><span class="sbadge" style="background:#7F77DD">7</span><span style="font-size:10px;color:#aaa">→</span><span class="sbadge" style="background:#7F77DD">8</span></div></td><td>🚕 Taxi Kakao T</td><td>20 phút</td><td>~8 km</td><td>~12–15K₩/taxi</td><td class="note-sm">App Kakao T tiếng Anh, thẻ tín dụng OK. Chia 2 taxi cho 6 người.</td></tr>
+    <tr><td><div style="display:flex;align-items:center;gap:3px"><span class="sbadge" style="background:#378ADD">9</span><span style="font-size:10px;color:#aaa">→</span><span class="sbadge" style="background:#378ADD">10</span></div></td><td>🚶 Đi bộ</td><td>15 phút</td><td>~1,5 km</td><td>Miễn phí</td><td class="note-sm">LOL Park (Gran Seoul, tầng B1) → Chợ Gwangjang.</td></tr>
+    <tr><td><div style="display:flex;align-items:center;gap:3px"><span class="sbadge" style="background:#1D9E75">11</span><span style="font-size:10px;color:#aaa">→</span><span class="sbadge" style="background:#1D9E75">12</span></div></td><td>🚌 Xe buýt / Taxi</td><td>20 phút</td><td>~3 km</td><td>~1.200–6.000₩</td><td class="note-sm">Chân núi Namsan → Itaewon. Xe buýt số 05 hoặc taxi ~6.000₩.</td></tr>
+    <tr><td><div style="display:flex;align-items:center;gap:3px"><span class="sbadge" style="background:#1D9E75">12</span><span style="font-size:10px;color:#aaa">→</span><span class="sbadge" style="background:#1D9E75">13</span></div></td><td>🚇 Tàu ĐN Tuyến 6</td><td>15 phút</td><td>~3 km</td><td>~1.400₩</td><td class="note-sm">Ga Itaewon → Yaksu (đổi T.2) → Jamsil (Lotte World Tower).</td></tr>
+    <tr><td><div style="display:flex;align-items:center;gap:3px"><span class="sbadge" style="background:#1D9E75">13</span><span style="font-size:10px;color:#aaa">→</span><span class="sbadge" style="background:#1D9E75">14</span></div></td><td>🚇 Tàu ĐN Tuyến 2</td><td>25 phút</td><td>~12 km</td><td>~1.500₩</td><td class="note-sm">Ga Jamsil → ga Yeouinaru. Đi bộ 10 phút ra bờ sông Hán.</td></tr>
+    <tr><td><div style="display:flex;align-items:center;gap:3px"><span class="sbadge" style="background:#EF9F27">15</span><span style="font-size:10px;color:#aaa">→</span><span class="sbadge" style="background:#EF9F27">16</span></div></td><td>🚶 Đi bộ</td><td>15 phút</td><td>~1,5 km</td><td>Miễn phí</td><td class="note-sm">Từ COEX Mall ra đại lộ Garosu-gil cây xanh.</td></tr>
+    <tr><td><div style="display:flex;align-items:center;gap:3px"><span class="sbadge" style="background:#EF9F27">16</span><span style="font-size:10px;color:#aaa">→</span><span class="sbadge" style="background:#EF9F27">17</span></div></td><td>🚇 Tàu ĐN Tuyến 2</td><td>20 phút</td><td>~7 km</td><td>~1.500₩</td><td class="note-sm">Ga Gangnam → Dongdaemun H&amp;C Park – cửa 1.</td></tr>
+    <tr><td><div style="display:flex;align-items:center;gap:3px"><span class="sbadge" style="background:#B85C8A">✈</span></div></td><td>🚇 Tàu AREX</td><td>43 phút</td><td>~55 km</td><td>5.000₩</td><td class="note-sm">Ngày 2/9 · Seoul Station → ICN. Khởi hành ~14:00 🇰🇷 để kịp bay 19:55.</td></tr>
+  </tbody>
+</table>
+</div>
+
+<!-- CHI PHÍ -->
+<div class="sec-hdr"><div class="sec-ico">💰</div><span class="sec-tit">Ước tính chi phí · Budget ~25 triệu/người</span></div>
+<div style="background:#1a2332;color:#fff;border-radius:10px;padding:14px 20px;margin-bottom:14px;display:flex;justify-content:space-between;align-items:center">
+  <div><div style="font-size:12px;color:rgba(255,255,255,0.6);margin-bottom:3px">Mục tiêu ngân sách · Plan 1 Seoul Only</div><div style="font-size:11px;color:rgba(255,255,255,0.4)">Không có KTX Seoul–Busan · Tiết kiệm hơn Plan 2 ~1 triệu/người</div></div>
+  <div style="text-align:right"><div style="font-size:22px;font-weight:700;color:#03C75A">~25.000.000 ₫</div><div style="font-size:11px;color:rgba(255,255,255,0.45);margin-top:2px">× 6 người = ~150.000.000 ₫</div></div>
+</div>
+<div class="budget-wrap">
+  <div class="budget-row hi"><span class="bk"><strong>✈ Vé máy bay Parata Air (khứ hồi HAN–ICN)</strong><br><span style="font-size:11px;color:#029a45">Đã xác nhận · 15kg ký gửi included</span></span><span class="bv" style="color:#029a45">8.150.000 ₫/người</span></div>
+  <div class="budget-row"><span class="bk">🏨 Khách sạn Seoul 5 đêm (chia 3 phòng đôi)<br><span style="font-size:11px;color:#888">Ibis Styles/Travelodge Myeongdong · 1 phòng 2F + 2 phòng 4M</span></span><span class="bv">~3.200.000 ₫/người</span></div>
+  <div class="budget-row"><span class="bk">🚇 Di chuyển nội địa Seoul (T-money, taxi, cáp treo…)</span><span class="bv">~900.000 ₫/người</span></div>
+  <div class="budget-row"><span class="bk">🍽 Ăn uống (5 ngày × 3 bữa)<br><span style="font-size:11px;color:#888">~150.000–200.000₩/ngày/người</span></span><span class="bv">~2.700.000 ₫/người</span></div>
+  <div class="budget-row"><span class="bk">🎫 Vé tham quan (N Seoul Tower, Lotte Sky, LOL Park, Gyeongbokgung…)</span><span class="bv">~1.200.000 ₫/người</span></div>
+  <div class="budget-row"><span class="bk">🛍 Mua sắm, mỹ phẩm, quà lưu niệm</span><span class="bv">~5.000.000 ₫/người</span></div>
+  <div class="budget-row"><span class="bk">🔐 Chi phí dự phòng (phát sinh, đổi tiền chênh lệch…)</span><span class="bv">~3.850.000 ₫/người</span></div>
+</div>
+<div class="budget-total"><span class="bt-lbl">TỔNG ước tính / người (đã bao gồm mua sắm)</span><span class="bt-val">~25.000.000 ₫</span></div>
+<p style="font-size:11px;color:#888;margin-top:8px">💡 Plan 1 (Seoul only) không có chi phí KTX (~1 triệu ₫), dành phần đó cho mua sắm hoặc vé tham quan cao cấp hơn (Lotte Sky, Seaworld…). Tỷ giá: 1.000 ₫ ≈ 56₩. Khách sạn 3 phòng đôi cho 6 người (2 nữ 1 phòng, 4 nam 2 phòng).</p>
+
+</div>
+
+<div class="ftr">
+  <div class="ftr-main">Plan 1 · Seoul Only · 6 người · 28/8 – 2/9/2026<br>Parata Air · HAN 00:20 🇻🇳→ICN 06:40 🇰🇷 (Thứ Sáu 28/8) · ICN 19:55 🇰🇷→HAN 22:50 🇻🇳 (Thứ Tư 2/9)</div>
+  <div class="ftr-sub">Kiểm tra lịch LOL Park: lolesports.com · Đặt vé Lotte Sky online · Check-in HAN lúc 21:30 ngày 27/8</div>
+</div>
+
+</body>
+</html>
