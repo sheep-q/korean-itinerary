@@ -4,123 +4,281 @@
 <meta charset="UTF-8"/>
 <meta name="viewport" content="width=device-width,initial-scale=1"/>
 <title>Plan 1: Seoul Only – 6 ngày khám phá | 2026</title>
+<link rel="preconnect" href="https://fonts.googleapis.com"/>
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+<link href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@400;500;600;700&display=swap" rel="stylesheet"/>
 <style>
 *{-webkit-print-color-adjust:exact!important;print-color-adjust:exact!important;color-adjust:exact!important}
 *{box-sizing:border-box;margin:0;padding:0}
-body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Arial,sans-serif;font-size:14px;color:#1a1a1a;background:#fff;line-height:1.5}
-a{color:#029a45;text-decoration:none}
 
-.hdr{background:#1a2332;color:#fff;padding:13px 32px;display:flex;align-items:center;justify-content:space-between}
-.hdr-brand{font-size:15px;font-weight:600}
-.hdr-right{font-size:12px;color:rgba(255,255,255,0.55)}
+:root{
+  /* brand */
+  --navy:#141d2b;--navy-2:#1a2332;--navy-3:#243044;
+  --green:#03C75A;--green-d:#029a45;--green-br:#3ddc84;--green-l:#e8faf2;--green-b:#b3e8cd;
+  /* ink & surfaces */
+  --ink:#151a21;--ink-2:#4a5560;--ink-3:#7b8694;
+  --bg:#f5f6f8;--surface:#fff;--line:#e4e8ec;--line-2:#eef0f3;
+  --amber:#f0a020;--amber-d:#8a5a00;
+  /* per-day accents (khớp với bản đồ, chú giải và bảng tuyến) */
+  --d1:#6B7480;--d2:#5F55D0;--d3:#1F76CE;--d4:#0E8F63;--d5:#B87514;--d6:#A94A74;
+  /* shape */
+  --r-sm:8px;--r:12px;--r-lg:16px;
+  --sh-1:0 1px 2px rgba(16,24,40,.04),0 2px 6px rgba(16,24,40,.05);
+  --sh-2:0 1px 2px rgba(16,24,40,.05),0 8px 20px rgba(16,24,40,.06);
+  --sh-3:0 10px 30px rgba(16,24,40,.11);
+  /* căn lề trùng cột nội dung 860px cho các dải full-width */
+  --gutter:max(28px,calc((100% - 860px) / 2));
+}
 
-.hero{background:#1a2332;color:#fff;padding:36px 32px 32px;border-bottom:4px solid #03C75A}
-.hero h1{font-size:26px;font-weight:600;margin-bottom:5px;letter-spacing:-0.01em}
-.hero-dest{font-size:15px;color:rgba(255,255,255,0.65);margin-bottom:3px}
-.hero-dates{font-size:14px;color:#03C75A;font-weight:600}
-.hero-tag{display:inline-block;margin-top:12px;background:#03C75A;color:#fff;padding:5px 16px;border-radius:20px;font-size:12px;font-weight:600;letter-spacing:.02em}
-.plan-badge{display:inline-block;margin-top:10px;margin-right:8px;background:rgba(255,255,255,0.12);color:rgba(255,255,255,0.85);padding:4px 14px;border-radius:16px;font-size:12px;border:1px solid rgba(255,255,255,0.25)}
+html{-webkit-text-size-adjust:100%}
+body{font-family:'Be Vietnam Pro',-apple-system,BlinkMacSystemFont,'Segoe UI',Arial,sans-serif;font-size:15px;color:var(--ink);background:var(--bg);line-height:1.62;-webkit-font-smoothing:antialiased;-moz-osx-font-smoothing:grayscale}
+a{color:var(--green-d);text-decoration:none}
+.ov-val,.ph-val,.f-val,.act-time,.rest-stars,.rest-price,.bv,.bt-val,.tr-tbl td{font-variant-numeric:tabular-nums}
 
-.ov-grid{display:grid;grid-template-columns:repeat(4,1fr);border-bottom:1px solid #e0e0e0}
-.ov-card{padding:18px 20px;border-right:1px solid #e0e0e0;text-align:center}
-.ov-card:last-child{border-right:none}
-.ov-icon{font-size:20px;color:#03C75A;margin-bottom:5px}
-.ov-val{font-size:22px;font-weight:600}
-.ov-lbl{font-size:11px;color:#666;margin-top:3px}
+/* ---------- header ---------- */
+.hdr{background:var(--navy);color:#fff;padding:12px var(--gutter);display:flex;align-items:center;justify-content:space-between;gap:16px}
+.hdr-brand{font-size:14px;font-weight:600;letter-spacing:.01em;display:flex;align-items:center;gap:9px}
+.hdr-brand::before{content:'';width:7px;height:7px;border-radius:50%;background:var(--green);box-shadow:0 0 0 3px rgba(3,199,90,.22);flex-shrink:0}
+.hdr-right{font-size:11px;color:rgba(255,255,255,.5);line-height:1.6;text-align:right}
+
+/* ---------- hero ---------- */
+.hero{position:relative;overflow:hidden;background:linear-gradient(158deg,#202c40 0%,#161f2e 52%,#101825 100%);color:#fff;padding:46px var(--gutter) 46px;border-bottom:4px solid var(--green)}
+.hero::before{content:'';position:absolute;top:-170px;right:-90px;width:460px;height:460px;border-radius:50%;background:radial-gradient(circle,rgba(3,199,90,.22),rgba(3,199,90,0) 66%);pointer-events:none}
+.hero>*{position:relative}
+.hero h1{font-size:clamp(23px,4.2vw,32px);font-weight:700;letter-spacing:-.022em;line-height:1.22;margin-bottom:9px}
+.hero-dest{font-size:14px;color:rgba(255,255,255,.62);margin-bottom:7px;letter-spacing:.01em}
+.hero-dates{font-size:14px;color:var(--green-br);font-weight:600;line-height:1.65}
+.hero-badges{display:flex;flex-wrap:wrap;align-items:center;gap:8px;margin-top:16px}
+.plan-badge{display:inline-block;background:rgba(255,255,255,.09);color:rgba(255,255,255,.88);padding:6px 15px;border-radius:20px;font-size:12px;border:1px solid rgba(255,255,255,.2);backdrop-filter:blur(6px)}
+.hero-tag{display:inline-block;background:var(--green);color:#fff;padding:6px 17px;border-radius:20px;font-size:12px;font-weight:600;letter-spacing:.02em;box-shadow:0 4px 14px rgba(3,199,90,.34)}
+
+/* ---------- thống kê ---------- */
+.ov-grid{position:relative;z-index:2;max-width:860px;margin:-34px auto 0;padding:0 28px;display:grid;grid-template-columns:repeat(4,1fr);gap:12px}
+.ov-card{background:var(--surface);border:1px solid var(--line);border-radius:var(--r);padding:16px 12px 14px;text-align:center;box-shadow:var(--sh-2);transition:transform .18s ease,box-shadow .18s ease}
+.ov-card:hover{transform:translateY(-2px);box-shadow:var(--sh-3)}
+.ov-icon{font-size:19px;line-height:1;margin-bottom:7px}
+.ov-val{font-size:26px;font-weight:700;letter-spacing:-.025em;color:var(--navy-2);line-height:1.15}
+.ov-lbl{font-size:11px;color:var(--ink-3);margin-top:3px;font-weight:500}
 
 .wrap{max-width:860px;margin:0 auto;padding:0 28px 56px}
 
-.sec-hdr{display:flex;align-items:center;gap:12px;padding:28px 0 14px;border-bottom:1px solid #e0e0e0;margin-bottom:24px}
-.sec-ico{width:36px;height:36px;background:#e8faf2;border-radius:8px;display:flex;align-items:center;justify-content:center;flex-shrink:0;font-size:18px}
-.sec-tit{font-size:19px;font-weight:600}
+/* ---------- tiêu đề mục ---------- */
+.sec-hdr{display:flex;align-items:center;gap:13px;padding:36px 0 15px;border-bottom:1px solid var(--line);margin-bottom:22px}
+.sec-ico{width:38px;height:38px;background:linear-gradient(150deg,#f0fcf5,#dcf6e8);border:1px solid var(--green-b);border-radius:11px;display:flex;align-items:center;justify-content:center;flex-shrink:0;font-size:18px;box-shadow:inset 0 1px 0 rgba(255,255,255,.9)}
+.sec-tit{font-size:20px;font-weight:700;letter-spacing:-.018em;color:var(--navy-2)}
 
-.price-highlight{background:#1a2332;color:#fff;border-radius:10px;padding:14px 18px;display:flex;justify-content:space-between;align-items:center;margin-bottom:14px}
-.ph-label{font-size:13px;color:rgba(255,255,255,0.7)}
-.ph-val{font-size:20px;font-weight:600;color:#03C75A;text-align:right}
-.ph-sub{font-size:11px;color:rgba(255,255,255,0.45);margin-top:2px}
-.ph-lsub{font-size:11px;color:rgba(255,255,255,0.45);margin-top:1px}
-.flight-grid{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-bottom:14px}
-.flight-card{border:1px solid #ddd;border-radius:10px;padding:16px}
-.flight-badge{display:inline-flex;align-items:center;gap:6px;background:#e8faf2;color:#029a45;font-size:12px;font-weight:600;padding:4px 12px;border-radius:16px;margin-bottom:12px;border:1px solid #b3e8cd}
-.f-row{display:flex;justify-content:space-between;font-size:13px;padding:5px 0;border-bottom:1px solid #f0f0f0}
+/* ---------- chuyến bay ---------- */
+.price-highlight{background:linear-gradient(132deg,#202c40,#141d2b);color:#fff;border-radius:var(--r-lg);padding:18px 22px;display:flex;justify-content:space-between;align-items:center;gap:20px;margin-bottom:16px;box-shadow:var(--sh-2)}
+.ph-label{font-size:13px;color:rgba(255,255,255,.82);font-weight:500;line-height:1.55}
+.ph-val{font-size:23px;font-weight:700;color:var(--green-br);text-align:right;letter-spacing:-.02em;line-height:1.25}
+.ph-sub{font-size:11px;color:rgba(255,255,255,.5);margin-top:3px;text-align:right}
+.ph-lsub{font-size:11px;color:rgba(255,255,255,.45);margin-top:3px}
+.flight-grid{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-bottom:16px}
+.flight-card{background:var(--surface);border:1px solid var(--line);border-radius:var(--r-lg);padding:18px;box-shadow:var(--sh-1)}
+.flight-badge{display:inline-flex;align-items:center;gap:6px;background:var(--green-l);color:var(--green-d);font-size:12px;font-weight:600;padding:5px 13px;border-radius:20px;margin-bottom:13px;border:1px solid var(--green-b)}
+.f-row{display:flex;justify-content:space-between;gap:14px;font-size:13px;padding:7px 0;border-bottom:1px dashed var(--line)}
 .f-row:last-child{border-bottom:none}
-.f-key{color:#666}
-.f-val{font-weight:600;text-align:right}
-.f-val.green{color:#029a45}
-.box-alert{background:#fff8e1;border-left:3px solid #f59f00;border-radius:8px;padding:13px 15px;font-size:13px;line-height:1.7;margin-bottom:14px}
-.box-alert .box-label{font-size:11px;font-weight:700;color:#b36e00;text-transform:uppercase;letter-spacing:.06em;display:block;margin-bottom:5px}
-.box-alert ul{margin-left:14px;font-size:12px;color:#7a5100;line-height:1.8}
-.box-alert li{margin-bottom:3px}
+.f-key{color:var(--ink-3);flex-shrink:0}
+.f-val{font-weight:600;text-align:right;color:var(--navy-2)}
+.f-val.green{color:var(--green-d)}
 
-.day-block{margin-bottom:32px;border:1px solid #ccc;border-radius:12px;overflow:hidden;page-break-inside:avoid}
-.day-hdr{background:#243044;color:#fff;padding:14px 20px;display:flex;align-items:center;gap:16px}
-.day-num{width:38px;height:38px;border-radius:50%;background:#03C75A;display:flex;align-items:center;justify-content:center;font-size:15px;font-weight:800;flex-shrink:0;color:#fff}
-.day-date-lbl{font-size:11px;color:rgba(255,255,255,0.5);margin-bottom:2px}
-.day-name{font-size:15px;font-weight:600;letter-spacing:.01em}
-.day-summary{padding:14px 20px;font-size:13px;line-height:1.8;color:#555;border-bottom:1px solid #eee;background:#f9f9f9}
+/* ---------- box ---------- */
+.box-alert{background:linear-gradient(180deg,#fffcf2,#fff7e4);border:1px solid #f5e2b4;border-left:4px solid var(--amber);border-radius:var(--r);padding:15px 17px;font-size:13px;line-height:1.7;margin-bottom:16px}
+.box-alert .box-label{color:#96620a}
+.box-alert ul{margin-left:16px;font-size:12.5px;color:#7a5100;line-height:1.8}
+.box-alert li{margin-bottom:4px}
 
-.activities{padding:0 20px}
-.act-row{display:grid;grid-template-columns:90px 1fr;gap:14px;padding:12px 0;border-bottom:1px solid #f0f0f0}
+/* ---------- khối ngày ---------- */
+.day-block{--day:var(--green);position:relative;background:var(--surface);border:1px solid var(--line);border-radius:var(--r-lg);overflow:hidden;margin-bottom:26px;box-shadow:var(--sh-2);page-break-inside:avoid}
+.day-block.d1{--day:var(--d1)}
+.day-block.d2{--day:var(--d2)}
+.day-block.d3{--day:var(--d3)}
+.day-block.d4{--day:var(--d4)}
+.day-block.d5{--day:var(--d5)}
+.day-block.d6{--day:var(--d6)}
+.day-hdr{position:relative;background:linear-gradient(118deg,#26334a,#1a2332);color:#fff;padding:17px 20px;display:flex;align-items:center;gap:15px}
+.day-hdr::before{content:'';position:absolute;top:0;left:0;right:0;height:4px;background:var(--day)}
+.day-num{width:40px;height:40px;border-radius:50%;background:var(--day);display:flex;align-items:center;justify-content:center;font-size:16px;font-weight:700;flex-shrink:0;color:#fff;box-shadow:0 0 0 4px rgba(255,255,255,.09),0 3px 8px rgba(0,0,0,.28)}
+.day-date-lbl{font-size:10.5px;color:rgba(255,255,255,.55);margin-bottom:3px;text-transform:uppercase;letter-spacing:.08em;font-weight:600}
+.day-name{font-size:16px;font-weight:600;letter-spacing:-.005em;line-height:1.4}
+.day-summary{padding:16px 20px;font-size:13.5px;line-height:1.78;color:var(--ink-2);border-bottom:1px solid var(--line-2);background:linear-gradient(180deg,#fafbfc,#f5f6f8)}
+
+/* ---------- timeline hoạt động ---------- */
+.activities{position:relative;padding:8px 20px 6px}
+.activities::before{content:'';position:absolute;left:119px;top:20px;bottom:20px;width:2px;background:linear-gradient(180deg,rgba(220,225,231,0),#dce1e7 7%,#dce1e7 93%,rgba(220,225,231,0))}
+.act-row{position:relative;display:grid;grid-template-columns:86px 1fr;gap:28px;padding:13px 0;border-bottom:1px solid var(--line-2)}
 .act-row:last-child{border-bottom:none}
-.act-time{font-size:12px;font-weight:700;color:#029a45;padding-top:2px;line-height:1.5}
-.act-name{font-size:13px;font-weight:600;margin-bottom:2px}
-.act-desc{font-size:12px;color:#555;line-height:1.6}
+.act-row::before{content:'';position:absolute;left:92px;top:19px;width:10px;height:10px;border-radius:50%;background:#fff;border:3px solid var(--day);box-shadow:0 0 0 3px #fff;z-index:1}
+.act-time{font-size:12px;font-weight:700;color:var(--day);padding-top:2px;line-height:1.5;text-align:right;letter-spacing:-.01em}
+.act-name{font-size:14px;font-weight:600;margin-bottom:3px;color:var(--navy-2);line-height:1.45}
+.act-desc{font-size:13px;color:var(--ink-2);line-height:1.68}
 
-.box{margin:0 20px 14px;padding:13px 15px;border-radius:8px;font-size:13px;line-height:1.7}
-.box-dining{background:#e8faf2;border-left:3px solid #03C75A}
-.box-dining .box-label{font-size:11px;font-weight:700;color:#029a45;text-transform:uppercase;letter-spacing:.06em;display:block;margin-bottom:5px}
-.box-tips{background:#f5f5f3;border-left:3px solid #ccc}
-.box-tips .box-label{font-size:11px;font-weight:700;color:#888;text-transform:uppercase;letter-spacing:.06em;display:block;margin-bottom:5px}
-.box-tips ul{margin-left:14px;font-size:12px;color:#555;line-height:1.7}
-.box-tips li{margin-bottom:3px}
+.box{margin:4px 20px 16px;padding:15px 17px;border-radius:var(--r);font-size:13px;line-height:1.7}
+.box .box-label,.box-alert .box-label{display:block;font-size:10.5px;font-weight:700;text-transform:uppercase;letter-spacing:.07em;margin-bottom:9px}
+.box-dining{background:linear-gradient(180deg,#f3fdf8,#e8faf2);border:1px solid var(--green-b);border-left:4px solid var(--green)}
+.box-dining .box-label{color:var(--green-d)}
+.box-tips{background:linear-gradient(180deg,#fafbfa,#f3f5f2);border:1px solid #e3e6e1;border-left:4px solid #c4cac2}
+.box-tips .box-label{color:#8a9189}
+.box-tips ul{margin-left:16px;font-size:12.5px;color:var(--ink-2);line-height:1.75}
+.box-tips li{margin-bottom:4px}
 
-.tags{display:flex;flex-wrap:wrap;gap:6px;margin:0 20px 16px}
-.tag{font-size:12px;padding:4px 11px;border-radius:16px;background:#e8faf2;color:#029a45;font-weight:600;border:1px solid #b3e8cd}
+.tags{display:flex;flex-wrap:wrap;gap:7px;margin:0 20px 18px}
+.tag{font-size:12px;padding:5px 12px;border-radius:20px;background:var(--green-l);color:var(--green-d);font-weight:600;border:1px solid var(--green-b)}
 
-.rest-list{margin-top:8px}
-.rest-item{display:grid;grid-template-columns:auto 1fr auto;gap:8px;align-items:start;padding:8px 0;border-bottom:1px solid #c8eeda}
-.rest-item:last-child{border-bottom:none}
-.rest-rank{width:22px;height:22px;border-radius:50%;background:#03C75A;color:#fff;font-size:10px;font-weight:800;display:flex;align-items:center;justify-content:center;flex-shrink:0;margin-top:1px}
-.rest-info .rest-name{font-size:13px;font-weight:700;color:#1a2332;margin-bottom:1px}
-.rest-info .rest-type{font-size:11px;color:#555;margin-bottom:2px}
-.rest-info .rest-addr{font-size:11px;color:#777}
+/* ---------- nhà hàng ---------- */
+.rest-list{margin-top:11px;display:grid;gap:8px}
+.rest-item{display:grid;grid-template-columns:auto 1fr auto;gap:12px;align-items:start;background:rgba(255,255,255,.72);border:1px solid rgba(3,199,90,.16);border-radius:10px;padding:11px 13px;transition:box-shadow .18s ease,border-color .18s ease,background .18s ease}
+.rest-item:hover{background:#fff;border-color:var(--green-b);box-shadow:var(--sh-1)}
+.rest-rank{width:24px;height:24px;border-radius:8px;background:var(--day,var(--green));color:#fff;font-size:11px;font-weight:700;display:flex;align-items:center;justify-content:center;flex-shrink:0;margin-top:1px}
+.rest-info .rest-name{font-size:13.5px;font-weight:700;color:var(--navy-2);margin-bottom:2px;line-height:1.4}
+.rest-info .rest-type{font-size:11.5px;color:var(--ink-2);margin-bottom:3px;line-height:1.5}
+.rest-info .rest-addr{font-size:11px;color:var(--ink-3)}
 .rest-right{text-align:right;flex-shrink:0}
-.rest-stars{color:#f59f00;font-size:12px;font-weight:700;white-space:nowrap}
-.rest-price{font-size:11px;color:#029a45;font-weight:600;margin-top:2px}
-.rest-map-link{display:inline-block;margin-top:4px;font-size:11px;color:#029a45;font-weight:600;padding:2px 8px;border:1px solid #03C75A;border-radius:10px;white-space:nowrap}
-.rest-map-link:hover{background:#e8faf2}
+.rest-stars{color:#e08c00;font-size:12px;font-weight:700;white-space:nowrap}
+.rest-price{font-size:11px;color:var(--green-d);font-weight:600;margin-top:2px;white-space:nowrap}
+.rest-map-link{display:inline-flex;align-items:center;justify-content:center;min-height:28px;margin-top:6px;font-size:11px;color:var(--green-d);font-weight:600;padding:3px 11px;border:1px solid var(--green-b);background:#fff;border-radius:20px;white-space:nowrap;transition:background .16s ease,border-color .16s ease}
+.rest-map-link:hover{background:var(--green-l);border-color:var(--green)}
 
-.tr-wrap{overflow-x:auto}
-.tr-tbl{width:100%;border-collapse:collapse;font-size:13px;border:1px solid #ccc;border-radius:10px;overflow:hidden}
-.tr-tbl th{background:#1a2332;color:#fff;padding:9px 12px;text-align:left;font-weight:600;font-size:11px;border-right:1px solid rgba(255,255,255,0.15)}
+/* ---------- bản đồ ---------- */
+.box-flat,.tags-flat{margin-left:0;margin-right:0}
+.map-filter{margin-bottom:12px}
+.map-filter-lbl{display:block;font-size:10.5px;font-weight:700;text-transform:uppercase;letter-spacing:.07em;color:var(--ink-3);margin-bottom:8px}
+.leg-btn{cursor:pointer;font-family:inherit;font-size:11.5px;color:var(--ink-2);-webkit-appearance:none;appearance:none;transition:background .16s ease,border-color .16s ease,box-shadow .16s ease}
+.leg-btn:hover{border-color:var(--green-b);background:var(--green-l)}
+.leg-btn.is-on{border-color:var(--green);background:var(--green-l);color:var(--green-d);font-weight:700;box-shadow:0 0 0 3px rgba(3,199,90,.13)}
+.leg-btn i{transition:transform .16s ease}
+.leg-btn.is-on i{transform:scale(1.3)}
+.leg-btn .i-all{background:conic-gradient(var(--d1),var(--d2),var(--d3),var(--d4),var(--d5),var(--d6),var(--d1))}
+.map-legend{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:12px}
+.leg{display:inline-flex;align-items:center;gap:7px;font-size:11.5px;font-weight:500;color:var(--ink-2);background:var(--surface);border:1px solid var(--line);border-radius:20px;padding:4px 11px 4px 9px}
+.leg i{width:10px;height:10px;border-radius:50%;flex-shrink:0}
+.map-box{width:100%;height:520px;border-radius:var(--r-lg);border:1px solid var(--line);overflow:hidden;box-shadow:var(--sh-2);z-index:0}
+.map-note{font-size:11px;color:var(--ink-3);margin-top:9px;line-height:1.6}
+
+/* ---------- bảng tuyến ---------- */
+.tr-wrap{background:var(--surface);border:1px solid var(--line);border-radius:var(--r-lg);box-shadow:var(--sh-1);overflow-x:auto}
+.tr-tbl{width:100%;border-collapse:collapse;font-size:12.5px}
+.tr-tbl th{background:linear-gradient(118deg,#26334a,#1a2332);color:#fff;padding:11px 12px;text-align:left;font-weight:600;font-size:10.5px;text-transform:uppercase;letter-spacing:.05em;border-right:1px solid rgba(255,255,255,.12);white-space:nowrap}
 .tr-tbl th:last-child{border-right:none}
-.tr-tbl td{padding:9px 12px;border-bottom:1px solid #eee;border-right:1px solid #eee;vertical-align:top;line-height:1.55}
+.tr-tbl td{padding:10px 12px;border-bottom:1px solid var(--line-2);border-right:1px solid var(--line-2);vertical-align:top;line-height:1.6}
 .tr-tbl td:last-child{border-right:none}
 .tr-tbl tr:last-child td{border-bottom:none}
-.tr-tbl tr:nth-child(even) td{background:#f9f9f7}
-.sbadge{display:inline-flex;align-items:center;justify-content:center;width:20px;height:20px;border-radius:50%;font-size:10px;font-weight:800;color:#fff;flex-shrink:0}
-.note-sm{font-size:11px;color:#666;line-height:1.55}
+.tr-tbl tbody tr:nth-child(even) td{background:#fafbfc}
+.tr-tbl tbody tr:hover td{background:#f2fbf6}
+.sbadge{display:inline-flex;align-items:center;justify-content:center;width:21px;height:21px;border-radius:7px;font-size:10px;font-weight:700;color:#fff;flex-shrink:0}
+.note-sm{font-size:11.5px;color:var(--ink-2);line-height:1.6}
 
-.budget-wrap{border:1px solid #ccc;border-radius:10px;overflow:hidden}
-.budget-row{display:flex;justify-content:space-between;padding:11px 16px;border-bottom:1px solid #eee;font-size:13px}
-.budget-row:last-child{border-bottom:none}
-.budget-row.hi{background:#e8faf2}
-.bk{color:#666}
-.bv{font-weight:600}
-.budget-total{display:flex;justify-content:space-between;align-items:center;background:#e8faf2;padding:14px 16px;border-top:2px solid #03C75A}
-.bt-lbl{font-weight:600;font-size:14px;color:#029a45}
-.bt-val{font-size:22px;font-weight:700;color:#029a45}
+/* ---------- chi phí ---------- */
+.budget-wrap{background:var(--surface);border:1px solid var(--line);border-bottom:none;border-radius:var(--r-lg) var(--r-lg) 0 0;overflow:hidden;box-shadow:var(--sh-1)}
+.budget-row{display:flex;justify-content:space-between;align-items:flex-start;gap:18px;padding:13px 18px;border-bottom:1px solid var(--line-2);font-size:13px}
+.budget-row.hi{background:linear-gradient(90deg,#f3fdf8,#e8faf2)}
+.bk{color:var(--ink-2);line-height:1.6}
+.bk-sub{display:block;font-size:11px;color:var(--ink-3);margin-top:3px;line-height:1.55}
+.bk-sub.ok{color:var(--green-d)}
+.wrap-note{font-size:11.5px;color:var(--ink-3);margin-top:10px;line-height:1.7}
+.bv{font-weight:700;color:var(--navy-2);white-space:nowrap;text-align:right}
+.budget-total{display:flex;justify-content:space-between;align-items:center;gap:16px;background:linear-gradient(125deg,#0fb45d,#03C75A 55%,#02a94d);color:#fff;padding:17px 18px;border-radius:0 0 var(--r-lg) var(--r-lg);box-shadow:var(--sh-2)}
+.bt-lbl{font-weight:600;font-size:13.5px;color:#fff;line-height:1.5}
+.bt-val{font-size:24px;font-weight:700;color:#fff;letter-spacing:-.025em;white-space:nowrap}
 
-.ftr{background:#1a2332;color:#fff;padding:28px 32px;text-align:center}
-.ftr-main{font-size:13px;opacity:.75;margin-bottom:6px;line-height:1.8}
-.ftr-sub{font-size:11px;opacity:.4}
+/* ---------- footer ---------- */
+.ftr{background:linear-gradient(158deg,#1c2534,#101825);color:#fff;padding:34px var(--gutter);text-align:center}
+.ftr-main{font-size:13px;color:rgba(255,255,255,.78);margin-bottom:8px;line-height:1.85}
+.ftr-sub{font-size:11px;color:rgba(255,255,255,.42);line-height:1.7}
 
-@media print {
+/* ================= responsive ================= */
+@media (max-width:900px){
+  .hdr{padding:12px 20px}
+  .hero{padding:38px 20px 40px}
+  .ov-grid{padding:0 20px;margin-top:-30px}
+  .wrap{padding:0 20px 46px}
+  .ftr{padding:30px 20px}
+  .flight-grid{grid-template-columns:1fr}
+  .map-box{height:440px}
+}
+
+@media (max-width:640px){
+  body{font-size:14.5px}
+  .hdr{flex-direction:column;align-items:flex-start;gap:5px;padding:12px 16px}
+  .hdr-right{text-align:left;font-size:10.5px}
+  .hero{padding:30px 16px 34px}
+  .hero h1{letter-spacing:-.02em}
+  .ov-grid{grid-template-columns:1fr 1fr;gap:10px;padding:0 16px;margin-top:-26px}
+  .ov-val{font-size:23px}
+  .wrap{padding:0 16px 40px}
+  .ftr{padding:26px 18px}
+  .sec-hdr{padding:30px 0 13px;gap:11px}
+  .sec-tit{font-size:18px}
+  .sec-ico{width:34px;height:34px;font-size:16px;border-radius:10px}
+
+  .price-highlight{flex-direction:column;align-items:stretch;gap:12px;padding:16px 17px}
+  .ph-val,.ph-sub{text-align:left}
+
+  .day-hdr{padding:15px 16px;gap:12px}
+  .day-num{width:36px;height:36px;font-size:15px}
+  .day-name{font-size:15px}
+  .day-summary{padding:14px 16px;font-size:13px}
+
+  /* timeline dồn về sát lề trái, giờ nằm trên tên hoạt động */
+  .activities{padding:6px 16px 4px}
+  .activities::before{left:24px;top:18px;bottom:18px}
+  .act-row{grid-template-columns:1fr;gap:5px;padding:12px 0 12px 34px}
+  .act-row::before{left:1px;top:17px}
+  .act-time{text-align:left;justify-self:start;display:inline-block;font-size:11px;letter-spacing:.02em;background:var(--surface);border:1px solid var(--line);border-radius:20px;padding:2px 10px;margin-bottom:3px}
+
+  .box{margin:4px 16px 14px;padding:14px 15px}
+  .tags{margin:0 16px 16px}
+  .rest-item{grid-template-columns:auto 1fr;gap:10px;padding:11px 12px}
+  .rest-right{grid-column:2;grid-row:2;display:flex;align-items:center;flex-wrap:wrap;gap:10px;text-align:left;margin-top:6px}
+  .rest-price{margin-top:0}
+  .rest-map-link{margin-top:0;margin-left:auto}
+
+  .map-box{height:360px}
+  .leg{font-size:11px;padding:3px 10px 3px 8px}
+
+  /* bảng tuyến -> từng hàng thành một thẻ */
+  .tr-wrap{overflow-x:visible;background:transparent;border:none;box-shadow:none;border-radius:0}
+  .tr-tbl{display:block;font-size:13px}
+  .tr-tbl thead{display:none}
+  .tr-tbl tbody{display:block}
+  .tr-tbl tr{display:block;background:var(--surface);border:1px solid var(--line);border-radius:var(--r);box-shadow:var(--sh-1);padding:10px 0;margin-bottom:10px}
+  .tr-tbl td,.tr-tbl tbody tr:nth-child(even) td,.tr-tbl tbody tr:hover td{display:flex;gap:10px;align-items:baseline;width:100%;border:none;padding:4px 14px;background:transparent}
+  .tr-tbl td::before{content:attr(data-label);flex:0 0 88px;color:var(--ink-3);font-size:10.5px;font-weight:700;text-transform:uppercase;letter-spacing:.04em;line-height:1.8}
+  .tr-tbl tr:last-child td{border-bottom:none}
+
+  .budget-row{flex-direction:column;gap:5px;padding:13px 16px}
+  .bv{text-align:left}
+  .budget-total{flex-direction:column;align-items:flex-start;gap:6px;padding:16px}
+  .bt-val{font-size:23px}
+}
+
+@media (max-width:420px){
+  .ov-val{font-size:21px}
+  .ov-icon{font-size:17px}
+  .hero-dates{font-size:13px}
+  .act-name{font-size:13.5px}
+  .rest-info .rest-name{font-size:13px}
+}
+
+/* ================= in ấn ================= */
+@media print{
   @page{margin:1cm;size:A4}
-  body{font-size:12px}
-  .hdr,.hero,.day-hdr,.ov-grid,.price-highlight,.budget-total,.ftr,.box-alert,.box-dining,.box-tips,.tag,.flight-badge,.day-summary{-webkit-print-color-adjust:exact!important;print-color-adjust:exact!important}
-  .day-block{page-break-inside:avoid;break-inside:avoid}
-  .sec-hdr{page-break-after:avoid;break-after:avoid}
+  body{font-size:11.5px;background:#fff}
+  .hdr,.hero,.day-hdr,.ov-card,.price-highlight,.budget-total,.ftr,.box-alert,.box-dining,.box-tips,.tag,.flight-badge,.day-summary,.tr-tbl th,.sbadge,.day-num,.rest-rank{-webkit-print-color-adjust:exact!important;print-color-adjust:exact!important}
+  .hdr,.hero,.ftr{padding-left:16px;padding-right:16px}
+  .hero{padding-top:24px;padding-bottom:24px}
+  .hero::before{display:none}
+  .ov-grid{margin-top:14px;padding:0 16px}
+  .wrap{padding:0 16px 0}
+  .day-block,.flight-card,.ov-card,.tr-wrap,.budget-wrap,.budget-total,.price-highlight,.map-box{box-shadow:none!important}
+  .day-block{page-break-inside:avoid;break-inside:avoid;margin-bottom:16px}
+  .sec-hdr{page-break-after:avoid;break-after:avoid;padding-top:20px}
+  .map-box{height:330px}
+  .rest-map-link{display:none}
+  .leg-btn{box-shadow:none!important}
+  .tr-tbl{font-size:10.5px}
+  .tr-tbl td{padding:6px 8px}
+  a{color:var(--green-d)}
 }
 </style>
 </head>
@@ -128,16 +286,18 @@ a{color:#029a45;text-decoration:none}
 
 <div class="hdr">
   <div class="hdr-brand">Hành trình Hàn Quốc 2026 · Plan 1</div>
-  <div class="hdr-right" style="text-align:right">Published 16:00 · 15/5/2026<br>Author: Lucas Nguyen</div>
+  <div class="hdr-right">Published 16:00 · 15/5/2026<br>Author: Lucas Nguyen</div>
 </div>
 
 <div class="hero">
   <h1>📋 Plan 1 – Seoul Toàn Bộ · 6 ngày</h1>
   <div class="hero-dest">Hàn Quốc · Seoul · Thủ đô</div>
   <div class="hero-dates">Check-in 21:30 🇻🇳 Thứ Năm 27/8 · Bay 00:20 🇻🇳 Thứ Sáu 28/8 – Về 22:50 🇻🇳 Thứ Tư 2/9</div>
-  <div class="plan-badge">Seoul only – không đi Busan</div>
-  <div class="plan-badge">5 ngày khám phá thủ đô</div>
-  <div class="hero-tag">Hành trình đã lên lịch</div>
+  <div class="hero-badges">
+    <span class="plan-badge">Seoul only – không đi Busan</span>
+    <span class="plan-badge">5 ngày khám phá thủ đô</span>
+    <span class="hero-tag">Hành trình đã lên lịch</span>
+  </div>
 </div>
 
 <div class="ov-grid">
@@ -190,21 +350,71 @@ a{color:#029a45;text-decoration:none}
   </ul>
 </div>
 
+<!-- NƠI Ở -->
+<div class="sec-hdr"><div class="sec-ico">🏠</div><span class="sec-tit">Nơi ở · Airbnb tại Hapjeong</span></div>
+
+<div class="price-highlight">
+  <div>
+    <div class="ph-label">My Blooming Stay 201 · Toàn bộ căn hộ riêng · Hapjeong, Mapo-gu</div>
+    <div class="ph-lsub">3 phòng ngủ · 5 giường · 2 phòng tắm · tối đa 8 khách · Host: T.U Kim (Superhost)</div>
+  </div>
+  <div>
+    <div class="ph-val">★ 4,94 · 49 đánh giá</div>
+    <div class="ph-sub">5 đêm · 28/8 → 2/9/2026 · 6 người</div>
+  </div>
+</div>
+
+<div class="flight-grid">
+  <div class="flight-card">
+    <div class="flight-badge">🛏 Thông tin chỗ ở</div>
+    <div class="f-row"><span class="f-key">Tên chỗ ở</span><span class="f-val">My Blooming Stay 201</span></div>
+    <div class="f-row"><span class="f-key">Loại</span><span class="f-val">Toàn bộ căn hộ – không chia sẻ</span></div>
+    <div class="f-row"><span class="f-key">Quy mô</span><span class="f-val">3 phòng ngủ · 2 phòng tắm · 8 khách</span></div>
+    <div class="f-row"><span class="f-key">Giường</span><span class="f-val">P1: queen + đơn lớn · P2: queen · P3: queen + sofa đơn</span></div>
+    <div class="f-row"><span class="f-key">Nhận phòng</span><span class="f-val green">15:00–00:00 🇰🇷 · tự nhận bằng mã cửa</span></div>
+    <div class="f-row"><span class="f-key">Trả phòng</span><span class="f-val">Trước 11:00 🇰🇷 Thứ Tư 2/9</span></div>
+  </div>
+  <div class="flight-card">
+    <div class="flight-badge">📍 Vị trí &amp; di chuyển</div>
+    <div class="f-row"><span class="f-key">Khu vực</span><span class="f-val">Hapjeong (합정), Mapo-gu</span></div>
+    <div class="f-row"><span class="f-key">Ga Hapjeong (T.2 &amp; T.6)</span><span class="f-val">6 phút đi bộ</span></div>
+    <div class="f-row"><span class="f-key">Phố Hongdae</span><span class="f-val">7 phút đi bộ</span></div>
+    <div class="f-row"><span class="f-key">Công viên sông Hàn</span><span class="f-val">4 phút đi bộ</span></div>
+    <div class="f-row"><span class="f-key">Từ sân bay ICN</span><span class="f-val green">Bus Limousine 6002 → Ga Hapjeong (~40 phút, đi thẳng)</span></div>
+    <div class="f-row"><span class="f-key">Quanh nhà</span><span class="f-val">7-Eleven 1' · Olive Young 5' · Daiso 5'</span></div>
+  </div>
+</div>
+
+<div class="box box-tips box-flat"><span class="box-label">🏡 Nội quy nhà &amp; lưu ý</span><ul>
+  <li>Cởi giày trong nhà (có sẵn dép) · Tòa nhà <strong>không hút thuốc</strong>, kể cả vape</li>
+  <li>Không tổ chức tiệc / tụ họp ồn · Không nướng KBBQ trong nhà · Giữ yên tĩnh sau 22:00 🇰🇷</li>
+  <li>Nhận phòng từ 15:00 – nếu tới sớm (hạ cánh 06:40) cần gửi hành lý hoặc hỏi chủ nhà về early check-in</li>
+  <li>Chính sách hủy: miễn phí trong 24 giờ đầu · hoàn tiền một phần nếu hủy trước 21/8/2026</li>
+  <li>Thời gian tới các khu (theo chủ nhà): Itaewon 15' · Yeouido 15' · Ga Seoul 20' · Myeongdong 20' · Gwanghwamun 25' · Gangnam 35'</li>
+  <li>Thông tin lấy từ tin đăng Airbnb – địa chỉ chính xác sẽ được cấp sau khi đặt; ghim trên bản đồ là <strong>vị trí gần đúng</strong> do Airbnb công bố</li>
+</ul>
+<a href="https://www.airbnb.com.vn/rooms/1511185123233776056?adults=6&amp;check_in=2026-08-28&amp;check_out=2026-09-02" target="_blank" class="rest-map-link" style="margin-top:10px">🔗 Mở tin đăng Airbnb</a>
+</div>
+
+<div class="tags tags-flat"><span class="tag">Tự nhận phòng bằng mã cửa</span><span class="tag">Ga Hapjeong 6 phút</span><span class="tag">Sông Hàn 4 phút</span><span class="tag">Hongdae 7 phút</span><span class="tag">Bus 6002 từ ICN</span></div>
+
 <div class="sec-hdr"><div class="sec-ico">🗺️</div><span class="sec-tit">Lịch trình ngày qua ngày</span></div>
 
 <!-- NGÀY 1 -->
-<div class="day-block">
+<div class="day-block d1">
   <div class="day-hdr">
-    <div class="day-num" style="background:#888780">1</div>
-    <div><div class="day-date-lbl">Thứ Sáu, 28/8/2026</div><div class="day-name">Đến Seoul · Myeongdong · Namdaemun</div></div>
+    <div class="day-num">1</div>
+    <div><div class="day-date-lbl">Thứ Sáu, 28/8/2026</div><div class="day-name">Đến Seoul · Nhận phòng Hapjeong · Myeongdong</div></div>
   </div>
-  <div class="day-summary">Hạ cánh sân bay Incheon lúc 06:40 giờ Hàn Quốc sau chuyến bay đêm từ Hà Nội. Làm thủ tục nhập cảnh, di chuyển vào trung tâm Seoul bằng tàu AREX, nhận phòng tại Myeongdong rồi thả mình vào mê cung phố ẩm thực và mua sắm sôi động nhất Seoul.</div>
+  <div class="day-summary">Hạ cánh sân bay Incheon lúc 06:40 giờ Hàn Quốc sau chuyến bay đêm từ Hà Nội. Làm thủ tục nhập cảnh, di chuyển về Hapjeong bằng xe buýt sân bay 6002, gửi hành lý chờ tới giờ nhận phòng 15:00, rồi thả mình vào mê cung phố ẩm thực và mua sắm sôi động nhất Seoul.</div>
   <div class="activities">
-    <div class="act-row"><div class="act-time">06:40 🇰🇷</div><div><div class="act-name">Hạ cánh sân bay Incheon (ICN)</div><div class="act-desc">Làm thủ tục hải quan, nhận hành lý. Mua thẻ T-money tại GS25 trong sân bay (3.000₩ tiền cọc). Lên tàu AREX vào Seoul Station (~5.000₩, 43 phút).</div></div></div>
-    <div class="act-row"><div class="act-time">Buổi sáng</div><div><div class="act-name">Nhận phòng khách sạn Myeongdong</div><div class="act-desc">Gửi hành lý nếu phòng chưa sẵn. Khu Myeongdong: Ibis Styles, Lotte City, Travelodge – ưu tiên vị trí gần ga Myeongdong.</div></div></div>
-    <div class="act-row"><div class="act-time">Buổi chiều</div><div><div class="act-name">Khu phố ẩm thực Myeongdong</div><div class="act-desc">Phố đi bộ 1km với hàng trăm quầy đồ ăn vỉa hè. Phải thử: tteokbokki, hotteok, kem bắp, gà chiên mật ong. Cửa hàng mỹ phẩm Innisfree, Etude, Olive Young.</div></div></div>
-    <div class="act-row"><div class="act-time">17:00 🇰🇷</div><div><div class="act-name">Chợ Namdaemun (남대문시장)</div><div class="act-desc">Chợ truyền thống lớn nhất Hàn Quốc. Quần áo, đồ lưu niệm, hải sản khô, đặc sản địa phương. Đi bộ ~10 phút từ Myeongdong.</div></div></div>
-    <div class="act-row"><div class="act-time">Tối</div><div><div class="act-name">Ăn tối tại Myeongdong</div><div class="act-desc">Samgyeopsal (thịt ba chỉ nướng) hoặc chimaek (gà chiên + bia Hàn) ngay trên phố. Nghỉ sớm lấy lại sức sau chuyến bay đêm.</div></div></div>
+    <div class="act-row"><div class="act-time">06:40 🇰🇷</div><div><div class="act-name">Hạ cánh sân bay Incheon (ICN)</div><div class="act-desc">Nhập cảnh, nhận hành lý · Mua T-money tại GS25 (cọc 3.000₩) · Ra tầng 1 bắt bus sân bay.</div></div></div>
+    <div class="act-row"><div class="act-time">07:30 🇰🇷</div><div><div class="act-name">Xe buýt sân bay 6002 về ga Hapjeong</div><div class="act-desc">ICN → ga Hapjeong, đi thẳng · ~17.000₩/người · 60–80 phút · Rẻ hơn: AREX tới ga Hongik Univ (~5.000₩) + 1 ga Tuyến 2.</div></div></div>
+    <div class="act-row"><div class="act-time">Buổi sáng</div><div><div class="act-name">Gửi hành lý &amp; ăn sáng quanh Hapjeong</div><div class="act-desc">Nhận phòng từ 15:00, nhà không có lễ tân → gửi vali tủ khóa ga Hapjeong · Cà phê Hapjeong · Sông Hàn 4 phút đi bộ.</div></div></div>
+    <div class="act-row"><div class="act-time">15:00 🇰🇷</div><div><div class="act-name">Nhận phòng Airbnb – My Blooming Stay 201</div><div class="act-desc">Tự mở bằng mã số cửa · Nguyên căn 3 phòng ngủ · 2 phòng tắm · Cất hành lý, nghỉ lấy sức.</div></div></div>
+    <div class="act-row"><div class="act-time">16:30 🇰🇷</div><div><div class="act-name">Khu phố ẩm thực Myeongdong</div><div class="act-desc">Tuyến 2 → Euljiro 1-ga + đi bộ 8 phút (~20 phút, ~1.500₩) · Thử tteokbokki, hotteok, kem bắp, gà mật ong · Olive Young, Innisfree.</div></div></div>
+    <div class="act-row"><div class="act-time">18:00 🇰🇷</div><div><div class="act-name">Chợ Namdaemun (남대문시장)</div><div class="act-desc">Chợ truyền thống lớn nhất Hàn · Quần áo, quà lưu niệm, hải sản khô · Đi bộ 10 phút từ Myeongdong.</div></div></div>
+    <div class="act-row"><div class="act-time">Tối</div><div><div class="act-name">Ăn tối tại Myeongdong</div><div class="act-desc">Samgyeopsal hoặc chimaek ngay trên phố · Về Hapjeong bằng Tuyến 2 (~20 phút), nghỉ sớm.</div></div></div>
   </div>
   <div class="box box-dining"><span class="box-label">🍽 Nhà hàng gợi ý – Ngày 1 · Myeongdong</span>
   <div class="rest-list">
@@ -225,23 +435,23 @@ a{color:#029a45;text-decoration:none}
     </div>
   </div>
   </div>
-  <div class="box box-tips"><span class="box-label">💡 Mẹo hay</span><ul><li>Mua thẻ T-money ngay tại sân bay – dùng được tàu điện ngầm, xe buýt, taxi Kakao T</li><li>Download app Naver Map và Kakao T trước khi đi – bản đồ và gọi taxi cực tiện</li><li>Tỷ giá: 1 triệu VNĐ ≈ 56.000₩ – đổi tiền tại Myeongdong được giá tốt nhất</li></ul></div>
-  <div class="tags"><span class="tag">Tàu AREX từ ICN</span><span class="tag">Phố ẩm thực Myeongdong</span><span class="tag">Chợ Namdaemun</span><span class="tag">Mỹ phẩm Olive Young</span></div>
+  <div class="box box-tips"><span class="box-label">💡 Mẹo hay</span><ul><li>Mua thẻ T-money ngay tại sân bay – dùng được tàu điện ngầm, xe buýt, taxi Kakao T</li><li>Download app Naver Map và Kakao T trước khi đi – bản đồ và gọi taxi cực tiện</li><li>Tỷ giá: 1 triệu VNĐ ≈ 56.000₩ – đổi tiền tại Myeongdong được giá tốt nhất</li><li>Lưu mã số cửa + hướng dẫn nhận phòng của chủ nhà ra ảnh/ghi chú offline trước khi bay</li></ul></div>
+  <div class="tags"><span class="tag">Bus 6002 → Hapjeong</span><span class="tag">Airbnb Hapjeong</span><span class="tag">Phố ẩm thực Myeongdong</span><span class="tag">Chợ Namdaemun</span><span class="tag">Mỹ phẩm Olive Young</span></div>
 </div>
 
 <!-- NGÀY 2 -->
-<div class="day-block">
+<div class="day-block d2">
   <div class="day-hdr">
-    <div class="day-num" style="background:#7F77DD">2</div>
+    <div class="day-num">2</div>
     <div><div class="day-date-lbl">Thứ Bảy, 29/8/2026</div><div class="day-name">Gyeongbokgung · Bukchon · Insadong · Hongdae · Sông Hán</div></div>
   </div>
   <div class="day-summary">Ngày dài nhất hành trình — khám phá Seoul từ cung điện ngàn năm đến khu giải trí sôi động của giới trẻ. Buổi sáng mang không khí hoàng gia, buổi chiều ngập nghệ thuật và K-pop, buổi tối lãng mạn bên sông Hán.</div>
   <div class="activities">
-    <div class="act-row"><div class="act-time">09:00 🇰🇷</div><div><div class="act-name">Cung điện Gyeongbokgung (경복궁)</div><div class="act-desc">Cung điện chính triều Joseon, xây năm 1395. Vé 3.000₩. Lễ đổi gác hoàng gia 10:00 &amp; 14:00 – xem miễn phí. Thuê hanbok trong sân để chụp ảnh miễn phí.</div></div></div>
-    <div class="act-row"><div class="act-time">11:00 🇰🇷</div><div><div class="act-name">Làng Hanok Bukchon (북촌한옥마을)</div><div class="act-desc">Gần 600 ngôi nhà mái ngói truyền thống. Điểm chụp ảnh đẹp: dốc Gahoe-ro 11-gil. Giữ yên tĩnh – có cư dân sinh sống.</div></div></div>
-    <div class="act-row"><div class="act-time">12:30 🇰🇷</div><div><div class="act-name">Ăn trưa và dạo phố Insadong</div><div class="act-desc">Phố nghệ nhân, thủ công mỹ nghệ, bánh tteok. Ssamziegil – khu phức hợp sân trong – không thể bỏ qua.</div></div></div>
-    <div class="act-row"><div class="act-time">14:30 🇰🇷</div><div><div class="act-name">Tàu điện ngầm đến Hongdae</div><div class="act-desc">Line 3 từ ga Anguk đến Hongdae (25 phút, ~1.400₩). Trung tâm văn hóa giới trẻ Seoul – nghệ sĩ đường phố, K-pop, cafe concept, streetwear.</div></div></div>
-    <div class="act-row"><div class="act-time">20:00 🇰🇷</div><div><div class="act-name">Công viên sông Hán Banpo – Đài phun nước cầu vồng</div><div class="act-desc">Taxi Kakao T từ Hongdae (~20 phút, ~13.000₩/taxi). Đài phun nước Rainbow Moonbow – màn trình diễn ánh sáng sau hoàng hôn. Mang đồ ăn ra picnic bên sông.</div></div></div>
+    <div class="act-row"><div class="act-time">09:00 🇰🇷</div><div><div class="act-name">Cung điện Gyeongbokgung (경복궁)</div><div class="act-desc">Cung điện triều Joseon, 1395 · Vé 3.000₩ · Lễ đổi gác 10:00 &amp; 14:00 (miễn phí) · Thuê hanbok chụp ảnh trong sân.</div></div></div>
+    <div class="act-row"><div class="act-time">11:00 🇰🇷</div><div><div class="act-name">Làng Hanok Bukchon (북촌한옥마을)</div><div class="act-desc">~600 nhà hanok mái ngói · Điểm chụp đẹp: dốc Gahoe-ro 11-gil · Giữ yên tĩnh – có dân sinh sống.</div></div></div>
+    <div class="act-row"><div class="act-time">12:30 🇰🇷</div><div><div class="act-name">Ăn trưa và dạo phố Insadong</div><div class="act-desc">Phố nghệ nhân, thủ công mỹ nghệ, bánh tteok · Ghé Ssamziegil – khu phức hợp sân trong.</div></div></div>
+    <div class="act-row"><div class="act-time">14:30 🇰🇷</div><div><div class="act-name">Tàu điện ngầm đến Hongdae</div><div class="act-desc">Tuyến 3 từ ga Anguk (25 phút, ~1.400₩) · Nghệ sĩ đường phố, K-pop, cafe concept, streetwear.</div></div></div>
+    <div class="act-row"><div class="act-time">20:00 🇰🇷</div><div><div class="act-name">Công viên sông Hán Banpo – Đài phun nước cầu vồng</div><div class="act-desc">Taxi Kakao T từ Hongdae (~20 phút, ~13.000₩/xe) · Đài phun nước Rainbow Moonbow sau hoàng hôn · Picnic bên sông.</div></div></div>
   </div>
   <div class="box box-dining"><span class="box-label">🍽 Nhà hàng gợi ý – Ngày 2 · Gyeongbokgung · Hongdae</span>
   <div class="rest-list">
@@ -266,17 +476,17 @@ a{color:#029a45;text-decoration:none}
 </div>
 
 <!-- NGÀY 3 -->
-<div class="day-block">
+<div class="day-block d3">
   <div class="day-hdr">
-    <div class="day-num" style="background:#378ADD">3</div>
+    <div class="day-num">3</div>
     <div><div class="day-date-lbl">Chủ Nhật, 30/8/2026</div><div class="day-name">LOL Park – Esports Day · Chợ Gwangjang</div></div>
   </div>
   <div class="day-summary">Ngày dành riêng cho LCK – giải đấu League of Legends hàng đầu thế giới. LOL Park tại khu Jongno là thánh địa của fan game Hàn Quốc: xem trận đấu trực tiếp, tham quan bảo tàng esports, chụp ảnh cùng cúp vô địch. Tối kết thúc tại chợ Gwangjang huyền thoại.</div>
   <div class="activities">
-    <div class="act-row"><div class="act-time">09:30 🇰🇷</div><div><div class="act-name">Di chuyển đến LOL Park – Gran Seoul (Jongno)</div><div class="act-desc">Tàu điện ngầm đến ga Jonggak hoặc Gwanghwamun. LOL Park nằm tầng B1 tòa Gran Seoul – địa điểm tổ chức LCK chính thức.</div></div></div>
-    <div class="act-row"><div class="act-time">10:00 🇰🇷</div><div><div class="act-name">Khu trải nghiệm LoL Experience Zone</div><div class="act-desc">Triển lãm lịch sử LoL, bộ sưu tập cúp LCK, khu chụp ảnh với champions. Merchandise store: skin, áo đấu, phụ kiện chính hãng.</div></div></div>
-    <div class="act-row"><div class="act-time">13:00 🇰🇷</div><div><div class="act-name">Xem trận đấu LCK Playoffs</div><div class="act-desc">Mùa LCK 2026 kéo đến 13/9, Playoffs tháng 8 rất có thể có trận tại đây. Xem lịch tại lolesports.com · Đặt vé tại ticketlink.co.kr (30.000–50.000₩/vé).</div></div></div>
-    <div class="act-row"><div class="act-time">Tối</div><div><div class="act-name">Chợ Gwangjang + Ăn tối khu Jongno</div><div class="act-desc">Chợ ẩm thực nổi tiếng nhất Hàn: bindaetteok (bánh xèo đậu xanh), mayak gimbap, yukhoe (bò sống). Không khí sôi động nhất từ 18:00–22:00.</div></div></div>
+    <div class="act-row"><div class="act-time">09:30 🇰🇷</div><div><div class="act-name">Di chuyển đến LOL Park – Gran Seoul (Jongno)</div><div class="act-desc">Tàu ĐN đến ga Jonggak hoặc Gwanghwamun · LOL Park ở tầng B1 tòa Gran Seoul – nơi tổ chức LCK.</div></div></div>
+    <div class="act-row"><div class="act-time">10:00 🇰🇷</div><div><div class="act-name">Khu trải nghiệm LoL Experience Zone</div><div class="act-desc">Lịch sử LoL, bộ sưu tập cúp LCK, chụp ảnh với champions · Store: skin, áo đấu, phụ kiện chính hãng.</div></div></div>
+    <div class="act-row"><div class="act-time">13:00 🇰🇷</div><div><div class="act-name">Xem trận đấu LCK Playoffs</div><div class="act-desc">LCK 2026 kéo đến 13/9, Playoffs tháng 8 có thể có trận · Lịch: lolesports.com · Vé: ticketlink.co.kr (30.000–50.000₩).</div></div></div>
+    <div class="act-row"><div class="act-time">Tối</div><div><div class="act-name">Chợ Gwangjang + Ăn tối khu Jongno</div><div class="act-desc">Bindaetteok (bánh xèo đậu xanh), mayak gimbap, yukhoe (bò sống) · Sôi động nhất 18:00–22:00.</div></div></div>
   </div>
   <div class="box box-dining"><span class="box-label">🍽 Nhà hàng gợi ý – Ngày 3 · Jongno · Chợ Gwangjang</span>
   <div class="rest-list">
@@ -301,18 +511,18 @@ a{color:#029a45;text-decoration:none}
 </div>
 
 <!-- NGÀY 4 -->
-<div class="day-block">
+<div class="day-block d4">
   <div class="day-hdr">
-    <div class="day-num" style="background:#1D9E75">4</div>
+    <div class="day-num">4</div>
     <div><div class="day-date-lbl">Thứ Hai, 31/8/2026</div><div class="day-name">N Seoul Tower · Itaewon · Lotte World Tower · Yeouido</div></div>
   </div>
   <div class="day-summary">Ngày 4 Seoul – leo lên tháp Namsan ngắm toàn cảnh thủ đô, rồi xuống phố Itaewon quốc tế ăn đủ mọi hương vị. Buổi chiều chinh phục Lotte World Tower cao nhất Hàn Quốc, tối thả thuyền hoặc picnic bên đảo Yeouido sông Hán.</div>
   <div class="activities">
-    <div class="act-row"><div class="act-time">09:30 🇰🇷</div><div><div class="act-name">N Seoul Tower trên núi Namsan (남산서울타탑)</div><div class="act-desc">Đi cáp treo từ chân núi Namsan (~9.000₩ khứ hồi). Tháp cao 236m – view 360° toàn Seoul. Gắn "love locks" tại hàng rào xung quanh tháp. Vé Observatory ~21.000₩/người.</div></div></div>
-    <div class="act-row"><div class="act-time">12:00 🇰🇷</div><div><div class="act-name">Phố Itaewon (이태원) – Ăn trưa đa quốc tịch</div><div class="act-desc">Tàu ĐN Line 6 từ Itaewon Station. Khu phố quốc tế nhất Seoul: nhà hàng Ý, Trung Đông, Mỹ Latin, craft beer, thương hiệu vintage. Khu Haebangchon (경리단길) gần đó có nhiều quán indie hay.</div></div></div>
-    <div class="act-row"><div class="act-time">14:30 🇰🇷</div><div><div class="act-name">Lotte World Tower (롯데월드타워) – 555m</div><div class="act-desc">Tòa nhà cao thứ 5 thế giới. Seoul Sky Observatory tầng 117–123 (27.000₩). View đỉnh nhìn xa 100km trời quang. Lotte World Mall ngay dưới – siêu thị lớn và nhiều cửa hàng.</div></div></div>
-    <div class="act-row"><div class="act-time">17:00 🇰🇷</div><div><div class="act-name">Đảo Yeouido (여의도) – Sông Hán chiều tà</div><div class="act-desc">Tàu ĐN Line 5 đến ga Yeouido. Công viên sông Hán rộng 2km – mua đồ ăn tại CU/GS25 và picnic theo kiểu Hàn Quốc. Thuê xe đạp đôi đi dọc bờ sông.</div></div></div>
-    <div class="act-row"><div class="act-time">Tối</div><div><div class="act-name">IFC Seoul Mall – Ăn tối + Đi bộ Yeouido</div><div class="act-desc">IFC Seoul ngay cạnh ga Yeouido – tầng hầm có food court và nhà hàng đa dạng. Buổi tối đảo Yeouido sáng đèn rất đẹp – đặc biệt khi nhìn từ bờ kia sông Hán.</div></div></div>
+    <div class="act-row"><div class="act-time">09:30 🇰🇷</div><div><div class="act-name">N Seoul Tower trên núi Namsan (남산서울타탑)</div><div class="act-desc">Cáp treo từ chân núi Namsan (~9.000₩ khứ hồi) · Tháp 236m, view 360° · Vé đài quan sát ~21.000₩ · Love locks.</div></div></div>
+    <div class="act-row"><div class="act-time">12:00 🇰🇷</div><div><div class="act-name">Phố Itaewon (이태원) – Ăn trưa đa quốc tịch</div><div class="act-desc">Tuyến 6 đến ga Itaewon · Nhà hàng Ý, Trung Đông, Mỹ Latin, craft beer, vintage · Haebangchon (경리단길) nhiều quán indie.</div></div></div>
+    <div class="act-row"><div class="act-time">14:30 🇰🇷</div><div><div class="act-name">Lotte World Tower (롯데월드타워) – 555m</div><div class="act-desc">Cao thứ 5 thế giới · Seoul Sky tầng 117–123 (27.000₩), trời quang nhìn xa 100km · Lotte World Mall ngay dưới.</div></div></div>
+    <div class="act-row"><div class="act-time">17:00 🇰🇷</div><div><div class="act-name">Đảo Yeouido (여의도) – Sông Hán chiều tà</div><div class="act-desc">Tuyến 5 đến ga Yeouido · Công viên sông Hàn 2km · Mua đồ ăn ở CU/GS25 picnic kiểu Hàn · Thuê xe đạp đôi.</div></div></div>
+    <div class="act-row"><div class="act-time">Tối</div><div><div class="act-name">IFC Seoul Mall – Ăn tối + Đi bộ Yeouido</div><div class="act-desc">IFC Seoul cạnh ga Yeouido – food court tầng hầm · Tối Yeouido sáng đèn, đẹp nhất khi nhìn từ bờ bên kia.</div></div></div>
   </div>
   <div class="box box-dining"><span class="box-label">🍽 Nhà hàng gợi ý – Ngày 4 · Namsan · Itaewon · Yeouido</span>
   <div class="rest-list">
@@ -338,17 +548,17 @@ a{color:#029a45;text-decoration:none}
 </div>
 
 <!-- NGÀY 5 -->
-<div class="day-block">
+<div class="day-block d5">
   <div class="day-hdr">
-    <div class="day-num" style="background:#EF9F27">5</div>
+    <div class="day-num">5</div>
     <div><div class="day-date-lbl">Thứ Ba, 1/9/2026</div><div class="day-name">COEX Starfield · Garosu-gil · Dongdaemun DDP</div></div>
   </div>
-  <div class="day-summary">Ngày cuối vui chơi tại Seoul – thư viện Starfield COEX nổi tiếng viral, phố boutique Garosu-gil cây xanh và kiệt tác kiến trúc DDP của Zaha Hadid. Chiều tối về khách sạn đóng hành lý, chuẩn bị sẵn sàng cho chuyến bay về ngày mai (2/9).</div>
+  <div class="day-summary">Ngày cuối vui chơi tại Seoul – thư viện Starfield COEX nổi tiếng viral, phố boutique Garosu-gil cây xanh và kiệt tác kiến trúc DDP của Zaha Hadid. Chiều tối về nhà ở Hapjeong đóng hành lý, chuẩn bị sẵn sàng cho chuyến bay về ngày mai (2/9).</div>
   <div class="activities">
-    <div class="act-row"><div class="act-time">10:00 🇰🇷</div><div><div class="act-name">Thư viện Starfield COEX (별마당 도서관)</div><div class="act-desc">Thư viện sách khổng lồ cao 13m – check-in viral nhất Seoul, miễn phí. SM Town Atrium ngay trong mall cho fan K-pop. COEX Aquarium tùy chọn (~29.000₩).</div></div></div>
-    <div class="act-row"><div class="act-time">12:00 🇰🇷</div><div><div class="act-name">Ăn trưa Gangnam + Phố Garosu-gil</div><div class="act-desc">Đi bộ ~15 phút từ COEX. Phố cây xanh boutique: cafe đặc sản, skincare premium, thời trang Hàn Quốc. Mua sắm cuối hành trình.</div></div></div>
-    <div class="act-row"><div class="act-time">14:00 🇰🇷</div><div><div class="act-name">Dongdaemun Design Plaza – DDP (동대문디자인플라자)</div><div class="act-desc">Kiệt tác kiến trúc Zaha Hadid – tham quan và mua sắm cuối trước khi ra sân bay (~20 phút, cửa 1). Chợ đêm Dongdaemun nếu còn thời gian.</div></div></div>
-    <div class="act-row"><div class="act-time">18:00 🇰🇷</div><div><div class="act-name">Ăn tối + Về khách sạn – Chuẩn bị hành lý</div><div class="act-desc">Ăn tối tại khu Dongdaemun hoặc Myeongdong (gần khách sạn hơn). Về phòng đóng hành lý sẵn – ngày mai (2/9) cần checkout và ra sân bay ICN lúc ~14:00–15:00.</div></div></div>
+    <div class="act-row"><div class="act-time">10:00 🇰🇷</div><div><div class="act-name">Thư viện Starfield COEX (별마당 도서관)</div><div class="act-desc">Kệ sách cao 13m – check-in viral nhất Seoul, miễn phí · SM Town Atrium trong mall · COEX Aquarium ~29.000₩ (tùy chọn).</div></div></div>
+    <div class="act-row"><div class="act-time">12:00 🇰🇷</div><div><div class="act-name">Ăn trưa Gangnam + Phố Garosu-gil</div><div class="act-desc">Đi bộ ~15 phút từ COEX · Phố cây xanh boutique: cafe đặc sản, skincare premium, thời trang Hàn.</div></div></div>
+    <div class="act-row"><div class="act-time">14:00 🇰🇷</div><div><div class="act-name">Dongdaemun Design Plaza – DDP (동대문디자인플라자)</div><div class="act-desc">Kiệt tác kiến trúc Zaha Hadid (~20 phút, cửa 1) · Mua sắm cuối · Chợ đêm Dongdaemun nếu còn thời gian.</div></div></div>
+    <div class="act-row"><div class="act-time">18:00 🇰🇷</div><div><div class="act-name">Ăn tối + Về Hapjeong – Chuẩn bị hành lý</div><div class="act-desc">Ăn tối Dongdaemun, hoặc về Hongdae/Hapjeong cho gần nhà · Đóng hành lý sẵn – mai trả phòng trước 11:00, ra ICN ~14:30.</div></div></div>
   </div>
   <div class="box box-dining"><span class="box-label">🍽 Nhà hàng gợi ý – Ngày 5 · Gangnam · COEX</span>
   <div class="rest-list">
@@ -374,19 +584,19 @@ a{color:#029a45;text-decoration:none}
 
 
 <!-- NGÀY 6 -->
-<div class="day-block">
+<div class="day-block d6">
   <div class="day-hdr">
-    <div class="day-num" style="background:#B85C8A">6</div>
+    <div class="day-num">6</div>
     <div><div class="day-date-lbl">Thứ Tư, 2/9/2026</div><div class="day-name">Trả phòng · Sân bay Incheon · Bay về Hà Nội</div></div>
   </div>
-  <div class="day-summary">Ngày cuối hành trình – buổi sáng tự do mua sắm nốt tại Myeongdong, trả phòng trước 12:00 rồi ra sân bay Incheon. Hoàn thuế VAT tại quầy Global Blue trước khi check-in. Parata Air ICN 19:55 🇰🇷 cất cánh, hạ cánh Nội Bài 22:50 🇻🇳 – kết thúc chuyến Seoul tuyệt vời!</div>
+  <div class="day-summary">Ngày cuối hành trình – buổi sáng dọn đồ và ăn sáng quanh Hapjeong, trả phòng Airbnb trước 11:00, tranh thủ mua sắm nốt tại Myeongdong rồi ra sân bay Incheon. Hoàn thuế VAT tại quầy Global Blue trước khi check-in. Parata Air ICN 19:55 🇰🇷 cất cánh, hạ cánh Nội Bài 22:50 🇻🇳 – kết thúc chuyến Seoul tuyệt vời!</div>
   <div class="activities">
-    <div class="act-row"><div class="act-time">Buổi sáng</div><div><div class="act-name">Tự do – Mua sắm cuối tại Myeongdong</div><div class="act-desc">Olive Young, Innisfree, quầy mỹ phẩm – mua nốt những thứ còn thiếu. Đổi lại tiền won dư sang VNĐ tại chợ Myeongdong (tỷ giá tốt hơn sân bay). GS25 gần khách sạn bán đồ ăn sáng tiện lợi.</div></div></div>
-    <div class="act-row"><div class="act-time">11:00 🇰🇷</div><div><div class="act-name">Trả phòng khách sạn (Check-out)</div><div class="act-desc">Checkout trước 12:00. Kiểm tra kỹ phòng – không bỏ sót đồ điện tử, sạc, hộ chiếu. Nhờ khách sạn giữ hành lý nếu cần đi ăn trưa trước khi di chuyển.</div></div></div>
-    <div class="act-row"><div class="act-time">12:00 🇰🇷</div><div><div class="act-name">Bữa trưa chia tay Seoul</div><div class="act-desc">Myeongdong Kyoja (kalguksu) hoặc quán quen trong 5 ngày qua – bữa cuối trên đất Hàn. Đảm bảo còn đủ tiền won cho taxi/AREX và bữa ăn ở sân bay nếu cần.</div></div></div>
-    <div class="act-row"><div class="act-time">14:00 🇰🇷</div><div><div class="act-name">Tàu AREX ra sân bay Incheon (ICN)</div><div class="act-desc">Từ ga Seoul Station (43 phút, 5.000₩/người) hoặc City Airport Terminal tại ga Hongik Univ. Mục tiêu có mặt tại ICN lúc 16:30–17:00 – trước giờ bay 3 tiếng.</div></div></div>
-    <div class="act-row"><div class="act-time">16:30 🇰🇷</div><div><div class="act-name">Check-in & Hoàn thuế VAT · Duty-free</div><div class="act-desc">Check-in Parata Air tại Terminal 1. Hoàn thuế VAT tại quầy Global Blue hoặc máy tự động (cần hóa đơn gốc từ cửa hàng Tax Free, trên 30.000₩). Mua duty-free nếu cần. Qua cửa xuất cảnh.</div></div></div>
-    <div class="act-row"><div class="act-time">19:55 🇰🇷</div><div><div class="act-name">✈ Parata Air ICN → HAN · Bay về Hà Nội</div><div class="act-desc">Cất cánh 19:55 🇰🇷 từ sân bay Incheon (UTC+9). Thời gian bay ~5 tiếng. Hạ cánh sân bay Nội Bài (HAN) 22:50 🇻🇳 ngày Thứ Tư 2/9/2026 – kết thúc 6 ngày Seoul đáng nhớ!</div></div></div>
+    <div class="act-row"><div class="act-time">Buổi sáng</div><div><div class="act-name">Ăn sáng &amp; dọn hành lý tại Hapjeong</div><div class="act-desc">7-Eleven cách nhà 1 phút · Hoặc cà phê Hapjeong / ra sông Hàn lần cuối (4 phút) · Dọn hành lý trước 11:00.</div></div></div>
+    <div class="act-row"><div class="act-time">11:00 🇰🇷</div><div><div class="act-name">Trả phòng Airbnb (Check-out)</div><div class="act-desc">Trả phòng trước 11:00, tự khóa cửa theo hướng dẫn chủ nhà · Kiểm tra đồ điện tử, sạc, hộ chiếu · Gửi vali tủ khóa ga Hapjeong/Hongik Univ.</div></div></div>
+    <div class="act-row"><div class="act-time">12:00 🇰🇷</div><div><div class="act-name">Mua sắm cuối &amp; bữa trưa chia tay tại Myeongdong</div><div class="act-desc">Tuyến 2 từ Hapjeong (~20 phút) · Olive Young, Innisfree · Đổi won dư tại chợ Myeongdong (giá tốt hơn sân bay) · Bữa cuối: Myeongdong Kyoja.</div></div></div>
+    <div class="act-row"><div class="act-time">14:30 🇰🇷</div><div><div class="act-name">Tàu AREX ra sân bay Incheon (ICN)</div><div class="act-desc">Myeongdong → ga Seoul Station (1 ga) → AREX ra ICN (43 phút, 5.000₩) · Hoặc bus 6002 từ Hapjeong · Có mặt ICN 16:30–17:00.</div></div></div>
+    <div class="act-row"><div class="act-time">16:30 🇰🇷</div><div><div class="act-name">Check-in & Hoàn thuế VAT · Duty-free</div><div class="act-desc">Check-in Parata Air tại Terminal 1 · Hoàn thuế VAT quầy Global Blue hoặc máy tự động (hóa đơn gốc Tax Free trên 30.000₩) · Duty-free · Qua cửa xuất cảnh.</div></div></div>
+    <div class="act-row"><div class="act-time">19:55 🇰🇷</div><div><div class="act-name">✈ Parata Air ICN → HAN · Bay về Hà Nội</div><div class="act-desc">Cất cánh 19:55 🇰🇷 · Bay ~5 tiếng · Hạ cánh sân bay Nội Bài (HAN) 22:50 🇻🇳 Thứ Tư 2/9/2026.</div></div></div>
   </div>
   <div class="box box-dining"><span class="box-label">🍽 Gợi ý bữa chia tay – Ngày 6 · Myeongdong</span>
   <div class="rest-list">
@@ -405,10 +615,10 @@ a{color:#029a45;text-decoration:none}
   <div class="box box-tips"><span class="box-label">💡 Checklist ngày về</span><ul>
     <li>Hoàn thuế VAT: giữ hóa đơn gốc từ cửa hàng Tax Free – mỗi hóa đơn trên 30.000₩</li>
     <li>Pin sạc dự phòng (power bank): PHẢI để trong hành lý xách tay, không được ký gửi</li>
-    <li>Kiểm tra passport, vé điện tử Parata Air và thẻ T-money trước khi checkout</li>
+    <li>Kiểm tra passport, vé điện tử Parata Air và thẻ T-money trước khi checkout</li><li>Nhà không có lễ tân giữ đồ – dùng tủ khóa ga Hapjeong/Hongik Univ nếu còn đi chơi sau 11:00</li>
     <li>Đổi tiền won dư tại Myeongdong trước khi ra sân bay (tỷ giá tốt hơn ICN)</li>
   </ul></div>
-  <div class="tags"><span class="tag">Checkout & trả phòng</span><span class="tag">Mua sắm cuối Myeongdong</span><span class="tag">AREX → ICN</span><span class="tag">Hoàn thuế VAT</span><span class="tag">Parata Air 19:55 🇰🇷</span><span class="tag">HAN 22:50 🇻🇳</span></div>
+  <div class="tags"><span class="tag">Checkout Airbnb 11:00</span><span class="tag">Mua sắm cuối Myeongdong</span><span class="tag">AREX → ICN</span><span class="tag">Hoàn thuế VAT</span><span class="tag">Parata Air 19:55 🇰🇷</span><span class="tag">HAN 22:50 🇻🇳</span></div>
 </div>
 
 <!-- BẢN ĐỒ LEAFLET -->
@@ -418,16 +628,20 @@ a{color:#029a45;text-decoration:none}
 <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
 
 <div style="margin-bottom:14px">
-  <div style="display:flex;flex-wrap:wrap;gap:8px;margin-bottom:10px">
-    <span style="display:inline-flex;align-items:center;gap:5px;font-size:12px"><span style="width:12px;height:12px;border-radius:50%;background:#888780;display:inline-block"></span>Ngày 1 – Thứ Sáu 28/8</span>
-    <span style="display:inline-flex;align-items:center;gap:5px;font-size:12px"><span style="width:12px;height:12px;border-radius:50%;background:#7F77DD;display:inline-block"></span>Ngày 2 – Thứ Bảy 29/8</span>
-    <span style="display:inline-flex;align-items:center;gap:5px;font-size:12px"><span style="width:12px;height:12px;border-radius:50%;background:#378ADD;display:inline-block"></span>Ngày 3 – Chủ Nhật 30/8</span>
-    <span style="display:inline-flex;align-items:center;gap:5px;font-size:12px"><span style="width:12px;height:12px;border-radius:50%;background:#1D9E75;display:inline-block"></span>Ngày 4 – Thứ Hai 31/8</span>
-    <span style="display:inline-flex;align-items:center;gap:5px;font-size:12px"><span style="width:12px;height:12px;border-radius:50%;background:#EF9F27;display:inline-block"></span>Ngày 5 – Thứ Ba 1/9</span>
-    <span style="display:inline-flex;align-items:center;gap:5px;font-size:12px"><span style="width:12px;height:12px;border-radius:50%;background:#B85C8A;display:inline-block"></span>Ngày 6 – Thứ Tư 2/9</span>
+  <div class="map-filter">
+    <span class="map-filter-lbl">Lọc theo ngày</span>
+    <div class="map-legend" id="dayFilter">
+      <button type="button" class="leg leg-btn is-on" data-day="all"><i class="i-all"></i>Tất cả 6 ngày</button>
+      <button type="button" class="leg leg-btn" data-day="1"><i style="background:var(--d1)"></i>Ngày 1 – Thứ Sáu 28/8</button>
+      <button type="button" class="leg leg-btn" data-day="2"><i style="background:var(--d2)"></i>Ngày 2 – Thứ Bảy 29/8</button>
+      <button type="button" class="leg leg-btn" data-day="3"><i style="background:var(--d3)"></i>Ngày 3 – Chủ Nhật 30/8</button>
+      <button type="button" class="leg leg-btn" data-day="4"><i style="background:var(--d4)"></i>Ngày 4 – Thứ Hai 31/8</button>
+      <button type="button" class="leg leg-btn" data-day="5"><i style="background:var(--d5)"></i>Ngày 5 – Thứ Ba 1/9</button>
+      <button type="button" class="leg leg-btn" data-day="6"><i style="background:var(--d6)"></i>Ngày 6 – Thứ Tư 2/9</button>
+    </div>
   </div>
-  <div id="map1" style="width:100%;height:480px;border-radius:10px;border:1px solid #ccc;overflow:hidden"></div>
-  <div style="font-size:11px;color:#888;margin-top:6px">💡 Click điểm số để xem chi tiết · <strong>Click đường nối → mở Naver Maps</strong> · Lộ trình thực tế (OSRM)</div>
+  <div id="map1" class="map-box"></div>
+  <div class="map-note">🏠 Ghim xanh = nơi ở tại Hapjeong – luôn hiển thị ở mọi ngày · 💡 Click điểm số để xem chi tiết · <strong>Click đường nối → mở Naver Maps</strong> · Lộ trình thực tế (OSRM)</div>
 </div>
 
 <script>
@@ -437,43 +651,52 @@ a{color:#029a45;text-decoration:none}
     attribution:'&copy; OpenStreetMap contributors &copy; CARTO',maxZoom:18
   }).addTo(map);
 
-  var C={d1:'#888780',d2:'#7F77DD',d3:'#378ADD',d4:'#1D9E75',d5:'#EF9F27',d6:'#B85C8A'};
+  var C={d1:'#6B7480',d2:'#5F55D0',d3:'#1F76CE',d4:'#0E8F63',d5:'#B87514',d6:'#A94A74'};
+  var HOME_C='#03C75A';
+  var ALL=[1,2,3,4,5,6];
 
-  // [num, lat, lng, name, color, popup]
+  // [num, lat, lng, name, color, popup, days] – num 0 = nơi ở (hiện ở mọi ngày)
+  // Toạ độ nơi ở là vị trí gần đúng do Airbnb công bố (địa chỉ chính xác cấp sau khi đặt)
   var pts=[
-    [1,  37.4602,126.4407,'Sân bay Incheon (ICN)',      C.d1,'Ngày 1 (28/8) · 06:40 🇰🇷 hạ cánh · Tàu AREX vào Seoul'],
-    [2,  37.5636,126.9869,'Myeongdong',                 C.d1,'Ngày 1 (28/8) · Phố ẩm thực & mua sắm · Check-in KS'],
-    [3,  37.5596,126.9780,'Chợ Namdaemun',              C.d1,'Ngày 1 (28/8) · Chợ truyền thống lớn nhất Seoul'],
-    [4,  37.5796,126.9770,'Cung điện Gyeongbokgung',    C.d2,'Ngày 2 (29/8) · 09:00 🇰🇷 · Cung điện triều Joseon 1395'],
-    [5,  37.5829,126.9832,'Làng Hanok Bukchon',         C.d2,'Ngày 2 (29/8) · 11:00 🇰🇷 · 600 nhà truyền thống'],
-    [6,  37.5727,126.9853,'Phố Insadong',               C.d2,'Ngày 2 (29/8) · 12:30 🇰🇷 · Nghệ nhân & Ssamziegil'],
-    [7,  37.5573,126.9249,'Hongdae',                    C.d2,'Ngày 2 (29/8) · 14:30 🇰🇷 · Văn hóa giới trẻ & K-pop'],
-    [8,  37.5112,127.0046,'Banpo – Sông Hán',           C.d2,'Ngày 2 (29/8) · 20:00 🇰🇷 · Đài phun nước cầu vồng'],
-    [9,  37.5700,126.9797,'LOL Park (Gran Seoul)',       C.d3,'Ngày 3 (30/8) · 09:30 🇰🇷 · Thánh địa esports LCK'],
-    [10, 37.5703,126.9987,'Chợ Gwangjang',              C.d3,'Ngày 3 (30/8) · Tối · Bindaetteok & Mayak Gimbap'],
-    [11, 37.5512,126.9882,'N Seoul Tower (Namsan)',      C.d4,'Ngày 4 (31/8) · 09:30 🇰🇷 · Cáp treo & view 360°'],
-    [12, 37.5340,126.9940,'Itaewon',                    C.d4,'Ngày 4 (31/8) · 12:00 🇰🇷 · Phố quốc tế – Korean-Mexican fusion'],
-    [13, 37.5126,127.1025,'Lotte World Tower (555m)',   C.d4,'Ngày 4 (31/8) · 14:30 🇰🇷 · Seoul Sky tầng 123'],
-    [14, 37.5266,126.9338,'Yeouido – Sông Hán',         C.d4,'Ngày 4 (31/8) · 17:00 🇰🇷 · Picnic & chimaek ven sông'],
-    [15, 37.5131,127.0589,'COEX Starfield',              C.d5,'Ngày 5 (1/9) · 10:00 🇰🇷 · Thư viện viral & SM Town'],
-    [16, 37.5203,127.0218,'Garosu-gil (Gangnam)',        C.d5,'Ngày 5 (1/9) · 12:00 🇰🇷 · Boutique cafe & skincare'],
-    [17, 37.5666,127.0093,'Dongdaemun DDP',              C.d5,'Ngày 5 (1/9) · 14:30 🇰🇷 · Kiến trúc Zaha Hadid']
+    [1,  37.4602,126.4407,'Sân bay Incheon (ICN)',      C.d1,'Ngày 1 (28/8) · 06:40 🇰🇷 hạ cánh · Ngày 6 (2/9) · bay về 19:55 🇰🇷',[1,6]],
+    [2,  37.5636,126.9869,'Myeongdong',                 C.d1,'Ngày 1 (28/8) · Phố ẩm thực &amp; mua sắm · Ngày 6 (2/9) · mua sắm cuối &amp; bữa chia tay',[1,6]],
+    [3,  37.5596,126.9780,'Chợ Namdaemun',              C.d1,'Ngày 1 (28/8) · Chợ truyền thống lớn nhất Seoul',[1]],
+    [4,  37.5796,126.9770,'Cung điện Gyeongbokgung',    C.d2,'Ngày 2 (29/8) · 09:00 🇰🇷 · Cung điện triều Joseon 1395',[2]],
+    [5,  37.5829,126.9832,'Làng Hanok Bukchon',         C.d2,'Ngày 2 (29/8) · 11:00 🇰🇷 · 600 nhà truyền thống',[2]],
+    [6,  37.5727,126.9853,'Phố Insadong',               C.d2,'Ngày 2 (29/8) · 12:30 🇰🇷 · Nghệ nhân &amp; Ssamziegil',[2]],
+    [7,  37.5573,126.9249,'Hongdae',                    C.d2,'Ngày 2 (29/8) · 14:30 🇰🇷 · Văn hóa giới trẻ &amp; K-pop · cách nơi ở 7 phút đi bộ',[2]],
+    [8,  37.5112,127.0046,'Banpo – Sông Hán',           C.d2,'Ngày 2 (29/8) · 20:00 🇰🇷 · Đài phun nước cầu vồng',[2]],
+    [9,  37.5700,126.9797,'LOL Park (Gran Seoul)',       C.d3,'Ngày 3 (30/8) · 09:30 🇰🇷 · Thánh địa esports LCK',[3]],
+    [10, 37.5703,126.9987,'Chợ Gwangjang',              C.d3,'Ngày 3 (30/8) · Tối · Bindaetteok &amp; Mayak Gimbap',[3]],
+    [11, 37.5512,126.9882,'N Seoul Tower (Namsan)',      C.d4,'Ngày 4 (31/8) · 09:30 🇰🇷 · Cáp treo &amp; view 360°',[4]],
+    [12, 37.5340,126.9940,'Itaewon',                    C.d4,'Ngày 4 (31/8) · 12:00 🇰🇷 · Phố quốc tế – Korean-Mexican fusion',[4]],
+    [13, 37.5126,127.1025,'Lotte World Tower (555m)',   C.d4,'Ngày 4 (31/8) · 14:30 🇰🇷 · Seoul Sky tầng 123',[4]],
+    [14, 37.5266,126.9338,'Yeouido – Sông Hán',         C.d4,'Ngày 4 (31/8) · 17:00 🇰🇷 · Picnic &amp; chimaek ven sông',[4]],
+    [15, 37.5131,127.0589,'COEX Starfield',              C.d5,'Ngày 5 (1/9) · 10:00 🇰🇷 · Thư viện viral &amp; SM Town',[5]],
+    [16, 37.5203,127.0218,'Garosu-gil (Gangnam)',        C.d5,'Ngày 5 (1/9) · 12:00 🇰🇷 · Boutique cafe &amp; skincare',[5]],
+    [17, 37.5666,127.0093,'Dongdaemun DDP',              C.d5,'Ngày 5 (1/9) · 14:30 🇰🇷 · Kiến trúc Zaha Hadid',[5]],
+    [0,  37.5459,126.9162,'Nơi ở – My Blooming Stay 201',HOME_C,
+     'Airbnb · Hapjeong, Mapo-gu · Ga Hapjeong (T.2 &amp; T.6) 6 phút đi bộ<br>Sông Hàn 4 phút · Hongdae 7 phút · Nhận phòng 15:00 · Trả phòng 11:00<br><em>Vị trí gần đúng theo Airbnb</em>',ALL]
   ];
+  var HOME=17; // chỉ số của nơi ở trong pts
 
-  // [fromIdx, toIdx, label, naverMode, dayColor, osrmProfile]
+  // [fromIdx, toIdx, label, naverMode, dayColor, osrmProfile, day]
   var segs=[
-    [0,  1,  '🚇 ~55km (AREX)',    'transit',C.d1,'driving'],
-    [1,  2,  '🚶 ~0.7km',          'walk',   C.d1,'foot'   ],
-    [3,  4,  '🚶 ~1.2km',          'walk',   C.d2,'foot'   ],
-    [4,  5,  '🚶 ~0.6km',          'walk',   C.d2,'foot'   ],
-    [5,  6,  '🚇 ~7km (Line 3)',   'transit',C.d2,'driving'],
-    [6,  7,  '🚕 ~8km (taxi)',     'transit',C.d2,'driving'],
-    [8,  9,  '🚶 ~1.5km',          'walk',   C.d3,'foot'   ],
-    [10, 11, '🚌 ~3km (bus/taxi)', 'transit',C.d4,'driving'],
-    [11, 12, '🚇 ~3km (Line 6)',   'transit',C.d4,'driving'],
-    [12, 13, '🚇 ~12km (Line 2)',  'transit',C.d4,'driving'],
-    [14, 15, '🚶 ~1.5km',          'walk',   C.d5,'foot'   ],
-    [15, 16, '🚇 ~7km (subway)',   'transit',C.d5,'driving']
+    [0,  HOME,'🚌 ~45km (bus 6002)',   'transit',C.d1,'driving',1],
+    [HOME,1, '🚇 ~20 phút (T.2)',      'transit',C.d1,'driving',1],
+    [1,  2,  '🚶 ~0.7km',              'walk',   C.d1,'foot'   ,1],
+    [3,  4,  '🚶 ~1.2km',              'walk',   C.d2,'foot'   ,2],
+    [4,  5,  '🚶 ~0.6km',              'walk',   C.d2,'foot'   ,2],
+    [5,  6,  '🚇 ~7km (Line 3)',       'transit',C.d2,'driving',2],
+    [6,  7,  '🚕 ~8km (taxi)',         'transit',C.d2,'driving',2],
+    [8,  9,  '🚶 ~1.5km',              'walk',   C.d3,'foot'   ,3],
+    [10, 11, '🚌 ~3km (bus/taxi)',     'transit',C.d4,'driving',4],
+    [11, 12, '🚇 ~3km (Line 6)',       'transit',C.d4,'driving',4],
+    [12, 13, '🚇 ~12km (Line 2)',      'transit',C.d4,'driving',4],
+    [14, 15, '🚶 ~1.5km',              'walk',   C.d5,'foot'   ,5],
+    [15, 16, '🚇 ~7km (subway)',       'transit',C.d5,'driving',5],
+    [HOME,1, '🚇 ~20 phút (T.2)',      'transit',C.d6,'driving',6],
+    [1,  0,  '🚇 ~55km (AREX → ICN)',  'transit',C.d6,'driving',6]
   ];
 
   function makeIcon(num,color){
@@ -486,36 +709,65 @@ a{color:#029a45;text-decoration:none}
     });
   }
 
-  var allLL=[];
+  function makeHomeIcon(){
+    return L.divIcon({
+      className:'',iconSize:[42,42],iconAnchor:[21,21],popupAnchor:[0,-24],
+      html:'<div style="width:42px;height:42px;border-radius:50% 50% 50% 8px;background:'+HOME_C+
+           ';border:3px solid #fff;box-shadow:0 3px 10px rgba(0,0,0,0.45);display:flex;align-items:center;'+
+           'justify-content:center;font-size:19px;transform:rotate(-8deg)"><span style="transform:rotate(8deg)">🏠</span></div>'
+    });
+  }
+
+  /* mỗi lớp trên bản đồ đi kèm danh sách ngày mà nó thuộc về */
+  var items=[],cur='all';
+  function visible(it){ return cur==='all'||it.days.indexOf(cur)>-1; }
+  function sync(it){
+    if(visible(it)){ if(!map.hasLayer(it.layer)) it.layer.addTo(map); }
+    else if(map.hasLayer(it.layer)){ map.removeLayer(it.layer); }
+  }
+  function register(layer,days){
+    var it={layer:layer,days:days};
+    items.push(it); sync(it); return it;
+  }
+
+  var ptMarkers=[];
   pts.forEach(function(p){
-    allLL.push([p[1],p[2]]);
-    L.marker([p[1],p[2]],{icon:makeIcon(p[0],p[4])})
-      .bindPopup('<div style="min-width:170px"><strong style="font-size:13px;color:'+p[4]+'">'+
-        p[0]+'. '+p[3]+'</strong><br><span style="font-size:11px;color:#555">'+p[5]+'</span></div>')
-      .addTo(map);
+    var isHome=(p[0]===0);
+    var popup=isHome
+      ? '<div style="min-width:200px"><strong style="font-size:13px;color:'+p[4]+'">🏠 '+p[3]+
+        '</strong><br><span style="font-size:11px;color:#555;line-height:1.55">'+p[5]+
+        '</span><br><a href="https://www.google.com/maps/search/?api=1&query='+p[1]+','+p[2]+
+        '" target="_blank" style="font-size:11px;font-weight:700;color:#029a45">🗺 Mở trong Google Maps</a></div>'
+      : '<div style="min-width:170px"><strong style="font-size:13px;color:'+p[4]+'">'+
+        p[0]+'. '+p[3]+'</strong><br><span style="font-size:11px;color:#555">'+p[5]+'</span></div>';
+    var m=L.marker([p[1],p[2]],{icon:isHome?makeHomeIcon():makeIcon(p[0],p[4]),zIndexOffset:isHome?1000:0})
+      .bindPopup(popup,{maxWidth:265});
+    ptMarkers.push({ll:[p[1],p[2]],days:p[6]});
+    register(m,p[6]);
   });
 
   segs.forEach(function(s){
-    var fi=s[0],ti=s[1],label=s[2],naverMode=s[3],color=s[4],osrmProfile=s[5];
+    var fi=s[0],ti=s[1],label=s[2],naverMode=s[3],color=s[4],osrmProfile=s[5],day=s[6];
     var from=pts[fi],to=pts[ti];
     var naverUrl='https://map.naver.com/v5/directions/'+
       from[2]+','+from[1]+','+encodeURIComponent(from[3])+'/'+
       to[2]+','+to[1]+','+encodeURIComponent(to[3])+'/'+naverMode;
 
     function drawLine(coords){
-      var line=L.polyline(coords,{color:color,weight:2,dashArray:'5 8',opacity:0.5}).addTo(map);
+      var line=L.polyline(coords,{color:color,weight:2,dashArray:'5 8',opacity:0.5});
       line.on('click',function(){window.open(naverUrl,'_blank');});
       line.bindTooltip(
         '<div style="font-size:11px;line-height:1.5">🗺 <strong>Naver Maps</strong><br>'+label+'</div>',
         {direction:'top',sticky:true}
       );
+      register(line,[day]);
       var mid=coords[Math.floor(coords.length/2)];
-      L.marker(mid,{icon:L.divIcon({
+      register(L.marker(mid,{icon:L.divIcon({
         className:'',iconSize:null,iconAnchor:[20,8],
         html:'<div style="background:rgba(255,255,255,0.9);border:1px solid '+color+
              ';border-radius:8px;padding:1px 7px;font-size:9.5px;font-weight:700;color:'+color+
              ';white-space:nowrap;box-shadow:0 1px 3px rgba(0,0,0,0.15)">'+label+'</div>'
-      }),interactive:false}).addTo(map);
+      }),interactive:false}),[day]);
     }
 
     var osrmUrl='https://router.project-osrm.org/route/v1/'+osrmProfile+'/'+
@@ -533,7 +785,25 @@ a{color:#029a45;text-decoration:none}
       .catch(function(){ drawLine([[from[1],from[2]],[to[1],to[2]]]); });
   });
 
-  map.fitBounds(L.latLngBounds(allLL).pad(0.06));
+  function fit(){
+    var lls=[];
+    ptMarkers.forEach(function(p){ if(cur==='all'||p.days.indexOf(cur)>-1) lls.push(p.ll); });
+    map.fitBounds(L.latLngBounds(lls).pad(0.12));
+  }
+
+  var btns=[].slice.call(document.querySelectorAll('#dayFilter .leg-btn'));
+  btns.forEach(function(b){
+    b.addEventListener('click',function(){
+      btns.forEach(function(x){ x.classList.remove('is-on'); });
+      b.classList.add('is-on');
+      var v=b.getAttribute('data-day');
+      cur=(v==='all')?'all':parseInt(v,10);
+      items.forEach(sync);
+      fit();
+    });
+  });
+
+  fit();
 })();
 </script>
 
@@ -543,40 +813,41 @@ a{color:#029a45;text-decoration:none}
 <table class="tr-tbl">
   <thead><tr><th style="width:70px">Tuyến</th><th style="width:145px">Phương tiện</th><th style="width:75px">Thời gian</th><th style="width:75px">Khoảng cách</th><th style="width:90px">Chi phí</th><th>Ghi chú</th></tr></thead>
   <tbody>
-    <tr><td><div style="display:flex;align-items:center;gap:3px"><span class="sbadge" style="background:#888780">1</span><span style="font-size:10px;color:#aaa">→</span><span class="sbadge" style="background:#888780">2</span></div></td><td>🚇 Tàu AREX</td><td>43 phút</td><td>~55 km</td><td>5.000₩</td><td class="note-sm">ICN Terminal 1 → Seoul Station. Mua T-money 3.000₩ tại GS25 sân bay.</td></tr>
-    <tr><td><div style="display:flex;align-items:center;gap:3px"><span class="sbadge" style="background:#888780">2</span><span style="font-size:10px;color:#aaa">→</span><span class="sbadge" style="background:#888780">3</span></div></td><td>🚶 Đi bộ</td><td>10 phút</td><td>~700 m</td><td>Miễn phí</td><td class="note-sm">Đường phẳng từ phố Myeongdong ra chợ Namdaemun.</td></tr>
-    <tr><td><div style="display:flex;align-items:center;gap:3px"><span class="sbadge" style="background:#7F77DD">4</span><span style="font-size:10px;color:#aaa">→</span><span class="sbadge" style="background:#7F77DD">5</span></div></td><td>🚶 Đi bộ</td><td>15 phút</td><td>~1,2 km</td><td>Miễn phí</td><td class="note-sm">Đường dốc nhẹ lên đồi Bukchon – đi giày thoải mái.</td></tr>
-    <tr><td><div style="display:flex;align-items:center;gap:3px"><span class="sbadge" style="background:#7F77DD">5</span><span style="font-size:10px;color:#aaa">→</span><span class="sbadge" style="background:#7F77DD">6</span></div></td><td>🚶 Đi bộ</td><td>10 phút</td><td>~600 m</td><td>Miễn phí</td><td class="note-sm">Dốc xuống từ Bukchon vào phố Insadong.</td></tr>
-    <tr><td><div style="display:flex;align-items:center;gap:3px"><span class="sbadge" style="background:#7F77DD">6</span><span style="font-size:10px;color:#aaa">→</span><span class="sbadge" style="background:#7F77DD">7</span></div></td><td>🚇 Tàu ĐN Tuyến 3</td><td>25 phút</td><td>~7 km</td><td>~1.400₩</td><td class="note-sm">Ga Anguk → Hongdae 입구. T-money dùng được.</td></tr>
-    <tr><td><div style="display:flex;align-items:center;gap:3px"><span class="sbadge" style="background:#7F77DD">7</span><span style="font-size:10px;color:#aaa">→</span><span class="sbadge" style="background:#7F77DD">8</span></div></td><td>🚕 Taxi Kakao T</td><td>20 phút</td><td>~8 km</td><td>~12–15K₩/taxi</td><td class="note-sm">App Kakao T tiếng Anh, thẻ tín dụng OK. Chia 2 taxi cho 6 người.</td></tr>
-    <tr><td><div style="display:flex;align-items:center;gap:3px"><span class="sbadge" style="background:#378ADD">9</span><span style="font-size:10px;color:#aaa">→</span><span class="sbadge" style="background:#378ADD">10</span></div></td><td>🚶 Đi bộ</td><td>15 phút</td><td>~1,5 km</td><td>Miễn phí</td><td class="note-sm">LOL Park (Gran Seoul, tầng B1) → Chợ Gwangjang.</td></tr>
-    <tr><td><div style="display:flex;align-items:center;gap:3px"><span class="sbadge" style="background:#1D9E75">11</span><span style="font-size:10px;color:#aaa">→</span><span class="sbadge" style="background:#1D9E75">12</span></div></td><td>🚌 Xe buýt / Taxi</td><td>20 phút</td><td>~3 km</td><td>~1.200–6.000₩</td><td class="note-sm">Chân núi Namsan → Itaewon. Xe buýt số 05 hoặc taxi ~6.000₩.</td></tr>
-    <tr><td><div style="display:flex;align-items:center;gap:3px"><span class="sbadge" style="background:#1D9E75">12</span><span style="font-size:10px;color:#aaa">→</span><span class="sbadge" style="background:#1D9E75">13</span></div></td><td>🚇 Tàu ĐN Tuyến 6</td><td>15 phút</td><td>~3 km</td><td>~1.400₩</td><td class="note-sm">Ga Itaewon → Yaksu (đổi T.2) → Jamsil (Lotte World Tower).</td></tr>
-    <tr><td><div style="display:flex;align-items:center;gap:3px"><span class="sbadge" style="background:#1D9E75">13</span><span style="font-size:10px;color:#aaa">→</span><span class="sbadge" style="background:#1D9E75">14</span></div></td><td>🚇 Tàu ĐN Tuyến 2</td><td>25 phút</td><td>~12 km</td><td>~1.500₩</td><td class="note-sm">Ga Jamsil → ga Yeouinaru. Đi bộ 10 phút ra bờ sông Hán.</td></tr>
-    <tr><td><div style="display:flex;align-items:center;gap:3px"><span class="sbadge" style="background:#EF9F27">15</span><span style="font-size:10px;color:#aaa">→</span><span class="sbadge" style="background:#EF9F27">16</span></div></td><td>🚶 Đi bộ</td><td>15 phút</td><td>~1,5 km</td><td>Miễn phí</td><td class="note-sm">Từ COEX Mall ra đại lộ Garosu-gil cây xanh.</td></tr>
-    <tr><td><div style="display:flex;align-items:center;gap:3px"><span class="sbadge" style="background:#EF9F27">16</span><span style="font-size:10px;color:#aaa">→</span><span class="sbadge" style="background:#EF9F27">17</span></div></td><td>🚇 Tàu ĐN Tuyến 2</td><td>20 phút</td><td>~7 km</td><td>~1.500₩</td><td class="note-sm">Ga Gangnam → Dongdaemun H&amp;C Park – cửa 1.</td></tr>
-    <tr><td><div style="display:flex;align-items:center;gap:3px"><span class="sbadge" style="background:#B85C8A">✈</span></div></td><td>🚇 Tàu AREX</td><td>43 phút</td><td>~55 km</td><td>5.000₩</td><td class="note-sm">Ngày 2/9 · Seoul Station → ICN. Khởi hành ~14:00 🇰🇷 để kịp bay 19:55.</td></tr>
+    <tr><td data-label="Tuyến"><div style="display:flex;align-items:center;gap:3px"><span class="sbadge" style="background:var(--d1)">1</span><span style="font-size:10px;color:#aaa">→</span><span class="sbadge" style="background:var(--green)">🏠</span></div></td><td data-label="Phương tiện">🚌 Bus sân bay 6002</td><td data-label="Thời gian">60–80 phút</td><td data-label="Khoảng cách">~45 km</td><td data-label="Chi phí">~17.000₩</td><td data-label="Ghi chú" class="note-sm">ICN Terminal 1 → ga Hapjeong, đi thẳng, có khoang hành lý. Rẻ hơn: AREX tới ga Hongik Univ (~5.000₩) rồi 1 ga Tuyến 2 sang Hapjeong. Mua T-money 3.000₩ tại GS25 sân bay.</td></tr>
+    <tr><td data-label="Tuyến"><div style="display:flex;align-items:center;gap:3px"><span class="sbadge" style="background:var(--green)">🏠</span><span style="font-size:10px;color:#aaa">→</span><span class="sbadge" style="background:var(--d1)">2</span></div></td><td data-label="Phương tiện">🚇 Tàu ĐN Tuyến 2</td><td data-label="Thời gian">~20 phút</td><td data-label="Khoảng cách">~7 km</td><td data-label="Chi phí">~1.500₩</td><td data-label="Ghi chú" class="note-sm">Ga Hapjeong → Euljiro 1-ga (không đổi tuyến), đi bộ ~8 phút vào phố Myeongdong.</td></tr>
+    <tr><td data-label="Tuyến"><div style="display:flex;align-items:center;gap:3px"><span class="sbadge" style="background:var(--d1)">2</span><span style="font-size:10px;color:#aaa">→</span><span class="sbadge" style="background:var(--d1)">3</span></div></td><td data-label="Phương tiện">🚶 Đi bộ</td><td data-label="Thời gian">10 phút</td><td data-label="Khoảng cách">~700 m</td><td data-label="Chi phí">Miễn phí</td><td data-label="Ghi chú" class="note-sm">Đường phẳng từ phố Myeongdong ra chợ Namdaemun.</td></tr>
+    <tr><td data-label="Tuyến"><div style="display:flex;align-items:center;gap:3px"><span class="sbadge" style="background:var(--d2)">4</span><span style="font-size:10px;color:#aaa">→</span><span class="sbadge" style="background:var(--d2)">5</span></div></td><td data-label="Phương tiện">🚶 Đi bộ</td><td data-label="Thời gian">15 phút</td><td data-label="Khoảng cách">~1,2 km</td><td data-label="Chi phí">Miễn phí</td><td data-label="Ghi chú" class="note-sm">Đường dốc nhẹ lên đồi Bukchon – đi giày thoải mái.</td></tr>
+    <tr><td data-label="Tuyến"><div style="display:flex;align-items:center;gap:3px"><span class="sbadge" style="background:var(--d2)">5</span><span style="font-size:10px;color:#aaa">→</span><span class="sbadge" style="background:var(--d2)">6</span></div></td><td data-label="Phương tiện">🚶 Đi bộ</td><td data-label="Thời gian">10 phút</td><td data-label="Khoảng cách">~600 m</td><td data-label="Chi phí">Miễn phí</td><td data-label="Ghi chú" class="note-sm">Dốc xuống từ Bukchon vào phố Insadong.</td></tr>
+    <tr><td data-label="Tuyến"><div style="display:flex;align-items:center;gap:3px"><span class="sbadge" style="background:var(--d2)">6</span><span style="font-size:10px;color:#aaa">→</span><span class="sbadge" style="background:var(--d2)">7</span></div></td><td data-label="Phương tiện">🚇 Tàu ĐN Tuyến 3</td><td data-label="Thời gian">25 phút</td><td data-label="Khoảng cách">~7 km</td><td data-label="Chi phí">~1.400₩</td><td data-label="Ghi chú" class="note-sm">Ga Anguk → Hongdae 입구. T-money dùng được.</td></tr>
+    <tr><td data-label="Tuyến"><div style="display:flex;align-items:center;gap:3px"><span class="sbadge" style="background:var(--d2)">7</span><span style="font-size:10px;color:#aaa">→</span><span class="sbadge" style="background:var(--d2)">8</span></div></td><td data-label="Phương tiện">🚕 Taxi Kakao T</td><td data-label="Thời gian">20 phút</td><td data-label="Khoảng cách">~8 km</td><td data-label="Chi phí">~12–15K₩/taxi</td><td data-label="Ghi chú" class="note-sm">App Kakao T tiếng Anh, thẻ tín dụng OK. Chia 2 taxi cho 6 người.</td></tr>
+    <tr><td data-label="Tuyến"><div style="display:flex;align-items:center;gap:3px"><span class="sbadge" style="background:var(--d3)">9</span><span style="font-size:10px;color:#aaa">→</span><span class="sbadge" style="background:var(--d3)">10</span></div></td><td data-label="Phương tiện">🚶 Đi bộ</td><td data-label="Thời gian">15 phút</td><td data-label="Khoảng cách">~1,5 km</td><td data-label="Chi phí">Miễn phí</td><td data-label="Ghi chú" class="note-sm">LOL Park (Gran Seoul, tầng B1) → Chợ Gwangjang.</td></tr>
+    <tr><td data-label="Tuyến"><div style="display:flex;align-items:center;gap:3px"><span class="sbadge" style="background:var(--d4)">11</span><span style="font-size:10px;color:#aaa">→</span><span class="sbadge" style="background:var(--d4)">12</span></div></td><td data-label="Phương tiện">🚌 Xe buýt / Taxi</td><td data-label="Thời gian">20 phút</td><td data-label="Khoảng cách">~3 km</td><td data-label="Chi phí">~1.200–6.000₩</td><td data-label="Ghi chú" class="note-sm">Chân núi Namsan → Itaewon. Xe buýt số 05 hoặc taxi ~6.000₩.</td></tr>
+    <tr><td data-label="Tuyến"><div style="display:flex;align-items:center;gap:3px"><span class="sbadge" style="background:var(--d4)">12</span><span style="font-size:10px;color:#aaa">→</span><span class="sbadge" style="background:var(--d4)">13</span></div></td><td data-label="Phương tiện">🚇 Tàu ĐN Tuyến 6</td><td data-label="Thời gian">15 phút</td><td data-label="Khoảng cách">~3 km</td><td data-label="Chi phí">~1.400₩</td><td data-label="Ghi chú" class="note-sm">Ga Itaewon → Yaksu (đổi T.2) → Jamsil (Lotte World Tower).</td></tr>
+    <tr><td data-label="Tuyến"><div style="display:flex;align-items:center;gap:3px"><span class="sbadge" style="background:var(--d4)">13</span><span style="font-size:10px;color:#aaa">→</span><span class="sbadge" style="background:var(--d4)">14</span></div></td><td data-label="Phương tiện">🚇 Tàu ĐN Tuyến 2</td><td data-label="Thời gian">25 phút</td><td data-label="Khoảng cách">~12 km</td><td data-label="Chi phí">~1.500₩</td><td data-label="Ghi chú" class="note-sm">Ga Jamsil → ga Yeouinaru. Đi bộ 10 phút ra bờ sông Hán.</td></tr>
+    <tr><td data-label="Tuyến"><div style="display:flex;align-items:center;gap:3px"><span class="sbadge" style="background:var(--d5)">15</span><span style="font-size:10px;color:#aaa">→</span><span class="sbadge" style="background:var(--d5)">16</span></div></td><td data-label="Phương tiện">🚶 Đi bộ</td><td data-label="Thời gian">15 phút</td><td data-label="Khoảng cách">~1,5 km</td><td data-label="Chi phí">Miễn phí</td><td data-label="Ghi chú" class="note-sm">Từ COEX Mall ra đại lộ Garosu-gil cây xanh.</td></tr>
+    <tr><td data-label="Tuyến"><div style="display:flex;align-items:center;gap:3px"><span class="sbadge" style="background:var(--d5)">16</span><span style="font-size:10px;color:#aaa">→</span><span class="sbadge" style="background:var(--d5)">17</span></div></td><td data-label="Phương tiện">🚇 Tàu ĐN Tuyến 2</td><td data-label="Thời gian">20 phút</td><td data-label="Khoảng cách">~7 km</td><td data-label="Chi phí">~1.500₩</td><td data-label="Ghi chú" class="note-sm">Ga Gangnam → Dongdaemun H&amp;C Park – cửa 1.</td></tr>
+    <tr><td data-label="Tuyến"><div style="display:flex;align-items:center;gap:3px"><span class="sbadge" style="background:var(--d6)">2</span><span style="font-size:10px;color:#aaa">→</span><span class="sbadge" style="background:var(--d6)">✈</span></div></td><td data-label="Phương tiện">🚇 Tàu AREX</td><td data-label="Thời gian">43 phút</td><td data-label="Khoảng cách">~55 km</td><td data-label="Chi phí">5.000₩</td><td data-label="Ghi chú" class="note-sm">Ngày 2/9 · Myeongdong → ga Seoul Station (1 ga) → AREX ra ICN. Khởi hành ~14:30 🇰🇷 để kịp bay 19:55. Hoặc bus 6002 từ ga Hapjeong.</td></tr>
   </tbody>
 </table>
 </div>
 
 <!-- CHI PHÍ -->
 <div class="sec-hdr"><div class="sec-ico">💰</div><span class="sec-tit">Ước tính chi phí · Budget ~25 triệu/người</span></div>
-<div style="background:#1a2332;color:#fff;border-radius:10px;padding:14px 20px;margin-bottom:14px;display:flex;justify-content:space-between;align-items:center">
-  <div><div style="font-size:12px;color:rgba(255,255,255,0.6);margin-bottom:3px">Mục tiêu ngân sách · Plan 1 Seoul Only</div><div style="font-size:11px;color:rgba(255,255,255,0.4)">Không có KTX Seoul–Busan · Tiết kiệm hơn Plan 2 ~1 triệu/người</div></div>
-  <div style="text-align:right"><div style="font-size:22px;font-weight:700;color:#03C75A">~25.000.000 ₫</div><div style="font-size:11px;color:rgba(255,255,255,0.45);margin-top:2px">× 6 người = ~150.000.000 ₫</div></div>
+<div class="price-highlight">
+  <div><div class="ph-label">Mục tiêu ngân sách · Plan 1 Seoul Only</div><div class="ph-lsub">Không có KTX Seoul–Busan · Tiết kiệm hơn Plan 2 ~1 triệu/người</div></div>
+  <div><div class="ph-val">~25.000.000 ₫</div><div class="ph-sub">× 6 người = ~150.000.000 ₫</div></div>
 </div>
 <div class="budget-wrap">
-  <div class="budget-row hi"><span class="bk"><strong>✈ Vé máy bay Parata Air (khứ hồi HAN–ICN)</strong><br><span style="font-size:11px;color:#029a45">Đã xác nhận · 15kg ký gửi included</span></span><span class="bv" style="color:#029a45">8.150.000 ₫/người</span></div>
-  <div class="budget-row"><span class="bk">🏨 Khách sạn Seoul 5 đêm (chia 3 phòng đôi)<br><span style="font-size:11px;color:#888">Ibis Styles/Travelodge Myeongdong · 1 phòng 2F + 2 phòng 4M</span></span><span class="bv">~3.200.000 ₫/người</span></div>
+  <div class="budget-row hi"><span class="bk"><strong>✈ Vé máy bay Parata Air (khứ hồi HAN–ICN)</strong><br><span class="bk-sub ok">Đã xác nhận · 15kg ký gửi included</span></span><span class="bv" style="color:var(--green-d)">8.150.000 ₫/người</span></div>
+  <div class="budget-row"><span class="bk">🏠 Airbnb Hapjeong 5 đêm (nguyên căn 3 phòng ngủ)<br><span class="bk-sub">My Blooming Stay 201 · Mapo-gu · 6 người chia 3 phòng · <strong>tạm tính – thay bằng giá Airbnb thực tế khi chốt</strong></span></span><span class="bv">~3.200.000 ₫/người</span></div>
   <div class="budget-row"><span class="bk">🚇 Di chuyển nội địa Seoul (T-money, taxi, cáp treo…)</span><span class="bv">~900.000 ₫/người</span></div>
-  <div class="budget-row"><span class="bk">🍽 Ăn uống (5 ngày × 3 bữa)<br><span style="font-size:11px;color:#888">~150.000–200.000₩/ngày/người</span></span><span class="bv">~2.700.000 ₫/người</span></div>
+  <div class="budget-row"><span class="bk">🍽 Ăn uống (5 ngày × 3 bữa)<br><span class="bk-sub">~150.000–200.000₩/ngày/người</span></span><span class="bv">~2.700.000 ₫/người</span></div>
   <div class="budget-row"><span class="bk">🎫 Vé tham quan (N Seoul Tower, Lotte Sky, LOL Park, Gyeongbokgung…)</span><span class="bv">~1.200.000 ₫/người</span></div>
   <div class="budget-row"><span class="bk">🛍 Mua sắm, mỹ phẩm, quà lưu niệm</span><span class="bv">~5.000.000 ₫/người</span></div>
   <div class="budget-row"><span class="bk">🔐 Chi phí dự phòng (phát sinh, đổi tiền chênh lệch…)</span><span class="bv">~3.850.000 ₫/người</span></div>
 </div>
 <div class="budget-total"><span class="bt-lbl">TỔNG ước tính / người (đã bao gồm mua sắm)</span><span class="bt-val">~25.000.000 ₫</span></div>
-<p style="font-size:11px;color:#888;margin-top:8px">💡 Plan 1 (Seoul only) không có chi phí KTX (~1 triệu ₫), dành phần đó cho mua sắm hoặc vé tham quan cao cấp hơn (Lotte Sky, Seaworld…). Tỷ giá: 1.000 ₫ ≈ 56₩. Khách sạn 3 phòng đôi cho 6 người (2 nữ 1 phòng, 4 nam 2 phòng).</p>
+<p class="wrap-note">💡 Plan 1 (Seoul only) không có chi phí KTX (~1 triệu ₫), dành phần đó cho mua sắm hoặc vé tham quan cao cấp hơn (Lotte Sky, Seaworld…). Tỷ giá: 1.000 ₫ ≈ 56₩. Chỗ ở là Airbnb nguyên căn 3 phòng ngủ tại Hapjeong (2 nữ 1 phòng, 4 nam 2 phòng) – chưa cập nhật giá thuê thực tế.</p>
 
 </div>
 
