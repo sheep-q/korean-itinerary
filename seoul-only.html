@@ -140,6 +140,13 @@ a{color:var(--green-d);text-decoration:none}
 .rest-map-link:hover{background:var(--green-l);border-color:var(--green)}
 
 /* ---------- bản đồ ---------- */
+.flag{display:inline-block;margin-left:7px;font-size:10px;font-weight:700;padding:2px 8px;border-radius:20px;vertical-align:2px;white-space:nowrap;letter-spacing:.01em}
+.flag-hard{background:#fff4e6;color:#a1620a;border:1px solid #f3d9b0}
+.flag-easy{background:var(--green-l);color:var(--green-d);border:1px solid var(--green-b)}
+.box-care{background:linear-gradient(180deg,#fff8fb,#fdeef5);border:1px solid #f2d2e0;border-left:4px solid #d9789f;border-radius:var(--r);padding:15px 17px;font-size:13px;line-height:1.7;margin-bottom:16px}
+.box-care .box-label{display:block;font-size:10.5px;font-weight:700;text-transform:uppercase;letter-spacing:.07em;margin-bottom:9px;color:#a8447a}
+.box-care ul{margin-left:16px;font-size:12.5px;color:#7d3f5c;line-height:1.8}
+.box-care li{margin-bottom:5px}
 .box-flat,.tags-flat{margin-left:0;margin-right:0}
 .map-filter{margin-bottom:12px}
 .map-filter-lbl{display:block;font-size:10.5px;font-weight:700;text-transform:uppercase;letter-spacing:.07em;color:var(--ink-3);margin-bottom:8px}
@@ -274,6 +281,7 @@ a{color:var(--green-d);text-decoration:none}
   .day-block{page-break-inside:avoid;break-inside:avoid;margin-bottom:16px}
   .sec-hdr{page-break-after:avoid;break-after:avoid;padding-top:20px}
   .map-box{height:330px}
+  .flag,.box-care{-webkit-print-color-adjust:exact!important;print-color-adjust:exact!important}
   .rest-map-link{display:none}
   .leg-btn{box-shadow:none!important}
   .tr-tbl{font-size:10.5px}
@@ -313,12 +321,12 @@ a{color:var(--green-d);text-decoration:none}
 
 <div class="price-highlight">
   <div>
-    <div class="ph-label">Parata Air · Khứ hồi · Đã bao gồm 15kg hành lý ký gửi</div>
-    <div class="ph-lsub">Hãng hàng không mới · Loại vé: Cơ bản</div>
+    <div class="ph-label">Parata Air · Khứ hồi · 10kg xách tay + 15kg ký gửi · 6/6 vé đã đặt xong</div>
+    <div class="ph-lsub">6 vé mua rải rác 17/5 – 2/6/2026, giá từ 6.932.600₫ đến 7.970.350₫</div>
   </div>
   <div>
-    <div class="ph-val">8.150.000 ₫/người</div>
-    <div class="ph-sub">× 6 người = 48.900.000 ₫</div>
+    <div class="ph-val">~7.552.000 ₫/người</div>
+    <div class="ph-sub">Tổng thực tế 6 vé = 45.311.260 ₫</div>
   </div>
 </div>
 
@@ -329,14 +337,14 @@ a{color:var(--green-d);text-decoration:none}
     <div class="f-row"><span class="f-key">Khởi hành</span><span class="f-val">HAN 00:20 🇻🇳 (Thứ Sáu, 28/8/2026)</span></div>
     <div class="f-row"><span class="f-key">Đến nơi</span><span class="f-val">ICN 06:40 🇰🇷 (Thứ Sáu, 28/8/2026)</span></div>
     <div class="f-row"><span class="f-key">Check-in tại HAN</span><span class="f-val green">21:30–22:00 🇻🇳 Thứ Năm 27/8</span></div>
-    <div class="f-row"><span class="f-key">Hành lý</span><span class="f-val">15kg ký gửi (đã bao gồm)</span></div>
+    <div class="f-row"><span class="f-key">Hành lý</span><span class="f-val">10kg xách tay + 15kg ký gửi</span></div>
   </div>
   <div class="flight-card">
     <div class="flight-badge">✈ Chiều về</div>
     <div class="f-row"><span class="f-key">Hãng bay</span><span class="f-val">Parata Air</span></div>
     <div class="f-row"><span class="f-key">Khởi hành</span><span class="f-val">ICN 19:55 🇰🇷 (Thứ Tư, 2/9/2026)</span></div>
     <div class="f-row"><span class="f-key">Đến nơi</span><span class="f-val">HAN 22:50 🇻🇳 (Thứ Tư, 2/9/2026)</span></div>
-    <div class="f-row"><span class="f-key">Loại vé</span><span class="f-val">Cơ bản · 15kg ký gửi included</span></div>
+    <div class="f-row"><span class="f-key">Hành lý</span><span class="f-val">10kg xách tay + 15kg ký gửi</span></div>
   </div>
 </div>
 
@@ -345,8 +353,8 @@ a{color:var(--green-d);text-decoration:none}
   <ul>
     <li><strong>Có mặt tại HAN lúc 21:30–22:00 🇻🇳 tối Thứ Năm 27/8/2026</strong> – cất cánh 00:20 🇻🇳 rạng sáng Thứ Sáu 28/8/2026</li>
     <li>Plan 1 – chỉ ở Seoul, không xuống Busan – tiết kiệm hơn và không mất thời gian di chuyển</li>
-    <li>Hành lý ký gửi 15kg/người đã bao gồm trong giá vé Parata Air</li>
-    <li>Công dân Việt Nam không cần visa vào Hàn Quốc ≤45 ngày (xác nhận K-ETA nếu yêu cầu)</li>
+    <li>Hành lý: 10kg xách tay + 15kg ký gửi/người, đã bao gồm trong giá vé Parata Air</li>
+    <li>Visa Hàn Quốc <strong>đã xin và đã trả phí</strong>: 14.310.000₫ cho cả nhóm (~2.385.000₫/người) – mang theo bản in visa + hộ chiếu</li>
   </ul>
 </div>
 
@@ -359,8 +367,8 @@ a{color:var(--green-d);text-decoration:none}
     <div class="ph-lsub">3 phòng ngủ · 5 giường · 2 phòng tắm · tối đa 8 khách · Host: T.U Kim (Superhost)</div>
   </div>
   <div>
-    <div class="ph-val">★ 4,94 · 49 đánh giá</div>
-    <div class="ph-sub">5 đêm · 28/8 → 2/9/2026 · 6 người</div>
+    <div class="ph-val">29.004.481 ₫ / 5 đêm</div>
+    <div class="ph-sub">= 4.834.080 ₫/người · ★ 4,94 (49 đánh giá) · đã đặt xong</div>
   </div>
 </div>
 
@@ -371,7 +379,7 @@ a{color:var(--green-d);text-decoration:none}
     <div class="f-row"><span class="f-key">Loại</span><span class="f-val">Toàn bộ căn hộ – không chia sẻ</span></div>
     <div class="f-row"><span class="f-key">Quy mô</span><span class="f-val">3 phòng ngủ · 2 phòng tắm · 8 khách</span></div>
     <div class="f-row"><span class="f-key">Giường</span><span class="f-val">P1: queen + đơn lớn · P2: queen · P3: queen + sofa đơn</span></div>
-    <div class="f-row"><span class="f-key">Nhận phòng</span><span class="f-val green">15:00–00:00 🇰🇷 · tự nhận bằng mã cửa</span></div>
+    <div class="f-row"><span class="f-key">Nhận phòng</span><span class="f-val green">15:00 🇰🇷 · tự nhận bằng mã cửa · <strong>chủ nhà hỗ trợ nhận phòng sớm</strong></span></div>
     <div class="f-row"><span class="f-key">Trả phòng</span><span class="f-val">Trước 11:00 🇰🇷 Thứ Tư 2/9</span></div>
   </div>
   <div class="flight-card">
@@ -380,15 +388,15 @@ a{color:var(--green-d);text-decoration:none}
     <div class="f-row"><span class="f-key">Ga Hapjeong (T.2 &amp; T.6)</span><span class="f-val">6 phút đi bộ</span></div>
     <div class="f-row"><span class="f-key">Phố Hongdae</span><span class="f-val">7 phút đi bộ</span></div>
     <div class="f-row"><span class="f-key">Công viên sông Hàn</span><span class="f-val">4 phút đi bộ</span></div>
-    <div class="f-row"><span class="f-key">Từ sân bay ICN</span><span class="f-val green">Bus Limousine 6002 → Ga Hapjeong (~40 phút, đi thẳng)</span></div>
-    <div class="f-row"><span class="f-key">Quanh nhà</span><span class="f-val">7-Eleven 1' · Olive Young 5' · Daiso 5'</span></div>
+    <div class="f-row"><span class="f-key">Từ sân bay ICN</span><span class="f-val green">Xe riêng đã đặt trong quỹ (~₩85.000/chiều cả nhóm) · chủ nhà cũng hỗ trợ gọi VAN</span></div>
+    <div class="f-row"><span class="f-key">Tiện nghi</span><span class="f-val">Máy giặt + sấy · gửi vali được · 7-Eleven 1'</span></div>
   </div>
 </div>
 
 <div class="box box-tips box-flat"><span class="box-label">🏡 Nội quy nhà &amp; lưu ý</span><ul>
   <li>Cởi giày trong nhà (có sẵn dép) · Tòa nhà <strong>không hút thuốc</strong>, kể cả vape</li>
   <li>Không tổ chức tiệc / tụ họp ồn · Không nướng KBBQ trong nhà · Giữ yên tĩnh sau 22:00 🇰🇷</li>
-  <li>Nhận phòng từ 15:00 – nếu tới sớm (hạ cánh 06:40) cần gửi hành lý hoặc hỏi chủ nhà về early check-in</li>
+  <li>Chủ nhà <strong>hỗ trợ nhận phòng sớm và gửi vali</strong> (theo bảng Homestay của nhóm) – nhắn xin trước để chắc chắn, vì hạ cánh 06:40 mà giờ chuẩn là 15:00</li>
   <li>Chính sách hủy: miễn phí trong 24 giờ đầu · hoàn tiền một phần nếu hủy trước 21/8/2026</li>
   <li>Thời gian tới các khu (theo chủ nhà): Itaewon 15' · Yeouido 15' · Ga Seoul 20' · Myeongdong 20' · Gwanghwamun 25' · Gangnam 35'</li>
   <li>Thông tin lấy từ tin đăng Airbnb – địa chỉ chính xác sẽ được cấp sau khi đặt; ghim trên bản đồ là <strong>vị trí gần đúng</strong> do Airbnb công bố</li>
@@ -397,6 +405,51 @@ a{color:var(--green-d);text-decoration:none}
 </div>
 
 <div class="tags tags-flat"><span class="tag">Tự nhận phòng bằng mã cửa</span><span class="tag">Ga Hapjeong 6 phút</span><span class="tag">Sông Hàn 4 phút</span><span class="tag">Hongdae 7 phút</span><span class="tag">Bus 6002 từ ICN</span></div>
+
+<!-- ĐI CÙNG BÀ BẦU -->
+<div class="sec-hdr"><div class="sec-ico">🤰</div><span class="sec-tit">Đi cùng bà bầu 4 tháng · lưu ý cho cả nhóm</span></div>
+
+<div class="box-care"><span class="box-label">⚠ Nguyên tắc chung của lịch trình này</span>
+<ul>
+  <li><strong>Chặng nào trên ~700 m thì đi taxi</strong>, không đi bộ – Kakao T, chia 2 xe cho 6 người nên mỗi chặng chỉ ~5.000–9.000₩/xe</li>
+  <li><strong>Tránh đổi tuyến tàu điện ngầm</strong> khi có thể: mỗi lần đổi tuyến ở Seoul là vài lượt cầu thang và hành lang dài</li>
+  <li>Mỗi toa tàu có <strong>ghế ưu tiên cho phụ nữ mang thai (임산부 배려석)</strong> sơn hồng – người Hàn nhường rất tự nhiên, cứ ngồi</li>
+  <li>Mọi ga tàu điện ngầm đều có <strong>nhà vệ sinh miễn phí và sạch</strong> – tiện để tính điểm nghỉ</li>
+  <li>Nhà ở Hapjeong là điểm nghỉ giữa ngày: Hongdae 7 phút đi bộ, Yeouido ~15 phút, Gyeongbokgung ~20 phút taxi</li>
+  <li>Ký hiệu <span class="flag flag-hard">dốc / nhiều đi bộ</span> trong lịch trình = chặng nặng, có thể ngồi cafe chờ nhóm; <span class="flag flag-easy">nhẹ nhàng</span> = phẳng, có chỗ ngồi</li>
+</ul>
+</div>
+
+<div class="flight-grid">
+  <div class="flight-card">
+    <div class="flight-badge">🍽 Món nên tránh</div>
+    <div class="f-row"><span class="f-key">Cua ngâm tương</span><span class="f-val">Cua <strong>sống</strong> ngâm – Ngày 5</span></div>
+    <div class="f-row"><span class="f-key">Yukhoe (육회)</span><span class="f-val">Bò <strong>sống</strong> – chợ Gwangjang Ngày 3</span></div>
+    <div class="f-row"><span class="f-key">Hoe / sashimi, trứng lòng đào</span><span class="f-val">Đồ chưa nấu chín</span></div>
+    <div class="f-row"><span class="f-key">Rượu bia</span><span class="f-val">Makgeolli · chimaek · bia bên sông Hàn</span></div>
+    <div class="f-row"><span class="f-key">Ăn được thoải mái</span><span class="f-val green">Samgyetang, samgyeopsal, kalguksu, bibimbap, tteokbokki, gà rán</span></div>
+  </div>
+  <div class="flight-card">
+    <div class="flight-badge">🧳 Chuẩn bị trước khi bay</div>
+    <div class="f-row"><span class="f-key">Nhận phòng sớm 28/8</span><span class="f-val green">Việc cần làm đầu tiên – xem lý do bên dưới</span></div>
+    <div class="f-row"><span class="f-key">Chuyến bay đêm 00:20</span><span class="f-val">Chọn ghế lối đi để dễ đứng lên đi lại</span></div>
+    <div class="f-row"><span class="f-key">Giấy tờ</span><span class="f-val">Hồ sơ khám thai + danh sách thuốc (tên gốc)</span></div>
+    <div class="f-row"><span class="f-key">Bảo hiểm</span><span class="f-val">Chọn loại có bảo hiểm thai kỳ</span></div>
+    <div class="f-row"><span class="f-key">Thời tiết</span><span class="f-val">Cuối tháng 8 Seoul còn ~30°C ẩm – tránh đi bộ giữa trưa</span></div>
+  </div>
+</div>
+
+<div class="box-care"><span class="box-label">🏠 Vì sao nhận phòng sớm là ưu tiên số 1</span>
+<ul>
+  <li>Hạ cánh <strong>06:40</strong> nhưng giờ nhận phòng chuẩn là <strong>15:00</strong> – hơn 8 tiếng chờ sau một chuyến bay đêm</li>
+  <li>Tin tốt: bảng Homestay của nhóm ghi chủ nhà <strong>hỗ trợ nhận phòng sớm</strong> và <strong>cho gửi vali</strong> – nhắn chủ nhà (T.U Kim) chốt việc này <strong>trước ngày đi</strong>, đừng đợi đến sát giờ</li>
+  <li>Chủ nhà dọn phòng trong khung 11:00–15:00, nên nếu khách trước đi sớm thì khả năng vào sớm càng cao</li>
+  <li>Xin được nhận phòng sớm = bà bầu ngủ bù được buổi sáng, cả nhóm nhẹ hẳn Ngày 1</li>
+  <li>Xe sân bay đã tính trong quỹ (xe riêng, không phải bus) – ngồi thẳng từ ICN về nhà, không phải đổi tàu kéo vali</li>
+</ul>
+</div>
+
+<p class="wrap-note">💡 Đây là gợi ý sắp xếp đi lại, không phải tư vấn y tế – <strong>nên hỏi bác sĩ sản khoa trước chuyến đi</strong> để có danh sách món cần tránh và giới hạn vận động chính xác cho từng người.</p>
 
 <div class="sec-hdr"><div class="sec-ico">🗺️</div><span class="sec-tit">Lịch trình ngày qua ngày</span></div>
 
@@ -409,12 +462,12 @@ a{color:var(--green-d);text-decoration:none}
   <div class="day-summary">Hạ cánh sân bay Incheon lúc 06:40 giờ Hàn Quốc sau chuyến bay đêm từ Hà Nội. Làm thủ tục nhập cảnh, di chuyển về Hapjeong bằng xe buýt sân bay 6002, gửi hành lý chờ tới giờ nhận phòng 15:00, rồi thả mình vào mê cung phố ẩm thực và mua sắm sôi động nhất Seoul.</div>
   <div class="activities">
     <div class="act-row"><div class="act-time">06:40 🇰🇷</div><div><div class="act-name">Hạ cánh sân bay Incheon (ICN)</div><div class="act-desc">Nhập cảnh, nhận hành lý · Mua T-money tại GS25 (cọc 3.000₩) · Ra tầng 1 bắt bus sân bay.</div></div></div>
-    <div class="act-row"><div class="act-time">07:30 🇰🇷</div><div><div class="act-name">Xe buýt sân bay 6002 về ga Hapjeong</div><div class="act-desc">ICN → ga Hapjeong, đi thẳng · ~17.000₩/người · 60–80 phút · Rẻ hơn: AREX tới ga Hongik Univ (~5.000₩) + 1 ga Tuyến 2.</div></div></div>
-    <div class="act-row"><div class="act-time">Buổi sáng</div><div><div class="act-name">Gửi hành lý &amp; ăn sáng quanh Hapjeong</div><div class="act-desc">Nhận phòng từ 15:00, nhà không có lễ tân → gửi vali tủ khóa ga Hapjeong · Cà phê Hapjeong · Sông Hàn 4 phút đi bộ.</div></div></div>
+    <div class="act-row"><div class="act-time">07:30 🇰🇷</div><div><div class="act-name">Xe riêng từ sân bay về Hapjeong <span class="flag flag-easy">nhẹ nhàng</span></div><div class="act-desc">Đã tính trong quỹ (~₩85.000/chiều cho cả nhóm) · Ngồi thẳng một chuyến về nhà, không phải kéo vali đổi tàu – quan trọng với bà bầu · Chủ nhà cũng hỗ trợ gọi VAN (báo ~270.000₫/người/chiều – nhóm cần chốt lại con số).</div></div></div>
+    <div class="act-row"><div class="act-time">Buổi sáng</div><div><div class="act-name">Nghỉ &amp; ăn sáng quanh Hapjeong <span class="flag flag-easy">nhẹ nhàng</span></div><div class="act-desc">Nếu xin được nhận phòng sớm thì vào nghỉ luôn · Chưa được thì gửi vali cho chủ nhà rồi ngồi cafe Hapjeong · Đừng đi bộ nhiều buổi sáng này – cả nhóm vừa bay đêm.</div></div></div>
     <div class="act-row"><div class="act-time">15:00 🇰🇷</div><div><div class="act-name">Nhận phòng Airbnb – My Blooming Stay 201</div><div class="act-desc">Tự mở bằng mã số cửa · Nguyên căn 3 phòng ngủ · 2 phòng tắm · Cất hành lý, nghỉ lấy sức.</div></div></div>
-    <div class="act-row"><div class="act-time">16:30 🇰🇷</div><div><div class="act-name">Khu phố ẩm thực Myeongdong</div><div class="act-desc">Tuyến 2 → Euljiro 1-ga + đi bộ 8 phút (~20 phút, ~1.500₩) · Thử tteokbokki, hotteok, kem bắp, gà mật ong · Olive Young, Innisfree.</div></div></div>
-    <div class="act-row"><div class="act-time">18:00 🇰🇷</div><div><div class="act-name">Chợ Namdaemun (남대문시장)</div><div class="act-desc">Chợ truyền thống lớn nhất Hàn · Quần áo, quà lưu niệm, hải sản khô · Đi bộ 10 phút từ Myeongdong.</div></div></div>
-    <div class="act-row"><div class="act-time">Tối</div><div><div class="act-name">Ăn tối tại Myeongdong</div><div class="act-desc">Samgyeopsal hoặc chimaek ngay trên phố · Về Hapjeong bằng Tuyến 2 (~20 phút), nghỉ sớm.</div></div></div>
+    <div class="act-row"><div class="act-time">16:30 🇰🇷</div><div><div class="act-name">Khu phố ẩm thực Myeongdong</div><div class="act-desc">Taxi ~25 phút (~15.000₩/xe, chia 2 xe) để tránh 8 phút đi bộ từ ga · Hoặc Tuyến 2 → Euljiro 1-ga · Thử tteokbokki, hotteok, kem bắp, gà mật ong · Olive Young, Innisfree.</div></div></div>
+    <div class="act-row"><div class="act-time">18:00 🇰🇷</div><div><div class="act-name">Chợ Namdaemun (남대문시장) <span class="flag flag-hard">tùy chọn nếu mệt</span></div><div class="act-desc">Chợ truyền thống lớn nhất Hàn · Quần áo, quà lưu niệm, hải sản khô · Đi bộ 10 phút đường phẳng từ Myeongdong – chợ đông và phải đứng nhiều, bỏ được nếu bà bầu mỏi chân.</div></div></div>
+    <div class="act-row"><div class="act-time">Tối</div><div><div class="act-name">Ăn tối tại Myeongdong</div><div class="act-desc">Samgyeopsal hoặc chimaek ngay trên phố (bà bầu bỏ phần bia) · Về Hapjeong bằng taxi ~25 phút, nghỉ sớm.</div></div></div>
   </div>
   <div class="box box-dining"><span class="box-label">🍽 Nhà hàng gợi ý – Ngày 1 · Myeongdong</span>
   <div class="rest-list">
@@ -447,12 +500,12 @@ a{color:var(--green-d);text-decoration:none}
   </div>
   <div class="day-summary">Ngày dài nhất hành trình — khám phá Seoul từ cung điện ngàn năm đến khu giải trí sôi động của giới trẻ. Buổi sáng mang không khí hoàng gia, buổi chiều ngập nghệ thuật và K-pop, buổi tối lãng mạn bên sông Hán.</div>
   <div class="activities">
-    <div class="act-row"><div class="act-time">09:00 🇰🇷</div><div><div class="act-name">Cung điện Gyeongbokgung (경복궁)</div><div class="act-desc">Cung điện triều Joseon, 1395 · Vé 3.000₩ · Lễ đổi gác 10:00 &amp; 14:00 (miễn phí) · Thuê hanbok chụp ảnh trong sân.</div></div></div>
-    <div class="act-row"><div class="act-time">11:00 🇰🇷</div><div><div class="act-name">Làng Hanok Bukchon (북촌한옥마을)</div><div class="act-desc">~600 nhà hanok mái ngói · Điểm chụp đẹp: dốc Gahoe-ro 11-gil · Giữ yên tĩnh – có dân sinh sống.</div></div></div>
+    <div class="act-row"><div class="act-time">09:00 🇰🇷</div><div><div class="act-name">Cung điện Gyeongbokgung (경복궁) <span class="flag flag-easy">nhẹ nhàng</span></div><div class="act-desc">Taxi ~20 phút từ nhà · Sân phẳng, nhiều bóng mát và ghế đá · Cung điện triều Joseon, 1395 · Vé 3.000₩ · Lễ đổi gác 10:00 &amp; 14:00 (miễn phí) · Thuê hanbok chụp ảnh trong sân.</div></div></div>
+    <div class="act-row"><div class="act-time">11:00 🇰🇷</div><div><div class="act-name">Làng Hanok Bukchon (북촌한옥마을) <span class="flag flag-hard">dốc / nhiều đi bộ</span></div><div class="act-desc"><strong>Đi taxi 7 phút lên đỉnh dốc rồi đi bộ xuống</strong>, đừng leo lên – đường đá lát dốc · ~600 nhà hanok mái ngói · Điểm chụp đẹp: dốc Gahoe-ro 11-gil · Giữ yên tĩnh – có dân sinh sống.</div></div></div>
     <div class="act-row"><div class="act-time">12:30 🇰🇷</div><div><div class="act-name">Ăn trưa và dạo phố Insadong</div><div class="act-desc">Phố nghệ nhân, thủ công mỹ nghệ, bánh tteok · Ghé Ssamziegil – khu phức hợp sân trong.</div></div></div>
-    <div class="act-row"><div class="act-time">13:30 🇰🇷</div><div><div class="act-name">Ikseon-dong (익선동) – Hẻm hanok cafe</div><div class="act-desc">Đi bộ ~9 phút từ Insadong · Hanok thập niên 1920 cải tạo thành cafe, quán, boutique · Hẻm rất hẹp và chiều Thứ Bảy cực đông – ai muốn chụp ảnh thoáng nên tách đi sớm · Không có gì rẻ.</div></div></div>
-    <div class="act-row"><div class="act-time">15:00 🇰🇷</div><div><div class="act-name">Tàu điện ngầm đến Hongdae</div><div class="act-desc">Ga Jongno 3-ga → ga Hongik Univ, đổi tuyến 1 lần (~30 phút, ~1.500₩) · Nghệ sĩ đường phố, K-pop, cafe concept, streetwear · Yeonnam-dong (quán lươn nướng) ngay cạnh.</div></div></div>
-    <div class="act-row"><div class="act-time">20:00 🇰🇷</div><div><div class="act-name">Công viên sông Hán Banpo – Đài phun nước cầu vồng</div><div class="act-desc">Taxi Kakao T từ Hongdae (~20 phút, ~13.000₩/xe) · Đài phun nước Rainbow Moonbow sau hoàng hôn · Picnic bên sông.</div></div></div>
+    <div class="act-row"><div class="act-time">13:30 🇰🇷</div><div><div class="act-name">Ikseon-dong (익선동) – Hẻm hanok cafe <span class="flag flag-easy">nhẹ nhàng</span></div><div class="act-desc"><strong>Đây là điểm nghỉ dài của ngày – ngồi cafe ~1 tiếng</strong> · Đi bộ ~9 phút đường phẳng từ Insadong · Hanok thập niên 1920 cải tạo thành cafe, quán, boutique · Hẻm rất hẹp và chiều Thứ Bảy cực đông – ai muốn chụp ảnh thoáng nên tách đi sớm · Không có gì rẻ.</div></div></div>
+    <div class="act-row"><div class="act-time">15:00 🇰🇷</div><div><div class="act-name">Hongdae – rồi về nhà nghỉ <span class="flag flag-easy">nhẹ nhàng</span></div><div class="act-desc">Taxi ~25 phút (~14.000₩/xe) để tránh đổi tuyến leo cầu thang · Hongdae cách nhà 7 phút đi bộ nên về nghỉ trước khi ra sông Hàn · Nghệ sĩ đường phố, K-pop, cafe concept, streetwear · Yeonnam-dong (quán lươn nướng) ngay cạnh.</div></div></div>
+    <div class="act-row"><div class="act-time">20:00 🇰🇷</div><div><div class="act-name">Công viên sông Hán Banpo – Đài phun nước cầu vồng <span class="flag flag-hard">tùy chọn nếu mệt</span></div><div class="act-desc">Taxi Kakao T từ Hongdae (~20 phút, ~13.000₩/xe) · Đài phun nước Rainbow Moonbow sau hoàng hôn · Picnic bên sông.</div></div></div>
   </div>
   <div class="box box-dining"><span class="box-label">🍽 Nhà hàng gợi ý – Ngày 2 · Gyeongbokgung · Hongdae</span>
   <div class="rest-list">
@@ -492,9 +545,9 @@ a{color:var(--green-d);text-decoration:none}
     <div class="act-row"><div class="act-time">09:30 🇰🇷</div><div><div class="act-name">Di chuyển đến LOL Park – Gran Seoul (Jongno)</div><div class="act-desc">Tàu ĐN đến ga Jonggak hoặc Gwanghwamun · LOL Park ở tầng B1 tòa Gran Seoul – nơi tổ chức LCK.</div></div></div>
     <div class="act-row"><div class="act-time">10:00 🇰🇷</div><div><div class="act-name">Khu trải nghiệm LoL Experience Zone</div><div class="act-desc">Lịch sử LoL, bộ sưu tập cúp LCK, chụp ảnh với champions · Store: skin, áo đấu, phụ kiện chính hãng.</div></div></div>
     <div class="act-row"><div class="act-time">13:00 🇰🇷</div><div><div class="act-name">Xem trận đấu LCK Playoffs</div><div class="act-desc">LCK 2026 kéo đến 13/9, Playoffs tháng 8 có thể có trận · Lịch: lolesports.com · Vé: ticketlink.co.kr (30.000–50.000₩) · Không có trận thì dồn thời gian cho Changgyeonggung &amp; Hyehwa-dong bên dưới.</div></div></div>
-    <div class="act-row"><div class="act-time">15:00 🇰🇷</div><div><div class="act-name">Cung Changgyeonggung (창경궁)</div><div class="act-desc">Đi bộ ~25 phút từ LOL Park (taxi ~8 phút) · Vé 1.000₩ (mặc hanbok miễn phí) · Vắng hơn Gyeongbokgung nhiều và giữ được nhiều công trình nguyên gốc hơn · Có nhà kính cổ và vườn cây.</div></div></div>
-    <div class="act-row"><div class="act-time">16:30 🇰🇷</div><div><div class="act-name">Hyehwa-dong · Daehangno + Naksan Park</div><div class="act-desc">Đi bộ ~20 phút · Khu sinh viên &amp; sân khấu kịch, nhịp chậm, cuối tuần có biểu diễn ngoài trời miễn phí · Leo ~450 m từ ga Hyehwa lên Naksan Park: tường thành cổ + chỗ ngắm sunset đẹp nhất khu.</div></div></div>
-    <div class="act-row"><div class="act-time">Tối</div><div><div class="act-name">Chợ Gwangjang + Ăn tối khu Jongno</div><div class="act-desc">Bindaetteok (bánh xèo đậu xanh), mayak gimbap, yukhoe (bò sống) · Sôi động nhất 18:00–22:00.</div></div></div>
+    <div class="act-row"><div class="act-time">15:00 🇰🇷</div><div><div class="act-name">Cung Changgyeonggung (창경궁) <span class="flag flag-easy">nhẹ nhàng</span></div><div class="act-desc"><strong>Taxi ~8 phút từ LOL Park</strong> (đừng đi bộ 2 km) · Vườn rộng, phẳng, vắng và nhiều ghế – cung dễ đi nhất trong 2 cung · Vé 1.000₩ (mặc hanbok miễn phí) · Vắng hơn Gyeongbokgung nhiều và giữ được nhiều công trình nguyên gốc hơn · Có nhà kính cổ và vườn cây.</div></div></div>
+    <div class="act-row"><div class="act-time">16:30 🇰🇷</div><div><div class="act-name">Hyehwa-dong · Daehangno + Naksan Park <span class="flag flag-hard">dốc / nhiều đi bộ</span></div><div class="act-desc">Taxi ~6 phút · Khu Daehangno phẳng, nhiều cafe, cuối tuần có biểu diễn ngoài trời miễn phí · <strong>Naksan Park phải leo ~450 m dốc – bà bầu ngồi cafe Daehangno chờ nhóm</strong>, khoảng 1 tiếng là nhóm xuống.</div></div></div>
+    <div class="act-row"><div class="act-time">Tối</div><div><div class="act-name">Chợ Gwangjang + Ăn tối khu Jongno</div><div class="act-desc">Taxi ~8 phút từ Hyehwa · Bindaetteok (bánh xèo đậu xanh), mayak gimbap · <strong>Yukhoe là bò sống – bà bầu không ăn</strong> · Sôi động nhất 18:00–22:00, chợ đông nên đi sớm để còn chỗ ngồi.</div></div></div>
   </div>
   <div class="box box-dining"><span class="box-label">🍽 Nhà hàng gợi ý – Ngày 3 · Jongno · Chợ Gwangjang</span>
   <div class="rest-list">
@@ -526,9 +579,9 @@ a{color:var(--green-d);text-decoration:none}
   </div>
   <div class="day-summary">Ngày 4 Seoul – leo lên tháp Namsan ngắm toàn cảnh thủ đô, rồi xuống phố Itaewon quốc tế ăn đủ mọi hương vị. Chiều về phía tây, gần nhà: picnic gà rán bên sông Hàn ở đảo Yeouido và ngắm hoàng hôn – ngày nhẹ nhất, không phải băng ngang thành phố.</div>
   <div class="activities">
-    <div class="act-row"><div class="act-time">09:30 🇰🇷</div><div><div class="act-name">N Seoul Tower trên núi Namsan (남산서울타탑)</div><div class="act-desc">Cáp treo từ chân núi Namsan (~9.000₩ khứ hồi) · Tháp 236m, view 360° · Vé đài quan sát ~21.000₩ · Love locks.</div></div></div>
-    <div class="act-row"><div class="act-time">12:00 🇰🇷</div><div><div class="act-name">Phố Itaewon (이태원) – Ăn trưa đa quốc tịch</div><div class="act-desc">Tuyến 6 đến ga Itaewon · Nhà hàng Ý, Trung Đông, Mỹ Latin, craft beer, vintage · Haebangchon (경리단길) nhiều quán indie.</div></div></div>
-    <div class="act-row"><div class="act-time">16:00 🇰🇷</div><div><div class="act-name">Đảo Yeouido (여의도) – Sông Hán chiều tà</div><div class="act-desc">Tuyến 6 + Tuyến 5 từ Itaewon (~30 phút, ~1.500₩) · Công viên sông Hàn 2km · Mua gà rán + bia ở CU/GS25 picnic kiểu Hàn · Thuê xe đạp đôi · Hoàng hôn ~19:10.</div></div></div>
+    <div class="act-row"><div class="act-time">09:30 🇰🇷</div><div><div class="act-name">N Seoul Tower trên núi Namsan (남산서울타탑) <span class="flag flag-easy">nhẹ nhàng</span></div><div class="act-desc"><strong>Taxi thẳng lên quảng trường tháp</strong> để khỏi leo dốc lên trạm cáp treo · Cáp treo ₩12.000 một chiều / ₩15.000 khứ hồi · Từ ga Myeongdong cửa 1 có xe shuttle tới trạm cáp treo nhưng chỉ chạy 12:00–20:30 · Tháp 236m, view 360° · Vé đài quan sát ~21.000₩ · Love locks.</div></div></div>
+    <div class="act-row"><div class="act-time">12:00 🇰🇷</div><div><div class="act-name">Phố Itaewon (이태원) – Ăn trưa đa quốc tịch</div><div class="act-desc">Xe buýt/taxi ~20 phút · Phố chính phẳng, đi bộ ngắn thôi · Nhà hàng Ý, Trung Đông, Mỹ Latin, craft beer, vintage · Haebangchon (경리단길) nhiều quán indie.</div></div></div>
+    <div class="act-row"><div class="act-time">16:00 🇰🇷</div><div><div class="act-name">Đảo Yeouido (여의도) – Sông Hán chiều tà <span class="flag flag-easy">nhẹ nhàng</span></div><div class="act-desc">Taxi ~25 phút từ Itaewon (~18.000₩/xe) thay vì tàu 2 lần đổi tuyến · Công viên phẳng, có bãi cỏ và ghế để ngồi lâu · Công viên sông Hàn 2km · Mua gà rán + bia ở CU/GS25 picnic kiểu Hàn · Thuê xe đạp đôi · Hoàng hôn ~19:10.</div></div></div>
     <div class="act-row"><div class="act-time">Tối</div><div><div class="act-name">IFC Seoul Mall – Ăn tối + Đi bộ Yeouido</div><div class="act-desc">IFC Seoul cạnh ga Yeouido – food court tầng hầm · Tối Yeouido sáng đèn, đẹp nhất khi nhìn từ bờ bên kia.</div></div></div>
   </div>
   <div class="box box-dining"><span class="box-label">🍽 Nhà hàng gợi ý – Ngày 4 · Namsan · Itaewon · Yeouido</span>
@@ -550,7 +603,7 @@ a{color:var(--green-d);text-decoration:none}
     </div>
   </div>
   </div>
-  <div class="box box-tips"><span class="box-label">💡 Mẹo ngày 4</span><ul><li>N Seoul Tower: đặt vé cáp treo online để tránh xếp hàng – Seoul Cable Car app</li><li>Đã bỏ Lotte World Tower/Seoul Sky khỏi lịch – trùng trải nghiệm với N Seoul Tower và lệch 12 km về phía đông. Muốn thêm lại thì ghép vào Ngày 5 (cùng cụm đông)</li><li>Itaewon: khu Haebangchon (HBC) gần đó yên tĩnh hơn và quán xá indie hơn</li></ul></div>
+  <div class="box box-tips"><span class="box-label">💡 Mẹo ngày 4</span><ul><li>N Seoul Tower: đặt vé cáp treo online để tránh xếp hàng – Seoul Cable Car app</li><li>Đã bỏ Lotte World Tower/Seoul Sky khỏi lịch – trùng trải nghiệm với N Seoul Tower và lệch 12 km về phía đông. Muốn thêm lại thì ghép vào Ngày 5 (cùng cụm đông)</li><li>Itaewon: khu Haebangchon (HBC) gần đó yên tĩnh và indie hơn, nhưng <strong>đường rất dốc</strong> – bà bầu nên ở lại phố chính</li><li>Ngày này nhẹ nhất và gần nhà nhất (Yeouido ~15 phút) – tận dụng để nghỉ nếu hôm trước mệt</li></ul></div>
   <div class="tags"><span class="tag">N Seoul Tower 236m</span><span class="tag">Cáp treo Namsan</span><span class="tag">Love locks</span><span class="tag">Gà rán + bia bên sông Hán</span><span class="tag">Hoàng hôn Yeouido</span></div>
 </div>
 
@@ -562,11 +615,11 @@ a{color:var(--green-d);text-decoration:none}
   </div>
   <div class="day-summary">Ngày cuối vui chơi tại Seoul, gom hết vào cụm phía đông cho khỏi đi lại lòng vòng: Seongsu-dong "Brooklyn của Seoul", bò Hanwoo chợ Majang, thư viện Starfield COEX, phố boutique Garosu-gil và DDP của Zaha Hadid lên đèn buổi tối. Chiều tối về nhà ở Hapjeong đóng hành lý, chuẩn bị sẵn sàng cho chuyến bay về ngày mai (2/9).</div>
   <div class="activities">
-    <div class="act-row"><div class="act-time">09:30 🇰🇷</div><div><div class="act-name">Seongsu-dong (성수동) – "Brooklyn của Seoul"</div><div class="act-desc">Tuyến 2 đi thẳng từ Hapjeong (~30 phút) · Nhà xưởng da/giày cũ cải tạo thành cafe rang xay, gallery, concept store · Đi bộ hết trong 10–15 phút, không cần taxi.</div></div></div>
-    <div class="act-row"><div class="act-time">12:00 🇰🇷</div><div><div class="act-name">Chợ Majang (마장동 축산물시장) – bò Hanwoo</div><div class="act-desc">Taxi ~10 phút từ Seongsu · Chợ thịt lớn nhất Hàn, Hanwoo rẻ hơn nhà hàng 20–30%: mua ở quầy rồi lên tầng trên nướng · Hỏi giá theo 100 g và xem nhãn – có nơi bán bò Úc/Mỹ nói là Hanwoo · Kiểm tra giờ đóng cửa trước khi đi.</div></div></div>
-    <div class="act-row"><div class="act-time">14:30 🇰🇷</div><div><div class="act-name">Thư viện Starfield COEX (별마당 도서관)</div><div class="act-desc">Tuyến 5 + Tuyến 2 (~35 phút) · Kệ sách cao 13m – check-in viral nhất Seoul, miễn phí · SM Town Atrium trong mall · COEX Aquarium ~29.000₩ (tùy chọn).</div></div></div>
-    <div class="act-row"><div class="act-time">16:30 🇰🇷</div><div><div class="act-name">Phố Garosu-gil (Sinsa) + cua ngâm tương</div><div class="act-desc">Taxi ~10 phút (~8.000₩) hoặc tàu đổi tuyến 1 lần (~25 phút) · Phố cây xanh boutique: cafe đặc sản, skincare premium · Cua ngâm tương Pro Ganjang Gejang ngay khu Sinsa (xem gợi ý bên dưới).</div></div></div>
-    <div class="act-row"><div class="act-time">19:30 🇰🇷</div><div><div class="act-name">Dongdaemun Design Plaza – DDP (동대문디자인플라자)</div><div class="act-desc">Tuyến 3 + Tuyến 2 (~30 phút) · Kiệt tác kiến trúc Zaha Hadid – đẹp nhất khi lên đèn buổi tối · Chợ đêm Dongdaemun ngay cạnh.</div></div></div>
+    <div class="act-row"><div class="act-time">09:30 🇰🇷</div><div><div class="act-name">Seongsu-dong (성수동) – "Brooklyn của Seoul" <span class="flag flag-easy">nhẹ nhàng</span></div><div class="act-desc">Tuyến 2 đi thẳng từ Hapjeong, <strong>không phải đổi tuyến</strong> (~30 phút) · Nhà xưởng da/giày cũ cải tạo thành cafe rang xay, gallery, concept store · Đi bộ hết trong 10–15 phút, không cần taxi.</div></div></div>
+    <div class="act-row"><div class="act-time">12:00 🇰🇷</div><div><div class="act-name">Chợ Majang (마장동 축산물시장) – bò Hanwoo <span class="flag flag-hard">tùy chọn nếu mệt</span></div><div class="act-desc">Taxi ~10 phút từ Seongsu · <strong>Chợ ướt, nhiều thịt sống và mùi khá nặng</strong> – bà bầu dễ nôn thì bỏ, nhóm đi rồi hẹn lại · Chợ thịt lớn nhất Hàn, Hanwoo rẻ hơn nhà hàng 20–30%: mua ở quầy rồi lên tầng trên nướng · Hỏi giá theo 100 g và xem nhãn – có nơi bán bò Úc/Mỹ nói là Hanwoo · Kiểm tra giờ đóng cửa trước khi đi.</div></div></div>
+    <div class="act-row"><div class="act-time">14:30 🇰🇷</div><div><div class="act-name">Thư viện Starfield COEX (별마당 도서관) <span class="flag flag-easy">nhẹ nhàng</span></div><div class="act-desc">Taxi ~20 phút (~13.000₩/xe) hoặc Tuyến 5 + Tuyến 2 (~35 phút) · Trong nhà, máy lạnh, nhiều chỗ ngồi – điểm nghỉ tốt giữa ngày · Kệ sách cao 13m – check-in viral nhất Seoul, miễn phí · SM Town Atrium trong mall · COEX Aquarium ~29.000₩ (tùy chọn).</div></div></div>
+    <div class="act-row"><div class="act-time">16:30 🇰🇷</div><div><div class="act-name">Phố Garosu-gil (Sinsa) + cua ngâm tương</div><div class="act-desc">Taxi ~10 phút (~8.000₩) · Phố cây xanh boutique: cafe đặc sản, skincare premium · Cua ngâm tương Pro Ganjang Gejang ngay khu Sinsa – <strong>cua sống nên bà bầu không ăn</strong>, gọi thêm món nấu chín cho chắc.</div></div></div>
+    <div class="act-row"><div class="act-time">19:30 🇰🇷</div><div><div class="act-name">Dongdaemun Design Plaza – DDP (동대문디자인플라자) <span class="flag flag-hard">tùy chọn nếu mệt</span></div><div class="act-desc">Taxi ~25 phút hoặc Tuyến 3 + Tuyến 2 (~30 phút) · <strong>Ngày nặng nhất hành trình – bỏ chặng này nếu bà bầu đã mỏi</strong> · Kiệt tác kiến trúc Zaha Hadid – đẹp nhất khi lên đèn buổi tối · Chợ đêm Dongdaemun ngay cạnh.</div></div></div>
     <div class="act-row"><div class="act-time">21:30 🇰🇷</div><div><div class="act-name">Về Hapjeong – Chuẩn bị hành lý</div><div class="act-desc">Ăn tối Dongdaemun, hoặc về Hongdae/Hapjeong cho gần nhà · Đóng hành lý sẵn – mai trả phòng trước 11:00, ra ICN ~14:30.</div></div></div>
   </div>
   <div class="box box-dining"><span class="box-label">🍽 Nhà hàng gợi ý – Ngày 5 · Seongsu · Majang · Sinsa</span>
@@ -611,9 +664,9 @@ a{color:var(--green-d);text-decoration:none}
   <div class="day-summary">Ngày cuối hành trình – buổi sáng dọn đồ và ăn sáng quanh Hapjeong, trả phòng Airbnb trước 11:00, tranh thủ mua sắm nốt tại Myeongdong rồi ra sân bay Incheon. Hoàn thuế VAT tại quầy Global Blue trước khi check-in. Parata Air ICN 19:55 🇰🇷 cất cánh, hạ cánh Nội Bài 22:50 🇻🇳 – kết thúc chuyến Seoul tuyệt vời!</div>
   <div class="activities">
     <div class="act-row"><div class="act-time">Buổi sáng</div><div><div class="act-name">Ăn sáng &amp; dọn hành lý tại Hapjeong</div><div class="act-desc">7-Eleven cách nhà 1 phút · Hoặc cà phê Hapjeong / ra sông Hàn lần cuối (4 phút) · Dọn hành lý trước 11:00.</div></div></div>
-    <div class="act-row"><div class="act-time">11:00 🇰🇷</div><div><div class="act-name">Trả phòng Airbnb (Check-out)</div><div class="act-desc">Trả phòng trước 11:00, tự khóa cửa theo hướng dẫn chủ nhà · Kiểm tra đồ điện tử, sạc, hộ chiếu · Gửi vali tủ khóa ga Hapjeong/Hongik Univ.</div></div></div>
+    <div class="act-row"><div class="act-time">11:00 🇰🇷</div><div><div class="act-name">Trả phòng Airbnb (Check-out)</div><div class="act-desc">Trả phòng trước 11:00, tự khóa cửa theo hướng dẫn chủ nhà · Kiểm tra đồ điện tử, sạc, hộ chiếu · <strong>Gửi vali cho chủ nhà</strong> (bảng Homestay ghi có hỗ trợ) để rảnh tay đi tiếp.</div></div></div>
     <div class="act-row"><div class="act-time">12:00 🇰🇷</div><div><div class="act-name">Mua sắm cuối &amp; bữa trưa chia tay tại Myeongdong</div><div class="act-desc">Tuyến 2 từ Hapjeong (~20 phút) · Olive Young, Innisfree · Đổi won dư tại chợ Myeongdong (giá tốt hơn sân bay) · Bữa cuối: Myeongdong Kyoja.</div></div></div>
-    <div class="act-row"><div class="act-time">14:30 🇰🇷</div><div><div class="act-name">Tàu AREX ra sân bay Incheon (ICN)</div><div class="act-desc">Myeongdong → ga Seoul Station (1 ga) → AREX ra ICN (43 phút, 5.000₩) · Hoặc bus 6002 từ Hapjeong · Có mặt ICN 16:30–17:00.</div></div></div>
+    <div class="act-row"><div class="act-time">14:30 🇰🇷</div><div><div class="act-name">Xe riêng ra sân bay Incheon (ICN) <span class="flag flag-easy">nhẹ nhàng</span></div><div class="act-desc"><strong>Quay lại Hapjeong lấy vali rồi đi xe riêng ra ICN</strong> (~₩85.000 cả nhóm – nhóm chưa chốt chiều về) để không phải kéo vali qua tàu · Hoặc AREX từ ga Seoul Station (43 phút, 5.000₩) · Có mặt ICN 16:30–17:00.</div></div></div>
     <div class="act-row"><div class="act-time">16:30 🇰🇷</div><div><div class="act-name">Check-in & Hoàn thuế VAT · Duty-free</div><div class="act-desc">Check-in Parata Air tại Terminal 1 · Hoàn thuế VAT quầy Global Blue hoặc máy tự động (hóa đơn gốc Tax Free trên 30.000₩) · Duty-free · Qua cửa xuất cảnh.</div></div></div>
     <div class="act-row"><div class="act-time">19:55 🇰🇷</div><div><div class="act-name">✈ Parata Air ICN → HAN · Bay về Hà Nội</div><div class="act-desc">Cất cánh 19:55 🇰🇷 · Bay ~5 tiếng · Hạ cánh sân bay Nội Bài (HAN) 22:50 🇻🇳 Thứ Tư 2/9/2026.</div></div></div>
   </div>
@@ -634,7 +687,7 @@ a{color:var(--green-d);text-decoration:none}
   <div class="box box-tips"><span class="box-label">💡 Checklist ngày về</span><ul>
     <li>Hoàn thuế VAT: giữ hóa đơn gốc từ cửa hàng Tax Free – mỗi hóa đơn trên 30.000₩</li>
     <li>Pin sạc dự phòng (power bank): PHẢI để trong hành lý xách tay, không được ký gửi</li>
-    <li>Kiểm tra passport, vé điện tử Parata Air và thẻ T-money trước khi checkout</li><li>Nhà không có lễ tân giữ đồ – dùng tủ khóa ga Hapjeong/Hongik Univ nếu còn đi chơi sau 11:00</li>
+    <li>Kiểm tra passport, vé điện tử Parata Air và thẻ T-money trước khi checkout</li><li>Chủ nhà cho gửi vali sau khi trả phòng – chốt trước với chủ nhà nếu còn đi chơi sau 11:00</li>
     <li>Đổi tiền won dư tại Myeongdong trước khi ra sân bay (tỷ giá tốt hơn ICN)</li>
   </ul></div>
   <div class="tags"><span class="tag">Checkout Airbnb 11:00</span><span class="tag">Mua sắm cuối Myeongdong</span><span class="tag">AREX → ICN</span><span class="tag">Hoàn thuế VAT</span><span class="tag">Parata Air 19:55 🇰🇷</span><span class="tag">HAN 22:50 🇻🇳</span></div>
@@ -660,7 +713,7 @@ a{color:var(--green-d);text-decoration:none}
     </div>
   </div>
   <div id="map1" class="map-box"></div>
-  <div class="map-note">🏠 Ghim xanh = nơi ở tại Hapjeong – luôn hiển thị ở mọi ngày · 💡 Click điểm số để xem chi tiết · <strong>Click đường nối → mở Naver Maps</strong> · Lộ trình thực tế (OSRM)</div>
+  <div class="map-note">🏠 Ghim xanh = nơi ở tại Hapjeong – luôn hiển thị ở mọi ngày · 🚕 Phần lớn chặng đã đổi sang taxi cho phù hợp khi đi cùng bà bầu · 💡 Click điểm số để xem chi tiết · <strong>Click đường nối → mở Naver Maps</strong> · Lộ trình thực tế (OSRM)</div>
 </div>
 
 <script>
@@ -705,25 +758,25 @@ a{color:var(--green-d);text-decoration:none}
 
   // [fromIdx, toIdx, label, naverMode, dayColor, osrmProfile, day]
   var segs=[
-    [0,  HOME,'🚌 ~45km (bus 6002)',  'transit',C.d1,'driving',1],
-    [HOME,1, '🚇 ~20 phút (T.2)',     'transit',C.d1,'driving',1],
+    [0,  HOME,'🚐 ~45km (xe riêng)',   'transit',C.d1,'driving',1],
+    [HOME,1, '🚕 ~25 phút (taxi)',    'transit',C.d1,'driving',1],
     [1,  2,  '🚶 ~0.7km',             'walk',   C.d1,'foot'   ,1],
-    [3,  4,  '🚶 ~1.2km',             'walk',   C.d2,'foot'   ,2],
+    [3,  4,  '🚕 ~1.2km (taxi)',      'transit',C.d2,'driving',2],
     [4,  5,  '🚶 ~0.6km',             'walk',   C.d2,'foot'   ,2],
     [5,  6,  '🚶 ~0.7km',             'walk',   C.d2,'foot'   ,2],
-    [6,  7,  '🚇 ~7km (~30 phút)',    'transit',C.d2,'driving',2],
+    [6,  7,  '🚕 ~7km (taxi)',        'transit',C.d2,'driving',2],
     [7,  8,  '🚕 ~8km (taxi)',        'transit',C.d2,'driving',2],
-    [9,  10, '🚶 ~2km (25 phút)',     'walk',   C.d3,'foot'   ,3],
-    [10, 11, '🚶 ~1.2km (có leo)',    'walk',   C.d3,'foot'   ,3],
-    [11, 12, '🚶 ~1.4km',             'walk',   C.d3,'foot'   ,3],
+    [9,  10, '🚕 ~2km (taxi)',        'transit',C.d3,'driving',3],
+    [10, 11, '🚕 ~1.2km (taxi)',      'transit',C.d3,'driving',3],
+    [11, 12, '🚕 ~1.4km (taxi)',      'transit',C.d3,'driving',3],
     [13, 14, '🚌 ~3km (bus/taxi)',    'transit',C.d4,'driving',4],
-    [14, 15, '🚇 ~6km (T.6+T.5)',     'transit',C.d4,'driving',4],
+    [14, 15, '🚕 ~6km (taxi)',        'transit',C.d4,'driving',4],
     [16, 17, '🚕 ~2.7km (taxi)',      'transit',C.d5,'driving',5],
     [17, 18, '🚇 ~7km (T.5+T.2)',     'transit',C.d5,'driving',5],
     [18, 19, '🚕 ~4km (taxi)',        'transit',C.d5,'driving',5],
     [19, 20, '🚇 ~6km (T.3+T.2)',     'transit',C.d5,'driving',5],
     [HOME,1, '🚇 ~20 phút (T.2)',     'transit',C.d6,'driving',6],
-    [1,  0,  '🚇 ~55km (AREX → ICN)', 'transit',C.d6,'driving',6]
+    [1,  0,  '🚐 ~45km ra ICN',        'transit',C.d6,'driving',6]
   ];
 
   function makeIcon(num,color){
@@ -840,45 +893,45 @@ a{color:var(--green-d);text-decoration:none}
 <table class="tr-tbl">
   <thead><tr><th style="width:70px">Tuyến</th><th style="width:145px">Phương tiện</th><th style="width:75px">Thời gian</th><th style="width:75px">Khoảng cách</th><th style="width:90px">Chi phí</th><th>Ghi chú</th></tr></thead>
   <tbody>
-    <tr><td data-label="Tuyến"><div style="display:flex;align-items:center;gap:3px"><span class="sbadge" style="background:var(--d1)">1</span><span style="font-size:10px;color:#aaa">→</span><span class="sbadge" style="background:var(--d1)">🏠</span></div></td><td data-label="Phương tiện">🚌 Bus sân bay 6002</td><td data-label="Thời gian">60–80 phút</td><td data-label="Khoảng cách">~45 km</td><td data-label="Chi phí">~17.000₩</td><td data-label="Ghi chú" class="note-sm">ICN Terminal 1 → ga Hapjeong, đi thẳng, có khoang hành lý. Rẻ hơn: AREX tới ga Hongik Univ (~5.000₩) rồi 1 ga Tuyến 2 sang Hapjeong. Mua T-money 3.000₩ tại GS25 sân bay.</td></tr>
-    <tr><td data-label="Tuyến"><div style="display:flex;align-items:center;gap:3px"><span class="sbadge" style="background:var(--d1)">🏠</span><span style="font-size:10px;color:#aaa">→</span><span class="sbadge" style="background:var(--d1)">2</span></div></td><td data-label="Phương tiện">🚇 Tàu ĐN Tuyến 2</td><td data-label="Thời gian">~20 phút</td><td data-label="Khoảng cách">~7 km</td><td data-label="Chi phí">~1.500₩</td><td data-label="Ghi chú" class="note-sm">Ga Hapjeong → Euljiro 1-ga (không đổi tuyến), đi bộ ~8 phút vào phố Myeongdong.</td></tr>
+    <tr><td data-label="Tuyến"><div style="display:flex;align-items:center;gap:3px"><span class="sbadge" style="background:var(--d1)">1</span><span style="font-size:10px;color:#aaa">→</span><span class="sbadge" style="background:var(--d1)">🏠</span></div></td><td data-label="Phương tiện">🚐 Xe riêng đã đặt</td><td data-label="Thời gian">~60 phút</td><td data-label="Khoảng cách">~45 km</td><td data-label="Chi phí">~₩85.000/nhóm</td><td data-label="Ghi chú" class="note-sm">ICN → nhà, ngồi thẳng một chuyến – đỡ nhất cho bà bầu và hành lý. Đã tính trong quỹ (~248.000₫/người). Chủ nhà cũng hỗ trợ gọi VAN. Nhớ nhận Climate Card / T-money.</td></tr>
+    <tr><td data-label="Tuyến"><div style="display:flex;align-items:center;gap:3px"><span class="sbadge" style="background:var(--d1)">🏠</span><span style="font-size:10px;color:#aaa">→</span><span class="sbadge" style="background:var(--d1)">2</span></div></td><td data-label="Phương tiện">🚕 Taxi (hoặc T.2)</td><td data-label="Thời gian">~25 phút</td><td data-label="Khoảng cách">~7 km</td><td data-label="Chi phí">~15.000₩/xe</td><td data-label="Ghi chú" class="note-sm">Taxi để tránh 8 phút đi bộ từ ga. Đi tàu: ga Hapjeong → Euljiro 1-ga, không đổi tuyến, rồi đi bộ ~8 phút.</td></tr>
     <tr><td data-label="Tuyến"><div style="display:flex;align-items:center;gap:3px"><span class="sbadge" style="background:var(--d1)">2</span><span style="font-size:10px;color:#aaa">→</span><span class="sbadge" style="background:var(--d1)">3</span></div></td><td data-label="Phương tiện">🚶 Đi bộ</td><td data-label="Thời gian">10 phút</td><td data-label="Khoảng cách">~700 m</td><td data-label="Chi phí">Miễn phí</td><td data-label="Ghi chú" class="note-sm">Đường phẳng từ phố Myeongdong ra chợ Namdaemun.</td></tr>
-    <tr><td data-label="Tuyến"><div style="display:flex;align-items:center;gap:3px"><span class="sbadge" style="background:var(--d2)">4</span><span style="font-size:10px;color:#aaa">→</span><span class="sbadge" style="background:var(--d2)">5</span></div></td><td data-label="Phương tiện">🚶 Đi bộ</td><td data-label="Thời gian">15 phút</td><td data-label="Khoảng cách">~1,2 km</td><td data-label="Chi phí">Miễn phí</td><td data-label="Ghi chú" class="note-sm">Đường dốc nhẹ lên đồi Bukchon – đi giày thoải mái.</td></tr>
+    <tr><td data-label="Tuyến"><div style="display:flex;align-items:center;gap:3px"><span class="sbadge" style="background:var(--d2)">4</span><span style="font-size:10px;color:#aaa">→</span><span class="sbadge" style="background:var(--d2)">5</span></div></td><td data-label="Phương tiện">🚕 Taxi lên dốc</td><td data-label="Thời gian">7 phút</td><td data-label="Khoảng cách">~1,2 km</td><td data-label="Chi phí">~5.000₩/xe</td><td data-label="Ghi chú" class="note-sm">Đường lên Bukchon dốc và đá lát – đi taxi lên đỉnh rồi đi bộ xuống, đừng leo lên.</td></tr>
     <tr><td data-label="Tuyến"><div style="display:flex;align-items:center;gap:3px"><span class="sbadge" style="background:var(--d2)">5</span><span style="font-size:10px;color:#aaa">→</span><span class="sbadge" style="background:var(--d2)">6</span></div></td><td data-label="Phương tiện">🚶 Đi bộ</td><td data-label="Thời gian">10 phút</td><td data-label="Khoảng cách">~600 m</td><td data-label="Chi phí">Miễn phí</td><td data-label="Ghi chú" class="note-sm">Dốc xuống từ Bukchon vào phố Insadong.</td></tr>
     <tr><td data-label="Tuyến"><div style="display:flex;align-items:center;gap:3px"><span class="sbadge" style="background:var(--d2)">6</span><span style="font-size:10px;color:#aaa">→</span><span class="sbadge" style="background:var(--d2)">7</span></div></td><td data-label="Phương tiện">🚶 Đi bộ</td><td data-label="Thời gian">9 phút</td><td data-label="Khoảng cách">~700 m</td><td data-label="Chi phí">Miễn phí</td><td data-label="Ghi chú" class="note-sm">Insadong-gil băng qua Jongno vào hẻm hanok Ikseon-dong.</td></tr>
-    <tr><td data-label="Tuyến"><div style="display:flex;align-items:center;gap:3px"><span class="sbadge" style="background:var(--d2)">7</span><span style="font-size:10px;color:#aaa">→</span><span class="sbadge" style="background:var(--d2)">8</span></div></td><td data-label="Phương tiện">🚇 Tàu ĐN (đổi 1 tuyến)</td><td data-label="Thời gian">~30 phút</td><td data-label="Khoảng cách">~7 km</td><td data-label="Chi phí">~1.500₩</td><td data-label="Ghi chú" class="note-sm">Ga Jongno 3-ga → ga Hongik Univ, đổi tuyến 1 lần. Yeonnam-dong (quán lươn nướng) ngay cạnh ga.</td></tr>
+    <tr><td data-label="Tuyến"><div style="display:flex;align-items:center;gap:3px"><span class="sbadge" style="background:var(--d2)">7</span><span style="font-size:10px;color:#aaa">→</span><span class="sbadge" style="background:var(--d2)">8</span></div></td><td data-label="Phương tiện">🚕 Taxi</td><td data-label="Thời gian">~25 phút</td><td data-label="Khoảng cách">~7 km</td><td data-label="Chi phí">~14.000₩/xe</td><td data-label="Ghi chú" class="note-sm">Taxi để không phải đổi tuyến leo cầu thang. Yeonnam-dong (quán lươn nướng) ngay cạnh ga Hongik Univ.</td></tr>
     <tr><td data-label="Tuyến"><div style="display:flex;align-items:center;gap:3px"><span class="sbadge" style="background:var(--d2)">8</span><span style="font-size:10px;color:#aaa">→</span><span class="sbadge" style="background:var(--d2)">9</span></div></td><td data-label="Phương tiện">🚕 Taxi Kakao T</td><td data-label="Thời gian">20 phút</td><td data-label="Khoảng cách">~8 km</td><td data-label="Chi phí">~12–15K₩/taxi</td><td data-label="Ghi chú" class="note-sm">App Kakao T tiếng Anh, thẻ tín dụng OK. Chia 2 taxi cho 6 người.</td></tr>
-    <tr><td data-label="Tuyến"><div style="display:flex;align-items:center;gap:3px"><span class="sbadge" style="background:var(--d3)">10</span><span style="font-size:10px;color:#aaa">→</span><span class="sbadge" style="background:var(--d3)">11</span></div></td><td data-label="Phương tiện">🚶 Đi bộ</td><td data-label="Thời gian">25 phút</td><td data-label="Khoảng cách">~2 km</td><td data-label="Chi phí">Miễn phí</td><td data-label="Ghi chú" class="note-sm">LOL Park (Gran Seoul, tầng B1) → cung Changgyeonggung, đi bộ dọc Jongno. Taxi ~8 phút nếu mỏi chân.</td></tr>
-    <tr><td data-label="Tuyến"><div style="display:flex;align-items:center;gap:3px"><span class="sbadge" style="background:var(--d3)">11</span><span style="font-size:10px;color:#aaa">→</span><span class="sbadge" style="background:var(--d3)">12</span></div></td><td data-label="Phương tiện">🚶 Đi bộ</td><td data-label="Thời gian">20 phút</td><td data-label="Khoảng cách">~1,2 km</td><td data-label="Chi phí">Miễn phí</td><td data-label="Ghi chú" class="note-sm">Changgyeonggung → Hyehwa-dong. Leo thêm ~450 m từ ga Hyehwa lên Naksan Park ngắm sunset.</td></tr>
-    <tr><td data-label="Tuyến"><div style="display:flex;align-items:center;gap:3px"><span class="sbadge" style="background:var(--d3)">12</span><span style="font-size:10px;color:#aaa">→</span><span class="sbadge" style="background:var(--d3)">13</span></div></td><td data-label="Phương tiện">🚶 Đi bộ / T.4</td><td data-label="Thời gian">20 phút</td><td data-label="Khoảng cách">~1,4 km</td><td data-label="Chi phí">Miễn phí – 1.400₩</td><td data-label="Ghi chú" class="note-sm">Naksan/Hyehwa xuống chợ Gwangjang. Đi tàu thì ga Hyehwa → Dongdaemun rồi đi bộ.</td></tr>
+    <tr><td data-label="Tuyến"><div style="display:flex;align-items:center;gap:3px"><span class="sbadge" style="background:var(--d3)">10</span><span style="font-size:10px;color:#aaa">→</span><span class="sbadge" style="background:var(--d3)">11</span></div></td><td data-label="Phương tiện">🚕 Taxi</td><td data-label="Thời gian">8 phút</td><td data-label="Khoảng cách">~2 km</td><td data-label="Chi phí">~6.000₩/xe</td><td data-label="Ghi chú" class="note-sm">LOL Park (Gran Seoul, tầng B1) → cung Changgyeonggung. Đi bộ mất 25 phút nên chọn taxi.</td></tr>
+    <tr><td data-label="Tuyến"><div style="display:flex;align-items:center;gap:3px"><span class="sbadge" style="background:var(--d3)">11</span><span style="font-size:10px;color:#aaa">→</span><span class="sbadge" style="background:var(--d3)">12</span></div></td><td data-label="Phương tiện">🚕 Taxi</td><td data-label="Thời gian">6 phút</td><td data-label="Khoảng cách">~1,2 km</td><td data-label="Chi phí">~5.000₩/xe</td><td data-label="Ghi chú" class="note-sm">Changgyeonggung → Daehangno (phẳng). Naksan Park phải leo thêm ~450 m dốc – bà bầu ngồi cafe chờ.</td></tr>
+    <tr><td data-label="Tuyến"><div style="display:flex;align-items:center;gap:3px"><span class="sbadge" style="background:var(--d3)">12</span><span style="font-size:10px;color:#aaa">→</span><span class="sbadge" style="background:var(--d3)">13</span></div></td><td data-label="Phương tiện">🚕 Taxi</td><td data-label="Thời gian">8 phút</td><td data-label="Khoảng cách">~1,4 km</td><td data-label="Chi phí">~5.000₩/xe</td><td data-label="Ghi chú" class="note-sm">Hyehwa xuống chợ Gwangjang. Chợ đông và phải đứng nhiều nên đừng đi bộ thêm trước đó.</td></tr>
     <tr><td data-label="Tuyến"><div style="display:flex;align-items:center;gap:3px"><span class="sbadge" style="background:var(--d4)">14</span><span style="font-size:10px;color:#aaa">→</span><span class="sbadge" style="background:var(--d4)">15</span></div></td><td data-label="Phương tiện">🚌 Xe buýt / Taxi</td><td data-label="Thời gian">20 phút</td><td data-label="Khoảng cách">~3 km</td><td data-label="Chi phí">~1.200–6.000₩</td><td data-label="Ghi chú" class="note-sm">Chân núi Namsan → Itaewon. Xe buýt số 05 hoặc taxi ~6.000₩.</td></tr>
-    <tr><td data-label="Tuyến"><div style="display:flex;align-items:center;gap:3px"><span class="sbadge" style="background:var(--d4)">15</span><span style="font-size:10px;color:#aaa">→</span><span class="sbadge" style="background:var(--d4)">16</span></div></td><td data-label="Phương tiện">🚇 Tuyến 6 + Tuyến 5</td><td data-label="Thời gian">~30 phút</td><td data-label="Khoảng cách">~6 km</td><td data-label="Chi phí">~1.500₩</td><td data-label="Ghi chú" class="note-sm">Ga Itaewon → Yeouido (đổi tuyến 1 lần). Đi bộ ~10 phút ra công viên sông Hàn.</td></tr>
+    <tr><td data-label="Tuyến"><div style="display:flex;align-items:center;gap:3px"><span class="sbadge" style="background:var(--d4)">15</span><span style="font-size:10px;color:#aaa">→</span><span class="sbadge" style="background:var(--d4)">16</span></div></td><td data-label="Phương tiện">🚕 Taxi</td><td data-label="Thời gian">~25 phút</td><td data-label="Khoảng cách">~6 km</td><td data-label="Chi phí">~18.000₩/xe</td><td data-label="Ghi chú" class="note-sm">Itaewon → thẳng công viên sông Hàn Yeouido, khỏi đổi tuyến rồi đi bộ thêm 10 phút.</td></tr>
     <tr><td data-label="Tuyến"><div style="display:flex;align-items:center;gap:3px"><span class="sbadge" style="background:var(--d5)">17</span><span style="font-size:10px;color:#aaa">→</span><span class="sbadge" style="background:var(--d5)">18</span></div></td><td data-label="Phương tiện">🚕 Taxi</td><td data-label="Thời gian">10 phút</td><td data-label="Khoảng cách">~2,7 km</td><td data-label="Chi phí">~6.000₩/taxi</td><td data-label="Ghi chú" class="note-sm">Seongsu-dong → chợ Majang. Đi tàu phải đổi T.2 sang T.5, taxi nhanh hơn nhiều.</td></tr>
-    <tr><td data-label="Tuyến"><div style="display:flex;align-items:center;gap:3px"><span class="sbadge" style="background:var(--d5)">18</span><span style="font-size:10px;color:#aaa">→</span><span class="sbadge" style="background:var(--d5)">19</span></div></td><td data-label="Phương tiện">🚇 Tuyến 5 + Tuyến 2</td><td data-label="Thời gian">~35 phút</td><td data-label="Khoảng cách">~7 km</td><td data-label="Chi phí">~1.500₩</td><td data-label="Ghi chú" class="note-sm">Ga Majang → ga Samseong (COEX). Cửa ra số 5/6 vào thẳng Starfield.</td></tr>
+    <tr><td data-label="Tuyến"><div style="display:flex;align-items:center;gap:3px"><span class="sbadge" style="background:var(--d5)">18</span><span style="font-size:10px;color:#aaa">→</span><span class="sbadge" style="background:var(--d5)">19</span></div></td><td data-label="Phương tiện">🚕 Taxi (hoặc T.5+T.2)</td><td data-label="Thời gian">~20 phút</td><td data-label="Khoảng cách">~7 km</td><td data-label="Chi phí">~13.000₩/xe</td><td data-label="Ghi chú" class="note-sm">Majang → COEX. Đi tàu phải đổi tuyến (~35 phút), taxi đỡ hơn. Cửa ra số 5/6 vào thẳng Starfield.</td></tr>
     <tr><td data-label="Tuyến"><div style="display:flex;align-items:center;gap:3px"><span class="sbadge" style="background:var(--d5)">19</span><span style="font-size:10px;color:#aaa">→</span><span class="sbadge" style="background:var(--d5)">20</span></div></td><td data-label="Phương tiện">🚕 Taxi</td><td data-label="Thời gian">10 phút</td><td data-label="Khoảng cách">~4 km</td><td data-label="Chi phí">~8.000₩/taxi</td><td data-label="Ghi chú" class="note-sm">COEX → Garosu-gil. Đi tàu cũng được nhưng phải đổi tuyến (~25 phút).</td></tr>
-    <tr><td data-label="Tuyến"><div style="display:flex;align-items:center;gap:3px"><span class="sbadge" style="background:var(--d5)">20</span><span style="font-size:10px;color:#aaa">→</span><span class="sbadge" style="background:var(--d5)">21</span></div></td><td data-label="Phương tiện">🚇 Tuyến 3 + Tuyến 2</td><td data-label="Thời gian">~30 phút</td><td data-label="Khoảng cách">~6 km</td><td data-label="Chi phí">~1.500₩</td><td data-label="Ghi chú" class="note-sm">Ga Sinsa → Dongdaemun History &amp; Culture Park (DDP), đổi tuyến tại Euljiro 3-ga.</td></tr>
-    <tr><td data-label="Tuyến"><div style="display:flex;align-items:center;gap:3px"><span class="sbadge" style="background:var(--d6)">2</span><span style="font-size:10px;color:#aaa">→</span><span class="sbadge" style="background:var(--d6)">✈</span></div></td><td data-label="Phương tiện">🚇 Tàu AREX</td><td data-label="Thời gian">43 phút</td><td data-label="Khoảng cách">~55 km</td><td data-label="Chi phí">5.000₩</td><td data-label="Ghi chú" class="note-sm">Ngày 2/9 · Myeongdong → ga Seoul Station (1 ga) → AREX ra ICN. Khởi hành ~14:30 🇰🇷 để kịp bay 19:55. Hoặc bus 6002 từ ga Hapjeong.</td></tr>
+    <tr><td data-label="Tuyến"><div style="display:flex;align-items:center;gap:3px"><span class="sbadge" style="background:var(--d5)">20</span><span style="font-size:10px;color:#aaa">→</span><span class="sbadge" style="background:var(--d5)">21</span></div></td><td data-label="Phương tiện">🚕 Taxi (hoặc T.3+T.2)</td><td data-label="Thời gian">~25 phút</td><td data-label="Khoảng cách">~6 km</td><td data-label="Chi phí">~16.000₩/xe</td><td data-label="Ghi chú" class="note-sm">Sinsa → DDP. Đi tàu phải đổi tuyến tại Euljiro 3-ga. Chặng này bỏ được nếu đã mỏi.</td></tr>
+    <tr><td data-label="Tuyến"><div style="display:flex;align-items:center;gap:3px"><span class="sbadge" style="background:var(--d6)">2</span><span style="font-size:10px;color:#aaa">→</span><span class="sbadge" style="background:var(--d6)">✈</span></div></td><td data-label="Phương tiện">🚐 Xe riêng (hoặc AREX)</td><td data-label="Thời gian">~60 phút</td><td data-label="Khoảng cách">~45 km</td><td data-label="Chi phí">~₩85.000/nhóm</td><td data-label="Ghi chú" class="note-sm">Ngày 2/9 · Về Hapjeong lấy vali rồi đi xe riêng ra ICN – nhóm chưa chốt chiều về. Cách khác: Myeongdong → ga Seoul Station (1 ga) → AREX (43 phút, 5.000₩). Khởi hành ~14:30 🇰🇷 để kịp bay 19:55.</td></tr>
   </tbody>
 </table>
 </div>
 
 <!-- CHI PHÍ -->
-<div class="sec-hdr"><div class="sec-ico">💰</div><span class="sec-tit">Ước tính chi phí · Budget ~25 triệu/người</span></div>
+<div class="sec-hdr"><div class="sec-ico">💰</div><span class="sec-tit">Chi phí thực tế · theo bảng quỹ của nhóm</span></div>
 <div class="price-highlight">
-  <div><div class="ph-label">Mục tiêu ngân sách · Plan 1 Seoul Only</div><div class="ph-lsub">Không có KTX Seoul–Busan · Tiết kiệm hơn Plan 2 ~1 triệu/người</div></div>
-  <div><div class="ph-val">~25.000.000 ₫</div><div class="ph-sub">× 6 người = ~150.000.000 ₫</div></div>
+  <div><div class="ph-label">Đã thu 20.000.000 ₫/người · Quỹ do Ngân giữ</div><div class="ph-lsub">Tỷ giá nhóm dùng: 1₩ = 17,5₫</div></div>
+  <div><div class="ph-val">Còn lại ~5.229.043 ₫/người</div><div class="ph-sub">Đã chi 15.421.374 ₫/người</div></div>
 </div>
 <div class="budget-wrap">
-  <div class="budget-row hi"><span class="bk"><strong>✈ Vé máy bay Parata Air (khứ hồi HAN–ICN)</strong><br><span class="bk-sub ok">Đã xác nhận · 15kg ký gửi included</span></span><span class="bv" style="color:var(--green-d)">8.150.000 ₫/người</span></div>
-  <div class="budget-row"><span class="bk">🏠 Airbnb Hapjeong 5 đêm (nguyên căn 3 phòng ngủ)<br><span class="bk-sub">My Blooming Stay 201 · Mapo-gu · 6 người chia 3 phòng · <strong>tạm tính – thay bằng giá Airbnb thực tế khi chốt</strong></span></span><span class="bv">~3.200.000 ₫/người</span></div>
-  <div class="budget-row"><span class="bk">🚇 Di chuyển nội địa Seoul (T-money, taxi, cáp treo…)</span><span class="bv">~900.000 ₫/người</span></div>
-  <div class="budget-row"><span class="bk">🍽 Ăn uống (5 ngày × 3 bữa)<br><span class="bk-sub">~150.000–200.000₩/ngày/người</span></span><span class="bv">~2.700.000 ₫/người</span></div>
-  <div class="budget-row"><span class="bk">🎫 Vé tham quan (N Seoul Tower, LOL Park, Gyeongbokgung, Changgyeonggung…)</span><span class="bv">~1.200.000 ₫/người</span></div>
-  <div class="budget-row"><span class="bk">🛍 Mua sắm, mỹ phẩm, quà lưu niệm</span><span class="bv">~5.000.000 ₫/người</span></div>
-  <div class="budget-row"><span class="bk">🔐 Chi phí dự phòng (phát sinh, đổi tiền chênh lệch…)</span><span class="bv">~3.850.000 ₫/người</span></div>
+  <div class="budget-row hi"><span class="bk"><strong>✈ Vé máy bay Parata Air (khứ hồi HAN–ICN)</strong><br><span class="bk-sub ok">6/6 vé đã đặt · mua rải rác 17/5 – 2/6 · từ 6.932.600₫ đến 7.970.350₫</span></span><span class="bv" style="color:var(--green-d)">~7.552.000 ₫/người</span></div>
+  <div class="budget-row"><span class="bk">🏠 Airbnb Hapjeong 5 đêm (nguyên căn 3 phòng ngủ)<br><span class="bk-sub">My Blooming Stay 201 · tổng 29.004.481₫ · đã đặt xong</span></span><span class="bv">4.834.080 ₫/người</span></div>
+  <div class="budget-row"><span class="bk">🛂 Visa Hàn Quốc<br><span class="bk-sub">Tổng 14.310.000₫ cho cả nhóm · đã trả</span></span><span class="bv">2.385.000 ₫/người</span></div>
+  <div class="budget-row"><span class="bk">🚐 Xe sân bay bên Hàn – chiều đi 28/8<br><span class="bk-sub">₩85.000 cho cả nhóm · chiều về 2/9 chưa chốt (dự kiến thêm ~248.000₫/người)</span></span><span class="bv">247.917 ₫/người</span></div>
+  <div class="budget-row"><span class="bk">🎫 Climate Card Seoul 7 ngày<br><span class="bk-sub">₩138.000 cả nhóm · tàu điện ngầm + xe buýt không giới hạn (không áp dụng cho taxi)</span></span><span class="bv">402.500 ₫/người</span></div>
+  <div class="budget-row"><span class="bk">🚕 Taxi giữa các điểm (đi cùng bà bầu)<br><span class="bk-sub">Chia 2 xe cho 6 người · ~5.000–9.000₩/xe mỗi chặng · trả từ phần còn lại</span></span><span class="bv">~500.000 ₫/người</span></div>
+  <div class="budget-row"><span class="bk">🍽 Ăn uống + 🛍 mua sắm + 🎫 vé tham quan<br><span class="bk-sub">Lấy từ phần còn lại của quỹ – chưa chốt</span></span><span class="bv">~4.700.000 ₫/người</span></div>
 </div>
-<div class="budget-total"><span class="bt-lbl">TỔNG ước tính / người (đã bao gồm mua sắm)</span><span class="bt-val">~25.000.000 ₫</span></div>
-<p class="wrap-note">💡 Plan 1 (Seoul only) không có chi phí KTX (~1 triệu ₫), dành phần đó cho mua sắm hoặc vé tham quan cao cấp hơn (Lotte Sky, Seaworld…). Tỷ giá: 1.000 ₫ ≈ 56₩. Chỗ ở là Airbnb nguyên căn 3 phòng ngủ tại Hapjeong (2 nữ 1 phòng, 4 nam 2 phòng) – chưa cập nhật giá thuê thực tế.</p>
+<div class="budget-total"><span class="bt-lbl">ĐÃ CHI / người (vé, chỗ ở, visa, xe, thẻ tàu)</span><span class="bt-val">15.421.374 ₫</span></div>
+<p class="wrap-note">💡 Số liệu lấy từ bảng <strong>Tổng chi phí</strong> trong Google Sheet của nhóm (mục đã chi khớp chính xác 15.421.374₫/người). Hai khoản chưa chốt: <strong>xe sân bay chiều về 2/9</strong> và <strong>xe sân bay phía Hà Nội</strong> cả hai chiều. Chỗ ở là Airbnb nguyên căn 3 phòng ngủ tại Hapjeong (2 nữ 1 phòng, 4 nam 2 phòng). Dòng taxi là khoản tôi thêm cho lịch trình đi cùng bà bầu – Climate Card không dùng được cho taxi.</p>
 
 </div>
 
