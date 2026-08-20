@@ -164,6 +164,12 @@ a{color:var(--green-d);text-decoration:none}
 .box-care li{margin-bottom:5px}
 .box-flat,.tags-flat{margin-left:0;margin-right:0}
 .map-filter{margin-bottom:12px}
+.geo-row{display:flex;align-items:center;gap:11px;flex-wrap:wrap;margin-top:11px}
+.geo-btn{cursor:pointer;font-family:inherit;font-size:12px;font-weight:700;color:#fff;background:linear-gradient(135deg,#2f7ce4,#1a63cf);border:1px solid #1a63cf;border-radius:20px;padding:7px 15px;box-shadow:0 2px 8px rgba(26,99,207,.26);-webkit-appearance:none;appearance:none;transition:filter .16s ease,box-shadow .16s ease}
+.geo-btn:hover{filter:brightness(1.07)}
+.geo-btn.is-on{background:linear-gradient(135deg,#e0574f,#cc3b33);border-color:#cc3b33;box-shadow:0 2px 8px rgba(204,59,51,.26)}
+.geo-out{font-size:11.5px;color:var(--ink-3);line-height:1.55;flex:1 1 220px;min-width:0}
+.geo-out strong{color:var(--navy-2)}
 .map-filter-lbl{display:block;font-size:10.5px;font-weight:700;text-transform:uppercase;letter-spacing:.07em;color:var(--ink-3);margin-bottom:8px}
 .leg-btn{cursor:pointer;font-family:inherit;font-size:11.5px;color:var(--ink-2);-webkit-appearance:none;appearance:none;transition:background .16s ease,border-color .16s ease,box-shadow .16s ease}
 .leg-btn:hover{border-color:var(--green-b);background:var(--green-l)}
@@ -300,6 +306,7 @@ a{color:var(--green-d);text-decoration:none}
   .map-box{height:330px}
   .flag,.box-care,.link-card,.qr-card{-webkit-print-color-adjust:exact!important;print-color-adjust:exact!important}
   .link-card,.qr-card{box-shadow:none!important}
+  .geo-row{display:none}
   .rest-map-link{display:none}
   .leg-btn{box-shadow:none!important}
   .tr-tbl{font-size:10.5px}
@@ -786,6 +793,10 @@ a{color:var(--green-d);text-decoration:none}
       <button type="button" class="leg leg-btn" data-day="5"><i style="background:var(--d5)"></i>Ngày 5 – Thứ Ba 1/9</button>
       <button type="button" class="leg leg-btn" data-day="6"><i style="background:var(--d6)"></i>Ngày 6 – Thứ Tư 2/9</button>
     </div>
+    <div class="geo-row">
+      <button type="button" class="geo-btn" id="geoBtn">📍 Hiện vị trí của tôi</button>
+      <span class="geo-out" id="geoOut">Trình duyệt sẽ hỏi quyền truy cập vị trí. Bật lên để biết mình đang cách điểm nào gần nhất bao xa.</span>
+    </div>
   </div>
   <div id="map1" class="map-box"></div>
   <div class="map-note">Mỗi ghim có icon theo loại địa điểm, <strong>số nhỏ ở góc</strong> khớp với bảng Tuyến di chuyển · 🏠 nơi ở Hapjeong (luôn hiển thị) · ♨ phòng xông hơi Ngày 1 · 🚕 Phần lớn chặng đã đổi sang taxi cho phù hợp khi đi cùng bà bầu · 💡 Click điểm số để xem chi tiết · <strong>Click đường nối → mở Naver Maps</strong> · Lộ trình thực tế (OSRM)</div>
@@ -972,6 +983,85 @@ a{color:var(--green-d);text-decoration:none}
     ptMarkers.forEach(function(p){ if(cur==='all'||p.days.indexOf(cur)>-1) lls.push(p.ll); });
     map.fitBounds(L.latLngBounds(lls).pad(0.12));
   }
+
+  /* ---- vị trí người dùng ---- */
+  var geoBtn=document.getElementById('geoBtn'), geoOut=document.getElementById('geoOut');
+  var geoMarker=null, geoCircle=null, geoWatch=null;
+
+  function km(a,b){
+    var R=6371, dLat=(b[0]-a[0])*Math.PI/180, dLon=(b[1]-a[1])*Math.PI/180;
+    var la1=a[0]*Math.PI/180, la2=b[0]*Math.PI/180;
+    var h=Math.sin(dLat/2)*Math.sin(dLat/2)+Math.cos(la1)*Math.cos(la2)*Math.sin(dLon/2)*Math.sin(dLon/2);
+    return 2*R*Math.asin(Math.sqrt(h));
+  }
+  function dist(d){ return d<1 ? Math.round(d*1000)+' m' : d.toFixed(1)+' km'; }
+
+  function nearest(la,ln){
+    var best=null;
+    pts.forEach(function(p){
+      var d=km([la,ln],[p[1],p[2]]);
+      if(!best||d<best.d) best={d:d,p:p};
+    });
+    return best;
+  }
+
+  function geoIcon(){
+    return L.divIcon({className:'',iconSize:[24,24],iconAnchor:[12,12],popupAnchor:[0,-14],
+      html:'<div style="width:18px;height:18px;margin:3px;border-radius:50%;background:#1a73e8;'+
+           'border:3px solid #fff;box-shadow:0 0 0 3px rgba(26,115,232,.3),0 2px 6px rgba(0,0,0,.45)"></div>'});
+  }
+
+  function onPos(pos){
+    var la=pos.coords.latitude, ln=pos.coords.longitude, acc=pos.coords.accuracy||0;
+    if(!geoMarker){
+      geoMarker=L.marker([la,ln],{icon:geoIcon(),zIndexOffset:2000})
+        .bindPopup('<strong style="font-size:13px;color:#1a73e8">📍 Vị trí của bạn</strong>').addTo(map);
+      geoCircle=L.circle([la,ln],{radius:acc,color:'#1a73e8',weight:1,fillColor:'#1a73e8',fillOpacity:.1}).addTo(map);
+      map.setView([la,ln],15);
+    } else {
+      geoMarker.setLatLng([la,ln]); geoCircle.setLatLng([la,ln]).setRadius(acc);
+    }
+    var n=nearest(la,ln), h=km([la,ln],[pts[HOME][1],pts[HOME][2]]);
+    var nm=(n.p[0]===0?'🏠 nơi ở':(n.p[0]===-1?'♨ phòng xông hơi':(ICO[n.p[0]]||'')+' '+n.p[0]+'. '+n.p[3]));
+    geoOut.innerHTML='Đang bật · gần nhất: <strong>'+nm+'</strong> cách ~'+dist(n.d)+
+                     ' · nơi ở Hapjeong ~'+dist(h)+' · độ chính xác ±'+Math.round(acc)+' m';
+  }
+
+  function onErr(e){
+    var m = e.code===1 ? 'Bạn đã từ chối quyền vị trí – mở lại trong cài đặt trình duyệt cho trang này.'
+          : e.code===2 ? 'Không lấy được vị trí (thiếu GPS hoặc mạng).'
+          : e.code===3 ? 'Quá thời gian chờ – bấm thử lại.'
+          : 'Không lấy được vị trí.';
+    geoOut.innerHTML='⚠ '+m;
+    stopGeo();
+  }
+
+  function stopGeo(){
+    if(geoWatch!=null){ navigator.geolocation.clearWatch(geoWatch); geoWatch=null; }
+    if(geoMarker){ map.removeLayer(geoMarker); geoMarker=null; }
+    if(geoCircle){ map.removeLayer(geoCircle); geoCircle=null; }
+    geoBtn.classList.remove('is-on');
+    geoBtn.textContent='📍 Hiện vị trí của tôi';
+  }
+
+  geoBtn.addEventListener('click',function(){
+    if(geoWatch!=null){
+      stopGeo();
+      geoOut.innerHTML='Đã tắt theo dõi vị trí.';
+      return;
+    }
+    if(!navigator.geolocation){
+      geoOut.innerHTML='⚠ Trình duyệt này không hỗ trợ định vị.'; return;
+    }
+    if(!window.isSecureContext){
+      geoOut.innerHTML='⚠ Định vị chỉ chạy khi mở qua <strong>https</strong> – dùng link GitHub Pages, không dùng được khi mở file HTML trực tiếp.';
+      return;
+    }
+    geoOut.innerHTML='Đang lấy vị trí…';
+    geoBtn.classList.add('is-on');
+    geoBtn.textContent='📍 Tắt vị trí';
+    geoWatch=navigator.geolocation.watchPosition(onPos,onErr,{enableHighAccuracy:true,timeout:15000,maximumAge:10000});
+  });
 
   var btns=[].slice.call(document.querySelectorAll('#dayFilter .leg-btn'));
   btns.forEach(function(b){
